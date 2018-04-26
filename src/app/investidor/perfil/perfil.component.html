@@ -1,0 +1,70 @@
+<mat-toolbar class="header" color="accent">
+  <section id="user-info" class="mat-typography">
+    <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
+  
+    <div class="info-text">
+      <p>Nivel {{user.nivel}}</p>
+      <h2>{{user.nome}}</h2>
+      <p>{{user.pontos}} / {{user.ptsProximoNivel}} pontos</p>
+    </div>
+  </section>
+</mat-toolbar>
+
+<div class="content">
+
+  <section id="pontos" class="mat-typography">
+    <h3>Conquistas</h3>
+    <div class="scroll">
+      <mat-card *ngFor="let ponto of pontos" class="margin">
+        <mat-card-content>
+          <mat-icon class="pontos-icon">{{ponto.icon}}</mat-icon>
+          <h4>{{ponto.titulo}}</h4>
+          <!-- <p>{{ponto.descricao}}</p> -->
+        </mat-card-content>
+        <mat-card-footer>
+          <h3>+ {{ponto.numPontos}} pontos</h3>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </section>
+  
+  <mat-divider></mat-divider>
+  
+  <section id="pontos" class="mat-typography">
+    <h3>Amigos</h3>
+    <div class="scroll">
+      <mat-card *ngFor="let ponto of pontos" class="margin">
+        <mat-card-content>
+          <mat-icon>{{ponto.icon}}</mat-icon>
+          <h4>{{ponto.titulo}}</h4>
+          <!-- <p>{{ponto.descricao}}</p> -->
+        </mat-card-content>
+        <mat-card-footer>
+          <h3>+ {{ponto.numPontos}} pontos</h3>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </section>
+  
+  <mat-divider></mat-divider>
+  
+  <section id="pontos" class="mat-typography">
+    <h3>Beneficios</h3>
+    <div class="scroll">
+      <mat-card *ngFor="let ponto of pontos" class="margin">
+        <mat-card-content>
+          <mat-icon>{{ponto.icon}}</mat-icon>
+          <h4>{{ponto.titulo}}</h4>
+          <!-- <p>{{ponto.descricao}}</p> -->
+        </mat-card-content>
+        <mat-card-footer>
+          <h3>+ {{ponto.numPontos}} pontos</h3>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </section>
+  
+  <mat-divider></mat-divider>
+
+
+</div>

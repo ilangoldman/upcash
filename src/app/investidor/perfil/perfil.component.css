@@ -1,0 +1,78 @@
+#user-info p, #user-info .progress-spinner, #user-info .info-text {
+    display: inline-block;
+}
+
+.info-text p {
+    margin-bottom: 0;
+}
+
+.nivel-icon {
+    /* position: absolute; */
+    /* top: 84px; */
+    /* left: 22px; */
+    font-size: 60px;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 14px;
+}
+
+.header {
+    position: fixed;
+    top: 50px;
+    height: 100px;
+    z-index: 5;
+}
+
+.margin {
+    margin: 14px;
+}
+
+.content {
+    position: relative;
+    top: 100px;
+}
+
+#pontos {
+    /* height: 300px; */
+    /* width: 100%; */
+    /* border: 1px solid green; */
+    /* overflow: auto; */
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#pontos h3 {
+    position: sticky;
+    left: 0;
+    margin-bottom: 0;
+}
+
+.pontos-icon {
+    border: 2px solid black;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.scroll {
+    /* height: 300px; */
+    width: max-content;
+    /* border: 5px solid red; */
+    
+}
+
+#pontos mat-card {
+    width: 100px;
+    /* height: 180px; */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#pontos mat-card p {
+    text-align: justify;
+    width: 90%;
+}
+
+/* #pontos mat-card-content h3 {
+    bottom: 0;
+} */

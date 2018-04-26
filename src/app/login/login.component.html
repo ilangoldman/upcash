@@ -1,0 +1,29 @@
+<div class="main-div">
+
+  <mat-card class="mat-elevation-z5 login-card">
+    <mat-card-content>
+      <h1 class="logo">Up<span>CASH</span></h1>
+      <mat-divider></mat-divider>
+      
+      <div class="align-center">
+        
+        <mat-form-field>
+          <input matInput #email placeholder="Email" (focus)="clearErro()" required> 
+          <!-- [formControl]="email" required>
+            <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input matInput #pwd type="password" placeholder="Senha" (focus)="clearErro()" required>
+        </mat-form-field>
+        
+        <mat-card-actions>
+          <button mat-raised-button id="login-button" [ngClass]="loginStatus" color="primary" class="mat-elevation-z8 btn" (click)="login(email.value,pwd.value)"></button>
+          <br>
+          <button mat-raised-button color="accent" class="mat-elevation-z8" (click)="goto('signup')">Cadastre-se</button>      
+        </mat-card-actions>
+        
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

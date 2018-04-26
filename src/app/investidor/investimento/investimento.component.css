@@ -1,0 +1,60 @@
+
+.margin {
+    /* padding: 14px; */
+    margin: 14px;
+}
+
+.investimentos{
+    padding: 0;
+}
+
+/* pesquisar na lista */
+
+.form {
+    width: 100%;
+}
+
+.search {
+    padding-top: 0;
+    padding-bottom: 0;    
+}
+
+/* lista de investimentos */
+
+.item-list:hover {
+    cursor: pointer;
+    background: olivedrab;
+}
+
+.item-list.completed {
+    border-left: 5px solid green;
+    /* color: green; */
+}
+
+.investimentos-list {
+    padding: 0;
+}
+
+.text-wrap {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;    
+}
+
+.more-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* font-size: 20px; */
+}
+
+.progress-spinner {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+}
+
+p.progress-spinner {
+    position: absolute;
+    right: 24px;
+    bottom: 14px;
+}
