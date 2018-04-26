@@ -17,7 +17,7 @@
       <!-- </div> -->
       <h3>{{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}</h3>
       <mat-progress-bar mode="determinate" value="{{empresa.porcentagem}}"></mat-progress-bar>
-      <button class="mat-elevation-z8 btn-investir" mat-raised-button>Investir</button>
+      <button class="mat-elevation-z8 btn-investir" mat-raised-button (click)="investir()">Investir</button>
     </mat-card-content>
   </mat-card>
   

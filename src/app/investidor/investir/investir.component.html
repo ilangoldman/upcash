@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>Investir</h1>
+<div mat-dialog-content>
+  <section class="mat-typography">
+    <mat-grid-list cols="2" rowHeight="1:1">
+      <mat-grid-tile>
+        <h3>Valor da Oferta:</h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field>
+          <mat-select placeholder="Escolha um valor" #oferta name="valor">
+            <mat-option *ngFor="let opt of ofertas" [value]="opt">
+              {{opt | currencyFormat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+    
+      <mat-grid-tile>
+        <h3>Taxa de Retorno: </h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <p>{{this.resumo.taxa}} % a.a</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Plano de Pagamento: </h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <p>{{this.resumo.parcelas.total}} de {{this.resumo.parcelas.valor | currencyFormat}}</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Retorno Bruto: </h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{this.resumo.retorno.bruto | currencyFormat}}</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Imposto de Renda Total:</h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{this.resumo.imposto}}</p>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Retorno Total Líquido: </h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{this.resumo.retorno.liquido | currencyFormat}}</p>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </section>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="">Fechar</button>
+  <button mat-raised-button color="warn" (click)="investir(oferta.value)" cdkFocusInitial>Investir</button>
+</div>

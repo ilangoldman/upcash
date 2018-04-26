@@ -44,7 +44,7 @@ export class PerfilComponent implements OnInit {
 
   showPoints() {
     const dialogRef = this.dialog.open(PontuacaoDialogComponent, {
-      width: '250px',
+      // width: '250px',
       data: { nivel: this.user.nivel }
     });
 

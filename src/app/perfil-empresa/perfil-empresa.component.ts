@@ -3,6 +3,8 @@ import { InvestimentoService } from '../_service/investimento/investimento.servi
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Chart } from 'chart.js';
+import { MatDialog } from '@angular/material';
+import { InvestirComponent } from '../investidor/investir/investir.component';
 
 @Component({
   selector: 'app-perfil-empresa',
@@ -24,7 +26,8 @@ export class PerfilEmpresaComponent implements OnInit {
     private investimentoService: InvestimentoService,
     private route: ActivatedRoute,
     private router: Router,
-    private location: Location
+    private location: Location,
+    public dialog: MatDialog
   ) {
     this.route.params.subscribe(params => {
       this.empresa = this.investimentoService.getEmpresa(params['id']);
@@ -37,6 +40,17 @@ export class PerfilEmpresaComponent implements OnInit {
     this.displayFaturamento();
     this.displayRating();
     this.displayParcelas();
+  }
+
+  investir() {
+    const dialogRef = this.dialog.open(InvestirComponent, {
+      width: '320px',
+      data: { id: this.empresa.id }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log('The dialog was closed');
+    });
   }
 
   close() {
@@ -121,12 +135,12 @@ export class PerfilEmpresaComponent implements OnInit {
     let atraso = this.empresa.investido.parcelas.atraso;
 
     let status = 'default';
-    if (pago > 0) { 
-      status = 'pago'; 
-    } else if (atraso > 0) { 
-      status = 'atraso'; 
+    if (pago > 0) {
+      status = 'pago';
+    } else if (atraso > 0) {
+      status = 'atraso';
     }
-    
+
     for (let i = 0; i < this.empresa.investido.parcelas.total; i++) {
       const parcela = {
         valor: this.empresa.investido.parcelas.valor,

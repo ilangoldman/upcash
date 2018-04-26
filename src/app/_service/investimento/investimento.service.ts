@@ -5,6 +5,32 @@ export class InvestimentoService {
 
   constructor() { }
 
+  investir(id, oferta) {
+    console.log('Investido em ' + id + ': R$' + oferta);
+    return true;
+  }
+
+  getResumoInvestir(id) {
+    const investir = {
+      ofertas: {
+        min: 500,
+        max: 4000,
+        step: 500
+      },
+      taxa: 32.2,
+      parcelas: {
+        total: 24,
+        valor: 138
+      },
+      retorno: {
+        bruto: 2400,
+        liquido: 2200
+      },
+      imposto: 234
+    };
+    return investir;
+  }
+
   getResumoCarteira() {
     const resumoCarteira = {
       retorno: 10.85,
