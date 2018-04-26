@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carteira',
@@ -15,7 +16,8 @@ export class CarteiraComponent implements OnInit {
   // displayedColumns = ['nome', 'investido', 'emprestimo', 'status'];
 
   constructor(
-    private investimentoService: InvestimentoService
+    private investimentoService: InvestimentoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -25,8 +27,7 @@ export class CarteiraComponent implements OnInit {
   }
 
   gotoEmpresa(id) {
-    // TODO
-    console.log(id);
+    this.router.navigate(['/investidor/empresa/' + id]);
   }
 
   search(value) {

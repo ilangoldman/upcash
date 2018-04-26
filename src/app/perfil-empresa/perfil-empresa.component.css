@@ -17,7 +17,7 @@
 
 .tab-group {
     position: sticky;
-    top: 100px;
+    top: 60px;
     right: 0;
     left: 0;
 }
@@ -28,11 +28,25 @@
 }
 
 #main-info {
-    position: sticky;
+    /* position: sticky;
     top: 50px;
     right: 0;
     left: 0;
-    z-index: 8;
+    z-index: 8; */
+}
+
+.table {
+    text-align: center;
+}
+
+.tab-content {
+    padding: 14px;
+    text-align: justify;    
+}
+
+div.scroll {
+    transform: translateY(100px);
+    transition: 0.3 all ease-in-out;
 }
 
 .btn-investir {
@@ -42,4 +56,39 @@
     position: absolute;
     right: 28px;
     top: 28px;
+}
+
+
+
+.scrollable-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scrollable-x {
+    width: max-content;
+}
+
+.fotos {
+    height: 200px;
+    width: 200px;
+    margin-right: 14px;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.default {
+    background-color: grey;
+}
+
+.pago {
+    background-color: green;
+}
+
+.atraso {
+    background-color: red;
 }

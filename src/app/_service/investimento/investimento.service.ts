@@ -317,7 +317,7 @@ export class InvestimentoService {
             porcentagem: 50
           }
         ],
-        garantia: 'Ilan',
+        avalista: 'Ilan',
         cnpj: '03.980.538/0001-06',
         empregados: 23,
         fundacao: '21/03/2018',
@@ -329,12 +329,9 @@ export class InvestimentoService {
         ]
       },
       analise: {
-        analise: 'bla bla bla',
-        colateral: 4,
-        carater: 3,
-        condicao: 2,
-        conexao: 1,
-        credito: 5
+        comentario: 'bla bla bla',
+        info: ['colateral', 'carater', 'condicao', 'conexao', 'credito'],
+        valor: [4, 3, 2, 1, 5]
       },
       financeiro: {
         faturamento: {
@@ -355,15 +352,103 @@ export class InvestimentoService {
             'nov/18', 'dez/18', 'jan/19'],
           valor: [765, 765, 867, 65, 867, 9678, 90, 76, 657, 768, 786, 657, 656]
         },
-        descritivo: 'sidbafcnadnfsdaf'
+        descritivo: 'sidbafcnadnfsdaf',
+        highlights: [
+          {
+            info: 'Receita Líquida',
+            d3: '28.897.921',
+            d2: '32.052.262',
+            d1: '38.195.547',
+          },
+          {
+            info: 'EBITDA',
+            d3: '- 15.358.129',
+            d2: '- 3.272.080',
+            d1: '- 3.752.532',
+          },
+          {
+            info: 'Resultado Líquido',
+            d3: '- 16.400.083',
+            d2: '4.033.488',
+            d1: '- 5.883.340',
+          },
+          {
+            info: 'Ativo Circulante',
+            d3: '8.181.057',
+            d2: '14.283.323',
+            d1: '21.530.178',
+          },
+          {
+            info: 'Disponibilidades',
+            d3: '408.063',
+            d2: '1.038.323',
+            d1: '298.555',
+          },
+          {
+            info: 'Passivo Circulante',
+            d3: '17.796.816',
+            d2: '16.391.846',
+            d1: '35.236.683',
+          },
+          {
+            info: 'Dívidas de Curto Prazo',
+            d3: '789.038',
+            d2: '3.350.037',
+            d1: '6.408.409',
+          },
+          {
+            info: 'Dívidas de Longo Prazo',
+            d3: '206.037',
+            d2: '0',
+            d1: '0',
+          },
+          {
+            info: 'Patrimonio Líquido',
+            d3: '- 800.662',
+            d2: '20.887.840',
+            d1: '- 4.611.371',
+          },
+          {
+            info: 'Capital Social',
+            d3: '12.302.092',
+            d2: '28.002.108',
+            d1: '1.069.668',
+          },
+          {
+            info: 'Margem EBITDA',
+            d3: '- 53 %',
+            d2: '- 10 %',
+            d1: '- 10 %',
+          },
+          {
+            info: 'Dívida Total / PL',
+            d3: '-1.24',
+            d2: '0.16',
+            d1: '- 1.63',
+          },
+          {
+            info: 'Dívida Líquida / EBITDA',
+            d3: '- 0.04',
+            d2: '- 0.71',
+            d1: '-1.39',
+          },
+          {
+            info: 'Liquidez Corrente',
+            d3: '0.46',
+            d2: '0.87',
+            d1: '0.61'
+          }
+        ]
       },
       investido: {
         valor: 2000,
-        parcelas: 38,
-        totalParcelas: 30,
-        pago: 8,
-        atraso: 2,
-        comprovantes: ''
+        comprovantes: '',
+        parcelas: {
+          valor: 138,
+          total: 24,
+          pago: 8,
+          atraso: 2
+        }
       }
     };
 

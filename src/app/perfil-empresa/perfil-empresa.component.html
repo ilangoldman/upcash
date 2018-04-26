@@ -1,5 +1,5 @@
 <div class="container">
-
+   <!-- onscroll="this.scrollCard()" -->
   <mat-toolbar class="header" color="primary">
     <button mat-icon-button (click)="close()">
       <mat-icon>close</mat-icon>
@@ -11,8 +11,10 @@
   
   <mat-card id="main-info" class="margin">
     <mat-card-content>
-      <h3>Taxa: {{empresa.taxa}}</h3>
-      <h3>Rating: {{empresa.rating | ratingFormat}}</h3>
+      <!-- <div [ngClass]="scroll"> -->
+        <h3>Taxa: {{empresa.taxa}}</h3>
+        <h3>Rating: {{empresa.rating | ratingFormat}}</h3>
+      <!-- </div> -->
       <h3>{{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}</h3>
       <mat-progress-bar mode="determinate" value="{{empresa.porcentagem}}"></mat-progress-bar>
       <button class="mat-elevation-z8 btn-investir" mat-raised-button>Investir</button>
@@ -25,12 +27,23 @@
         <mat-icon>monetization_on</mat-icon>
         <div *ngIf="tabSelected==0">Geral</div>
       </ng-template>
-      <h2>Descrição</h2>
-        {{empresa.geral.descricao}}
-      <h2>Como ajuda</h2>
-         {{empresa.geral.motivo}} 
-      <h2>Acionistas</h2>
-        <mat-table #table [dataSource]="empresa.geral.acionistas">
+      <div class="tab-content">
+
+        <div class="scrollable-container">
+          <div class="scrollable-x">
+            <img class="fotos" *ngFor="let foto of empresa.geral.img" src="{{foto}}">
+          </div>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <h2>Descrição</h2>
+        <p>{{empresa.geral.descricao}}</p>
+        <mat-divider></mat-divider>
+        <h2>Como ajuda</h2>
+        <p>{{empresa.geral.motivo}}</p>
+        <h2>Acionistas</h2>
+        <mat-table #acionistas class="table" [dataSource]="empresa.geral.acionistas">
           <ng-container matColumnDef="nome">
             <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
             <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
@@ -42,6 +55,24 @@
           <mat-header-row *matHeaderRowDef="acionistasCol"></mat-header-row>
           <mat-row *matRowDef="let row; columns: acionistasCol;"></mat-row>
         </mat-table>
+      <mat-divider></mat-divider>
+    
+      <h2>Outras</h2>
+        <h4>Avalista:</h4>
+        <p>{{empresa.geral.avalista}}</p>
+        <h4>CNPJ:</h4>
+        <p>{{empresa.geral.cnpj}}</p>
+        <h4>Número de Empregados:</h4>
+        <p>{{empresa.geral.empregados}}</p>
+        <h4>Data de Fundação:</h4>
+        <p>{{empresa.geral.fundacao}}</p>
+
+        <h4>Página Web:</h4>
+        <p>{{empresa.geral.site}}</p>
+
+        <h4>Endereço:</h4>
+        <p>{{empresa.geral.endereco}}</p>
+      </div>
 
     </mat-tab>
     <mat-tab label="Financeiro">
@@ -49,32 +80,74 @@
       <mat-icon>monetization_on</mat-icon>
       <div *ngIf="tabSelected==1">Financeiro</div>
       </ng-template>
-      <h2>Faturamento</h2>
-
-      <h2>Highlights</h2>
-      
+      <div class="tab-content">
+        <h2>Faturamento</h2>
+        <div>
+          <canvas #faturamentoChart></canvas>
+        </div>
+        <!-- <h2>Highlights</h2> -->
+        <!-- <p>{{empresa.financeiro.descritivo}}</p> -->
+        <mat-table #highlights [dataSource]="empresa.financeiro.highlights">
+          <ng-container matColumnDef="info">
+            <mat-header-cell *matHeaderCellDef> Highlights </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.info}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="d3">
+            <mat-header-cell *matHeaderCellDef> 2015 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.d3}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="d2">
+            <mat-header-cell *matHeaderCellDef> 2016 </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.d2}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="d1">
+            <mat-header-cell *matHeaderCellDef> 2017* </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.d1}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="highlightsCol"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: highlightsCol;"></mat-row>
+        </mat-table>
+      </div>      
     </mat-tab>
     <mat-tab label="Analise">
       <ng-template mat-tab-label>
         <mat-icon>monetization_on</mat-icon>
         <div *ngIf="tabSelected==2">Analise</div>
       </ng-template>
-      <h2>Rating</h2>
-      
-      <h2>Nossa análise</h2>
-      
+      <div class="tab-content">
+        <h2>Rating</h2>
+        <div>
+          <canvas #ratingChart></canvas>
+        </div>
+        <h2>Nossa análise</h2>
+        <p>{{empresa.analise.comentario}}</p>
+      </div>    
     </mat-tab>
-    <mat-tab label="Investimento">
+    <mat-tab label="Investimento" *ngIf="empresa.investido">
       <ng-template mat-tab-label>
         <mat-icon>monetization_on</mat-icon>
         <div *ngIf="tabSelected==3">Investimento</div>
       </ng-template>
-      <h2>Parcelas</h2>
-      
-      <h2>Última Notificação</h2>      
-      
-      <h2>Comprovantes</h2>
-      
+      <div class="tab-content">      
+        <h2>Parcelas ({{empresa.investido.parcelas.pago}}/{{empresa.investido.parcelas.total}})</h2>
+
+        <div class="scrollable-container">
+          <div class="scrollable-x">
+            <div class="button-row">
+              <button mat-mini-fab *ngFor="let parcela of parcelas" [ngClass]="parcela.status">{{parcela.valor}}</button>
+
+            </div>
+          </div>
+        </div>
+        
+        <mat-divider></mat-divider>
+        <h2>Última Notificação</h2>      
+        
+        <mat-divider></mat-divider>
+        <h2>Comprovantes</h2>
+        <button mat-raised-button>Contrato</button>
+        <button mat-raised-button>Transferência</button>
+      </div>      
     </mat-tab>
   </mat-tab-group>
 
