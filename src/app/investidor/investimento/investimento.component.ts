@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-investimento',
@@ -10,7 +11,8 @@ export class InvestimentoComponent implements OnInit {
   private investimentos;
 
   constructor(
-    private investimentoService: InvestimentoService
+    private investimentoService: InvestimentoService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -19,7 +21,8 @@ export class InvestimentoComponent implements OnInit {
 
   gotoEmpresa(id) {
     // TODO
-    console.log(id);
+    // console.log(id);
+    this.router.navigate(['/investidor/empresa/' + id]);
   }
 
   getInvestimento() {

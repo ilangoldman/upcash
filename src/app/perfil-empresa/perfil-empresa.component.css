@@ -1,0 +1,45 @@
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.tab-group {
+    position: sticky;
+    top: 100px;
+    right: 0;
+    left: 0;
+}
+
+
+.margin {
+    margin: 14px;
+}
+
+#main-info {
+    position: sticky;
+    top: 50px;
+    right: 0;
+    left: 0;
+    z-index: 8;
+}
+
+.btn-investir {
+    background-color: orangered;
+    border: 1px solid black;
+    /* float: right; */
+    position: absolute;
+    right: 28px;
+    top: 28px;
+}

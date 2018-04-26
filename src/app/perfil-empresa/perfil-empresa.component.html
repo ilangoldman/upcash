@@ -1,3 +1,81 @@
-<p>
-  perfil-empresa works!
-</p>
+<div class="container">
+
+  <mat-toolbar class="header" color="primary">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+    <h1>
+      {{empresa.nome}}
+    </h1>
+  </mat-toolbar>
+  
+  <mat-card id="main-info" class="margin">
+    <mat-card-content>
+      <h3>Taxa: {{empresa.taxa}}</h3>
+      <h3>Rating: {{empresa.rating | ratingFormat}}</h3>
+      <h3>{{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}</h3>
+      <mat-progress-bar mode="determinate" value="{{empresa.porcentagem}}"></mat-progress-bar>
+      <button class="mat-elevation-z8 btn-investir" mat-raised-button>Investir</button>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-tab-group class="tab-group" (selectedIndexChange)="changeTab($event)">
+    <mat-tab label="Geral">
+      <ng-template mat-tab-label>
+        <mat-icon>monetization_on</mat-icon>
+        <div *ngIf="tabSelected==0">Geral</div>
+      </ng-template>
+      <h2>Descrição</h2>
+        {{empresa.geral.descricao}}
+      <h2>Como ajuda</h2>
+         {{empresa.geral.motivo}} 
+      <h2>Acionistas</h2>
+        <mat-table #table [dataSource]="empresa.geral.acionistas">
+          <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="porcentagem">
+            <mat-header-cell *matHeaderCellDef> % </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.porcentagem}} </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="acionistasCol"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: acionistasCol;"></mat-row>
+        </mat-table>
+
+    </mat-tab>
+    <mat-tab label="Financeiro">
+      <ng-template mat-tab-label>
+      <mat-icon>monetization_on</mat-icon>
+      <div *ngIf="tabSelected==1">Financeiro</div>
+      </ng-template>
+      <h2>Faturamento</h2>
+
+      <h2>Highlights</h2>
+      
+    </mat-tab>
+    <mat-tab label="Analise">
+      <ng-template mat-tab-label>
+        <mat-icon>monetization_on</mat-icon>
+        <div *ngIf="tabSelected==2">Analise</div>
+      </ng-template>
+      <h2>Rating</h2>
+      
+      <h2>Nossa análise</h2>
+      
+    </mat-tab>
+    <mat-tab label="Investimento">
+      <ng-template mat-tab-label>
+        <mat-icon>monetization_on</mat-icon>
+        <div *ngIf="tabSelected==3">Investimento</div>
+      </ng-template>
+      <h2>Parcelas</h2>
+      
+      <h2>Última Notificação</h2>      
+      
+      <h2>Comprovantes</h2>
+      
+    </mat-tab>
+  </mat-tab-group>
+
+</div>

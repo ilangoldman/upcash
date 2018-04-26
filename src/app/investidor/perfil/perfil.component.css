@@ -32,19 +32,17 @@
     top: 100px;
 }
 
-#pontos {
-    /* height: 300px; */
-    /* width: 100%; */
-    /* border: 1px solid green; */
-    /* overflow: auto; */
+.scrollable-container {
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-#pontos h3 {
+.subheader {
     position: sticky;
     left: 0;
     margin-bottom: 0;
+    padding-top: 14px;
+    padding-left: 14px;
 }
 
 .pontos-icon {
@@ -53,14 +51,11 @@
     padding: 7px;
 }
 
-.scroll {
-    /* height: 300px; */
+.scrollable-x {
     width: max-content;
-    /* border: 5px solid red; */
-    
 }
 
-#pontos mat-card {
+.scrollable-card {
     width: 100px;
     /* height: 180px; */
     text-align: center;
@@ -68,11 +63,28 @@
     vertical-align: top;
 }
 
-#pontos mat-card p {
+.scrollable-card p {
     text-align: justify;
     width: 90%;
 }
 
+.completo {
+    background-color: green;
+}
+
+#pontos h4 {
+    margin-top: 7px;
+}
+
 /* #pontos mat-card-content h3 {
     bottom: 0;
+} */
+
+#beneficios mat-card {
+    /* border-radius: 50%; */
+}
+
+/* .flip-card {
+    transform: rotateY(180deg);
+    transition: 0.5s all ease-in-out;
 } */

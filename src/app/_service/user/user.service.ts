@@ -64,4 +64,110 @@ export class UserService {
     return pontos;
   }
 
+  getAmigos() {
+    const amigos = [
+      {
+        badge: 'cake',
+        nome: 'Ilan',
+        nivel: 999
+      },
+      {
+        badge: 'android',
+        nome: 'Gabriel',
+        nivel: 32
+      },
+      {
+        badge: 'home',
+        nome: 'Leo',
+        nivel: 28
+      },
+      {
+        badge: 'android',
+        nome: 'Roberval',
+        nivel: 15
+      },
+      {
+        badge: 'cake',
+        nome: 'Waldisley',
+        nivel: 8
+      }
+    ];
+    return amigos;
+  }
+
+  getPontuacao() {
+    const tblPontos = [
+      {
+        nivel: 1,
+        numPontos: 100
+      },
+      {
+        nivel: 2,
+        numPontos: 200
+      },
+      {
+        nivel: 3,
+        numPontos: 300
+      },
+      {
+        nivel: 4,
+        numPontos: 400
+      },
+      {
+        nivel: 5,
+        numPontos: 500
+      },
+      {
+        nivel: 6,
+        numPontos: 600
+      },
+      {
+        nivel: 7,
+        numPontos: 700
+      },
+    ];
+    return tblPontos;
+  }
+
+  getBeneficios() {
+    const beneficios = [
+      {
+        icon: 'cake',
+        titulo: 'Vale $$',
+        descricao: 'bla bla bla',
+        ajuda: 'como conseguir?',
+        completo: true
+      },
+      {
+        icon: 'cake',
+        titulo: 'Vale $$',
+        descricao: 'bla bla bla',
+        ajuda: 'como conseguir?',
+        completo: false
+      },
+      {
+        icon: 'cake',
+        titulo: 'Vale $$',
+        descricao: 'bla bla bla',
+        ajuda: 'como conseguir?',
+        completo: true
+      },
+      {
+        icon: 'cake',
+        titulo: 'Vale $$',
+        descricao: 'bla bla bla',
+        ajuda: 'como conseguir?',
+        completo: false
+      },
+      {
+        icon: 'cake',
+        titulo: 'Vale $$',
+        descricao: 'bla bla bla',
+        ajuda: 'como conseguir?',
+        completo: true
+      },
+    ];
+    return beneficios;
+  }
+
 }

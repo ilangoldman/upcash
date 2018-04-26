@@ -11,7 +11,7 @@
 </mat-toolbar>
 
 <mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
-  <mat-sidenav #sidenav [mode]="over" [fixedInViewport]="true" [fixedTopGap]="0">
+  <mat-sidenav #sidenav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="0">
     <p>
       <button mat-button (click)="sidenav.close()">
         <mat-icon (click)="sidenav.close()">arrow_back</mat-icon>

@@ -24,7 +24,8 @@ import { MatIconModule,
   MatGridListModule,
   MatProgressSpinnerModule,
   MatProgressBarModule,
-  MatInputModule} from '@angular/material';
+  MatInputModule,
+  MatDialogModule} from '@angular/material';
 
 // Services
 import { UserService } from './_service/user/user.service';
@@ -44,6 +45,7 @@ import { PerfilComponent } from './investidor/perfil/perfil.component';
 import { PerfilEmpresaComponent } from './perfil-empresa/perfil-empresa.component';
 import { ConfiguracaoComponent } from './investidor/configuracao/configuracao.component';
 import { NotificacaoComponent } from './investidor/notificacao/notificacao.component';
+import { PontuacaoDialogComponent } from './investidor/perfil/pontuacao-dialog/pontuacao-dialog.component';
 
 
 
@@ -62,7 +64,8 @@ import { NotificacaoComponent } from './investidor/notificacao/notificacao.compo
     PerfilComponent,
     PerfilEmpresaComponent,
     ConfiguracaoComponent,
-    NotificacaoComponent
+    NotificacaoComponent,
+    PontuacaoDialogComponent
 ],
   imports: [
     BrowserModule,
@@ -80,12 +83,16 @@ import { NotificacaoComponent } from './investidor/notificacao/notificacao.compo
     MatGridListModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [
     UserService,
     LoginService,
     InvestimentoService
+  ],
+  entryComponents: [
+    PontuacaoDialogComponent
   ],
   bootstrap: [AppComponent]
 })
