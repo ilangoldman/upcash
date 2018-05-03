@@ -21,8 +21,8 @@ export class CarteiraComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.displayCarteira();
-    this.displayMovimentacao();
+    // this.displayCarteira();
+    // this.displayMovimentacao();
     this.getInvestimento();
   }
 

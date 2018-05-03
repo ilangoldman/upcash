@@ -1,3 +1,13 @@
+.header {
+    border-top: 1px solid whitesmoke;
+    height: 40px;
+    z-index: 10;
+}
+
+.space {
+    flex: 1 1 auto;
+}
+
 .margin {
     /* padding: 14px; */
     margin: 14px;

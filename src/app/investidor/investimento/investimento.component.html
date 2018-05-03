@@ -1,86 +1,42 @@
 <div class="investimento">
-  <mat-tab-group >
-    <mat-tab label="Oportunidades">
-      
-      <!-- <mat-card class="margin search">
-        <mat-card-content>
-          <mat-form-field class="form">
-            <input matInput (keyup)="search($event.target.value)" placeholder="Pesquisar">
-            <mat-icon matSuffix>search</mat-icon>
-          </mat-form-field>
-        </mat-card-content>
-      </mat-card> -->
-      <app-search (output)="search($event)"></app-search>
+  <app-search (output)="search($event)"></app-search>
 
-      <mat-card class="margin investimentos">
-        <mat-card-content>
+  <mat-card class="margin investimentos">
+    <mat-card-content>
 
-          <mat-list class="investimentos-list">
-            <mat-list-item class="item-list" *ngFor="let empresa of investimentos" (click)="gotoEmpresa(empresa.id)" [ngClass]="{ 'completed': empresa.porcentagem==100}">
-              <img matListAvatar src="assets/logo/{{empresa.logo}}"/>
-              <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
-              <p mat-line>&nbsp;</p>
-              <h3 mat-line>
-                Rating: {{empresa.rating | ratingFormat}}
-              </h3>
-              <h3 mat-line>
-                Taxa: {{empresa.taxa}} % a.a
-              </h3>
-              <p mat-line>
-                Prazo: {{empresa.prazo}} meses
-              </p>
-              <p mat-line>
-                {{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}
-              </p>
-              
-              
-              <button class="more-btn" mat-icon-button>
-                <mat-icon>star</mat-icon>
-              </button>
-              
-              <p class="progress-spinner" *ngIf="empresa.porcentagem!=100">{{empresa.porcentagem}}%</p>
-              <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
-              </mat-progress-spinner>
-              
-              <mat-divider></mat-divider>
-            </mat-list-item>
-          </mat-list>
+      <mat-list class="investimentos-list">
+        <mat-list-item class="item-list" *ngFor="let empresa of investimentos" (click)="gotoEmpresa(empresa.id)" [ngClass]="{ 'completed': empresa.porcentagem==100}">
+          <img matListAvatar src="assets/logo/{{empresa.logo}}"/>
+          <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
+          <p mat-line>&nbsp;</p>
+          <h3 mat-line>
+            Rating: {{empresa.rating | ratingFormat}}
+          </h3>
+          <h3 mat-line>
+            Taxa: {{empresa.taxa}} % a.a
+          </h3>
+          <p mat-line>
+            Prazo: {{empresa.prazo}} meses
+          </p>
+          <p mat-line>
+            {{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}
+          </p>
           
-        </mat-card-content>
-      </mat-card>
-
-
-
-
-    </mat-tab>
-<!-- 
-    <mat-tab label="Salvo">
-      <mat-card class="margin search">
-        <mat-card-content>
-          <mat-form-field class="form">
-            <input matInput (keyup)="search($event.target.value)" placeholder="Pesquisar">
-            <mat-icon matSuffix>search</mat-icon>
-          </mat-form-field>
-        </mat-card-content>
-      </mat-card>
-
-
-    </mat-tab>
-
-    <mat-tab label="Recusados">
-      <mat-card class="margin search">
-        <mat-card-content>
-          <mat-form-field class="form">
-            <input matInput (keyup)="search($event.target.value)" placeholder="Pesquisar">
-            <mat-icon matSuffix>search</mat-icon>
-          </mat-form-field>
-        </mat-card-content>
-      </mat-card>
-    </mat-tab> -->
-
-
-  </mat-tab-group>
-
+          
+          <button class="more-btn" mat-icon-button>
+            <mat-icon>star</mat-icon>
+          </button>
+          
+          <p class="progress-spinner" *ngIf="empresa.porcentagem!=100">{{empresa.porcentagem}}%</p>
+          <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
+          </mat-progress-spinner>
+          
+          <mat-divider></mat-divider>
+        </mat-list-item>
+      </mat-list>
+      
+    </mat-card-content>
+  </mat-card>
 </div>
 
 

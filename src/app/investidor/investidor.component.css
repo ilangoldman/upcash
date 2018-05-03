@@ -6,8 +6,34 @@
     /* text-align: center; */
 }
 
+.subheader {
+    border-top: 1px solid whitesmoke;
+    height: 40px;
+}
+
+.cash-logo {
+    color: orange;
+}
+
+.space {
+    flex: 1 1 auto;    
+}
+
+.header .user-menu {
+    font-size: .6875rem;
+    /* margin-right: 0; */
+    /* flex: 1 1 auto; */
+    width: 60px;
+    text-align: right;
+}
+/* 
+.header .user-menu mat-icon {
+    font-size: .6875rem;    
+    vertical-align: bottom;    
+} */
+
 .header span {
-    /* text-align: center; */
+    text-align: center;
     /* margin: 0 auto; */
     /* margin-left: auto;
      */
@@ -22,18 +48,18 @@
 
 .sidenav-container {
     position: absolute;
-    top: 50px;
+    top: 95px;
     bottom: 0;
     left: 0;
     right: 0;
 }
 
-.active {
+/* .active {
     color: orange;
     border-right: 5px solid orange;
-    /* color: dark-orange; */
+    color: dark-orange;
     transition: 0.3s all ease-in-out;
-}
+} */
 
 .list-button {
     width: 100%;

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../_service/user/user.service';
 import { MatSidenav } from '@angular/material';
+import { LoginService } from '../_service/login/login.service';
 
 
 @Component({
@@ -12,6 +13,32 @@ import { MatSidenav } from '@angular/material';
 export class InvestidorComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   private user;
+  private activePage = 'Home';
+
+  private userMenuIcon = 'keyboard_arrow_down';
+  private mainUserMenu = [
+    {
+      icon: 'account_circle',
+      text: 'Meus dados',
+      page: 'configuracoes'
+    },
+    {
+      icon: 'vpn_key',
+      text: 'Alterar dados de Acesso',
+      page: 'configAcesso'
+    },
+    {
+      icon: 'announcement',
+      text: 'Notificações',
+      page: 'notificacoes'
+    },
+    {
+      icon: 'exit_to_app',
+      text: 'Sair',
+      page: 'logout'
+    }
+
+  ];
 
   private mainSideNav = [
     {
@@ -23,27 +50,31 @@ export class InvestidorComponent implements OnInit {
       icon: 'account_balance_wallet',
       text: 'Carteira',
       page: 'carteira'
+      // subitem: {
+      //   text: 'Carteira',
+      //   page: 'carteira'
+      // }
     },
     {
       icon: 'monetization_on',
       text: 'Investimentos',
       page: 'investimento'
     },
-    {
-      icon: 'account_circle',
-      text: 'Perfil',
-      page: 'perfil'
-    },
-    {
-      icon: 'settings',
-      text: 'Configurações',
-      page: 'configuracoes'
-    },
-    {
-      icon: 'announcement',
-      text: 'Notificações',
-      page: 'notificacoes'
-    },
+    // {
+    //   icon: 'account_circle',
+    //   text: 'Perfil',
+    //   page: 'perfil'
+    // },
+    // {
+    //   icon: 'settings',
+    //   text: 'Configurações',
+    //   page: 'configuracoes'
+    // },
+    // {
+    //   icon: 'announcement',
+    //   text: 'Notificações',
+    //   page: 'notificacoes'
+    // },
     // {
     //   icon: 'help',
     //   text: 'Suporte',
@@ -55,9 +86,13 @@ export class InvestidorComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userService: UserService
+    private userService: UserService,
+    private loginService: LoginService
   ) {
-    this.activeItem = this.mainSideNav[1];
+    // this.activeItem = this.mainSideNav[1];
+    if (!loginService.isLogged()) {
+      this.router.navigate(['']);
+    }
   }
 
   ngOnInit() {
@@ -76,7 +111,22 @@ export class InvestidorComponent implements OnInit {
   }
 
   goto(url) {
-    this.router.navigate(['/investidor/' + url]);
+    if (url.page === 'logout') {
+      this.loginService.logout();
+      this.router.navigate(['']);
+    } else {
+      this.activePage = url.text;
+      this.router.navigate(['/investidor/' + url.page]);
+    }
+    this.sidenav.close();
+  }
+
+  openUserMenu() {
+    this.userMenuIcon = 'keyboard_arrow_up';
+  }
+
+  closeUserMenu() {
+    this.userMenuIcon = 'keyboard_arrow_down';
   }
 
 }

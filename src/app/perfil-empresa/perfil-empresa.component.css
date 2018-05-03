@@ -75,11 +75,11 @@ div.scroll {
     margin-right: 14px;
 }
 
-.button-row {
+/* .button-row {
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
+} */
 
 .default {
     background-color: grey;

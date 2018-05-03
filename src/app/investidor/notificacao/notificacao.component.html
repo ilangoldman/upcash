@@ -1,3 +1,17 @@
-<p>
-  notificacao works!
-</p>
+<mat-list>
+  <mat-list-item *ngFor="let msg of mensagens" [ngClass]="{ 'new': msg.lida == false }" (click)="openMsg(msg)">
+    <img matListAvatar src="assets/logo/{{msg.logo}}" />
+    
+      <h2 mat-line class="empresa text-wrap">{{msg.empresa}}</h2>
+      
+      <!-- <p mat-line>&nbsp;</p> -->
+      <p mat-line>{{msg.titulo}}</p>
+      
+      <p class="data">{{msg.data}}</p>
+      
+      <!-- <button class="more-btn" mat-icon-button>
+        <mat-icon>more_vert</mat-icon>
+      </button> -->
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
