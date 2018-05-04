@@ -9,15 +9,15 @@ export class LoginService {
   validarUsuario(usuario, senha): boolean {
     // let user;
     let login = null;
-    if (usuario === 'investidor' && senha === '123456') {
+    if (usuario === 'investidor@upcash.com' && senha === '123456') {
       login = {
         token: '321654',
-        username: usuario
+        email: usuario
       };
-    } else if (usuario === 'empresa' && senha === '654321') {
+    } else if (usuario === 'empresa@upcash.com' && senha === '654321') {
       login = {
         token: '123456',
-        username: usuario
+        email: usuario
       };
     }
 

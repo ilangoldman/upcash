@@ -27,7 +27,10 @@ import { MatIconModule,
   MatInputModule,
   MatDialogModule,
   MatSelectModule,
-  MatExpansionModule} from '@angular/material';
+  MatExpansionModule,
+  MatFormFieldModule,
+  MatFormFieldControl,
+  MatSnackBarModule} from '@angular/material';
 
 // Services
 import { UserService } from './_service/user/user.service';
@@ -51,6 +54,8 @@ import { PontuacaoDialogComponent } from './investidor/perfil/pontuacao-dialog/p
 import { InvestirComponent } from './investidor/investir/investir.component';
 import { NotificacaoService } from './_service/notificacao/notificacao.service';
 import { MensagemComponent } from './investidor/notificacao/mensagem/mensagem.component';
+import { UserConfigComponent } from './components/user-config/user-config.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -72,7 +77,8 @@ import { MensagemComponent } from './investidor/notificacao/mensagem/mensagem.co
     NotificacaoComponent,
     PontuacaoDialogComponent,
     InvestirComponent,
-    MensagemComponent
+    MensagemComponent,
+    UserConfigComponent
 ],
   imports: [
     BrowserModule,
@@ -93,7 +99,10 @@ import { MensagemComponent } from './investidor/notificacao/mensagem/mensagem.co
     MatInputModule,
     MatDialogModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [
     UserService,

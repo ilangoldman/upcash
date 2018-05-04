@@ -5,9 +5,20 @@ export class UserService {
 
   constructor() { }
 
+  alterarEmail(email) {
+    const login = JSON.parse(localStorage.getItem('login'));
+    console.log(email + ' - ' + login.email);
+  }
+
+  alterarSenha(pwd, newPwd) {
+    const login = JSON.parse(localStorage.getItem('login'));
+    console.log(pwd + ' - ' + newPwd + ' - ' + login.email);
+  }
+
   getUser() {
     const user = {
       nome: 'Ilan',
+      email: 'investidor@upcash.com',
       tipo: 'I',
       icon: 'android',
       pontos: 482,

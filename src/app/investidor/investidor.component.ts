@@ -20,12 +20,12 @@ export class InvestidorComponent implements OnInit {
     {
       icon: 'account_circle',
       text: 'Meus dados',
-      page: 'configuracoes'
+      page: 'configuracao/perfil'
     },
     {
       icon: 'vpn_key',
       text: 'Alterar dados de Acesso',
-      page: 'configAcesso'
+      page: 'configuracao/acesso'
     },
     {
       icon: 'announcement',

@@ -10,6 +10,7 @@ import { PerfilComponent } from './investidor/perfil/perfil.component';
 import { PerfilEmpresaComponent } from './perfil-empresa/perfil-empresa.component';
 import { ConfiguracaoComponent } from './investidor/configuracao/configuracao.component';
 import { NotificacaoComponent } from './investidor/notificacao/notificacao.component';
+import { UserConfigComponent } from './components/user-config/user-config.component';
 
 
 
@@ -54,6 +55,7 @@ const routes: Routes = [
     {
         path: 'investidor',
         component: InvestidorComponent,
+        // redirectTo: '/investidor/home',
         data: { state: 'investidor' },
         children: [
             {
@@ -82,9 +84,16 @@ const routes: Routes = [
                 data: { state: 'empresa' }
             },
             {
-                path: 'configuracoes',
+                path: 'configuracao',
+                redirectTo: 'configuracao/perfil'
+            },
+            {
+                path: 'configuracao/perfil',
                 component: ConfiguracaoComponent,
-                data: { state: 'configuracoes' }
+            },
+            {
+                path: 'configuracao/acesso',
+                component: UserConfigComponent
             },
             {
                 path: 'notificacoes',

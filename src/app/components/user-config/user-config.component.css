@@ -1,0 +1,17 @@
+.align-center {
+    /* margin: 28px auto !important; */
+    /* border: 2px solid green; */
+    /* width: fit-content; */
+    text-align: center;
+    margin: auto auto;    
+}
+
+.email {
+    border-bottom: 1px dotted grey;
+    width: fit-content;
+    margin-bottom: 14px;
+}
+
+.margin {
+    margin: 14px;
+}

@@ -1,0 +1,52 @@
+
+<section class="mat-typography">
+
+  <mat-card class="margin align-center">
+
+    
+    <h2>EMAIL</h2>
+    <h4 class="align-center email">{{user.email}}</h4>
+    <!-- <mat-divider></mat-divider> -->
+    
+    <mat-form-field>
+      <input matInput [formControl]="newEmail" placeholder="Novo email" (input)="checkData(checkEmail, newEmail.value)">
+      <mat-error *ngIf="newEmail.invalid">{{getErrorMessage(newEmail)}}</mat-error>      
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput [formControl]="checkEmail" placeholder="Confirmar novo email" (input)="checkData(checkEmail, newEmail.value)">
+      <mat-error *ngIf="checkEmail.invalid">{{getErrorMessage(checkEmail)}}</mat-error>
+      
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="saveEmail()">Alterar Email</button>
+    </mat-card-actions>
+      
+  </mat-card>
+    <!-- <mat-divider></mat-divider> -->
+  <mat-card class="margin align-center">
+
+    <h2>SENHA</h2>
+    <mat-form-field>
+      <input matInput type="password" [formControl]="pwd" placeholder="Senha Atual">
+      <mat-error *ngIf="pwd.invalid">{{getErrorMessage(pwd)}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="password" [formControl]="newPwd" (input)="checkData(checkPwd, newPwd.value)" placeholder="Nova Senha">
+      <mat-error *ngIf="newPwd.invalid">{{getErrorMessage(newPwd)}}</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <input matInput type="password" [formControl]="checkPwd" (input)="checkData(checkPwd, newPwd.value)" placeholder="Confirmar Nova Senha">
+      <mat-error *ngIf="checkPwd.invalid">{{getErrorMessage(checkPwd)}}</mat-error>
+    </mat-form-field>
+    
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="savePwd()">Alterar Senha</button>
+    </mat-card-actions>
+      
+  </mat-card> 
+    
+  </section>
