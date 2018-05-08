@@ -7,6 +7,42 @@
     overflow: auto;
 }
 
+/* Card de Investimentos */
+
+.close {
+    float: left;
+}
+
+.progress {
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.align-info {
+    text-align: center;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.dash {
+    border: 1px solid gray;
+}
+
+.btn {
+    padding: 0 7px;
+}
+
+.btn-investir {
+    width: 100%;
+}
+
+/* Outros */
+
 .header {
     position: sticky;
     top: 0;
@@ -16,10 +52,11 @@
 }
 
 .tab-group {
-    position: sticky;
-    top: 60px;
-    right: 0;
-    left: 0;
+    /* position: sticky; */
+    /* top: 60px; */
+    /* right: 0; */
+    /* left: 0; */
+    margin-top: 14px;
 }
 
 
@@ -49,15 +86,13 @@ div.scroll {
     transition: 0.3 all ease-in-out;
 }
 
-.btn-investir {
+/* .btn-investir {
     background-color: orangered;
     border: 1px solid black;
-    /* float: right; */
     position: absolute;
     right: 28px;
     top: 28px;
-}
-
+} */
 
 
 .scrollable-container {

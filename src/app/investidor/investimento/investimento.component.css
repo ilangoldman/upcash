@@ -4,9 +4,6 @@
     margin: 14px;
 }
 
-.investimentos{
-    padding: 0;
-}
 
 /* pesquisar na lista */
 
@@ -19,16 +16,46 @@
     padding-bottom: 0;    
 }
 
-/* lista de investimentos */
+/* Card de Investimentos */
 
-.item-list:hover {
-    cursor: pointer;
-    background: olivedrab;
+.progress {
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.align-info {
+    /* margin: 0 auto; */
+    text-align: center;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.dash {
+    border: 1px solid gray;
+}
+
+.btn {
+    padding: 0 7px;
+}
+
+.btn-investir {
+    width: 100%;
+}
+
+/* lista de investimentos */
+/* 
+
+.investimentos{
+    padding: 0;
 }
 
 .item-list.completed {
     border-left: 5px solid green;
-    /* color: green; */
 }
 
 .investimentos-list {
@@ -44,7 +71,6 @@
     position: absolute;
     right: 0;
     top: 0;
-    /* font-size: 20px; */
 }
 
 .progress-spinner {
@@ -57,4 +83,4 @@ p.progress-spinner {
     position: absolute;
     right: 24px;
     bottom: 14px;
-}
+} */

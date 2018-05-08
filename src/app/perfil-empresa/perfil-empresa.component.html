@@ -1,25 +1,57 @@
 <div class="container">
    <!-- onscroll="this.scrollCard()" -->
-  <mat-toolbar class="header" color="primary">
-    <button mat-icon-button (click)="close()">
+  <!-- <mat-toolbar class="header" color="primary">
+    <button mat-icon-button [mat-dialog-close]="">
       <mat-icon>close</mat-icon>
     </button>
     <h1>
       {{empresa.nome}}
     </h1>
-  </mat-toolbar>
+  </mat-toolbar> -->
   
-  <mat-card id="main-info" class="margin">
+
+  <mat-card class="mat-elevation-z8">
+    <button mat-icon-button class="close" [mat-dialog-close]="">
+      <mat-icon>close</mat-icon>
+    </button>
+    <mat-card-title-group>
+      <!-- class="align-center" -->
+      <mat-card-title>{{empresa.nome}}</mat-card-title>
+      <img mat-card-avatar src="assets/logo/{{empresa.logo}}" alt="Logo da Empresa">
+    </mat-card-title-group>
     <mat-card-content>
-      <!-- <div [ngClass]="scroll"> -->
+      <!-- <img mat-card-image src="assets/logo/{{empresa.logo}}" alt="Logo da Empresa"> -->
+      <div class="align-info">
+        <div></div>
+        <p> Rating <br> {{empresa.rating | ratingFormat}}</p>
+        <div class="dash"></div>
+        <p>Taxa <br> {{empresa.taxa}}% a.a</p>
+        <div class="dash"></div>
+        <p> Prazo <br> {{empresa.prazo}} meses</p>
+        <div></div>
+      </div>
+      <p class="progress">
+        {{empresa.obtido | currencyFormat}} de
+        <b>{{empresa.emprestimo | currencyFormat}}</b>
+      </p>
+      <mat-progress-bar mode="determinate" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}"></mat-progress-bar>
+    </mat-card-content>
+
+    <mat-card-actions class="btn">
+      <button mat-raised-button class="btn-investir" color="accent" (click)="investir(empresa.id)" cdkInitialFocus>INVESTIR</button>
+    </mat-card-actions>
+  </mat-card>
+
+
+  <!-- <mat-card id="main-info" class="margin">
+    <mat-card-content>
         <h3>Taxa: {{empresa.taxa}}</h3>
         <h3>Rating: {{empresa.rating | ratingFormat}}</h3>
-      <!-- </div> -->
       <h3>{{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}</h3>
       <mat-progress-bar mode="determinate" value="{{empresa.porcentagem}}"></mat-progress-bar>
-      <button class="mat-elevation-z8 btn-investir" mat-raised-button (click)="investir()">Investir</button>
+      <button class="mat-elevation-z8 btn-investir" mat-raised-button (click)="investir()" cdkFocusInitial>Investir</button>
     </mat-card-content>
-  </mat-card>
+  </mat-card> -->
   
   <mat-tab-group class="tab-group" (selectedIndexChange)="changeTab($event)">
     <mat-tab label="Geral">

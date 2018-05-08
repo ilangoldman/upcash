@@ -113,7 +113,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   entryComponents: [
     PontuacaoDialogComponent,
     InvestirComponent,
-    MensagemComponent
+    MensagemComponent,
+    PerfilEmpresaComponent
   ],
   bootstrap: [AppComponent]
 })

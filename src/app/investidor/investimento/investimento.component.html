@@ -1,66 +1,81 @@
 <div class="investimento">
   <app-search (output)="search($event)"></app-search>
 
-  <mat-card class="margin investimentos">
-    <mat-card-content>
+  <mat-card class="margin" *ngFor="let empresa of investimentos">
+    <mat-card-content (click)="openEmpresa(empresa.id)">
+      <img mat-card-image src="assets/logo/{{empresa.logo}}" alt="Logo da Empresa">
 
-      <mat-list class="investimentos-list">
-        <mat-list-item class="item-list" *ngFor="let empresa of investimentos" (click)="gotoEmpresa(empresa.id)" [ngClass]="{ 'completed': empresa.porcentagem==100}">
-          <img matListAvatar src="assets/logo/{{empresa.logo}}"/>
-          <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
-          <p mat-line>&nbsp;</p>
-          <h3 mat-line>
-            Rating: {{empresa.rating | ratingFormat}}
-          </h3>
-          <h3 mat-line>
-            Taxa: {{empresa.taxa}} % a.a
-          </h3>
-          <p mat-line>
-            Prazo: {{empresa.prazo}} meses
-          </p>
-          <p mat-line>
-            {{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}
-          </p>
-          
-          
-          <button class="more-btn" mat-icon-button>
-            <mat-icon>star</mat-icon>
-          </button>
-          
-          <p class="progress-spinner" *ngIf="empresa.porcentagem!=100">{{empresa.porcentagem}}%</p>
-          <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
-          </mat-progress-spinner>
-          
-          <mat-divider></mat-divider>
-        </mat-list-item>
-      </mat-list>
+      <h2 class="align-center">{{empresa.nome}}</h2>
       
+      <div class="align-info">
+        <div></div>
+        <p> Rating <br> {{empresa.rating | ratingFormat}}</p>
+        <div class="dash"></div>
+        <p>
+          Taxa <br> {{empresa.taxa}} % a.a
+        </p>   
+        <div class="dash"></div>        
+        <p>
+          Prazo <br> {{empresa.prazo}} meses
+        </p>
+        <div></div>
+      </div>
+
+      <p class="progress">
+        {{empresa.obtido | currencyFormat}} de <b>{{empresa.emprestimo | currencyFormat}}</b>
+      </p>
+
+      <mat-progress-bar mode="determinate" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
+      </mat-progress-bar>
+
     </mat-card-content>
+
+    <mat-card-actions class="btn">
+      <!-- <div></div> -->
+      <!-- <button mat-raised-button color="primary">Mais Detalhes</button> -->
+      <button mat-raised-button class="btn-investir" color="accent" (click)="investir(empresa.id)">INVESTIR</button>
+      <!-- <div></div> -->
+    </mat-card-actions>
   </mat-card>
+
 </div>
 
 
+<!-- List of Items
 
-<!-- tinder cards -->
+  <mat-list class="investimentos-list">
+    <mat-list-item class="item-list" *ngFor="let empresa of investimentos" (click)="gotoEmpresa(empresa.id)" [ngClass]="{ 'completed': empresa.porcentagem==100}">
+      <img matListAvatar src="assets/logo/{{empresa.logo}}" />
+      <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
+      <p mat-line>&nbsp;</p>
+      <h3 mat-line>
+        Rating: {{empresa.rating | ratingFormat}}
+      </h3>
+      <h3 mat-line>
+        Taxa: {{empresa.taxa}} % a.a
+      </h3>
+      <p mat-line>
+        Prazo: {{empresa.prazo}} meses
+      </p>
+      <p mat-line>
+        {{empresa.obtido | currencyFormat}} de {{empresa.emprestimo | currencyFormat}}
+      </p>
+  
+  
+      <button class="more-btn" mat-icon-button>
+        <mat-icon>star</mat-icon>
+      </button>
+  
+      <p class="progress-spinner" *ngIf="empresa.porcentagem!=100">{{empresa.porcentagem}}%</p>
+      <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
+      </mat-progress-spinner>
+  
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
 
-      <!-- <mat-card class="margin">
-              <mat-card-content>
-                <img src="logo">
-              </mat-card-content>
-            </mat-card>
-      
-            <p class="margin">
-              <button mat-raised-button>
-                <mat-icon>arrow_back</mat-icon>
-                Anterior
-              </button>
-              
-              <button mat-raised-button>
-                Investir
-              </button>
-              
-              <button mat-raised-button>
-                Proximo
-                <mat-icon>arrow_forward</mat-icon>
-              </button>
-            </p> -->
+
+
+
+
+ -->

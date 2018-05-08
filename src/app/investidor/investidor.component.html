@@ -46,7 +46,7 @@
       </button>
     </p>
 
-    <section id="user-info" class="mat-typography">
+    <section id="user-info" class="mat-typography" (click)="goto({page: 'perfil'})">
       <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">        
       </mat-progress-spinner>
       <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>

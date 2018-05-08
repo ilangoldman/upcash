@@ -12,7 +12,7 @@ export class MensagemComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<MensagemComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) { 
+  ) {
     this.mensagem = data.msg;
   }
 

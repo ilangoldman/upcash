@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Chart } from 'chart.js';
 import { InvestimentoService } from '../../_service/investimento/investimento.service';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { PerfilEmpresaComponent } from '../../perfil-empresa/perfil-empresa.component';
 
 @Component({
   selector: 'app-carteira',
@@ -17,7 +19,8 @@ export class CarteiraComponent implements OnInit {
 
   constructor(
     private investimentoService: InvestimentoService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit() {
@@ -26,8 +29,22 @@ export class CarteiraComponent implements OnInit {
     this.getInvestimento();
   }
 
-  gotoEmpresa(id) {
-    this.router.navigate(['/investidor/empresa/' + id]);
+  // gotoEmpresa(id) {
+  //   this.router.navigate(['/investidor/empresa/' + id]);
+  // }
+
+  openEmpresa(id) {
+    const empRef = this.dialog.open(PerfilEmpresaComponent, {
+      width: '100vw',
+      height: '100vh',
+      maxWidth: '100vw',
+      autoFocus: false,
+      data: { id: id }
+    });
+
+    empRef.afterClosed().subscribe(result => {
+      // this.getNotificacoes();
+    });
   }
 
   search(value) {

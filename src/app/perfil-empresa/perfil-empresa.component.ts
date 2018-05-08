@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
 import { InvestimentoService } from '../_service/investimento/investimento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Chart } from 'chart.js';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { InvestirComponent } from '../investidor/investir/investir.component';
 
 @Component({
@@ -27,13 +27,19 @@ export class PerfilEmpresaComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private location: Location,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public dialogRef: MatDialogRef<PerfilEmpresaComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.route.params.subscribe(params => {
-      this.empresa = this.investimentoService.getEmpresa(params['id']);
-      this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
-      this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);
-    });
+    this.empresa = this.investimentoService.getEmpresa(data.id);
+    this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
+    this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);
+
+    // this.route.params.subscribe(params => {
+    //   this.empresa = this.investimentoService.getEmpresa(params['id']);
+    //   this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
+    //   this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);
+    // });
   }
 
   ngOnInit() {
@@ -54,7 +60,7 @@ export class PerfilEmpresaComponent implements OnInit {
   }
 
   close() {
-    this.location.back();
+    // this.location.back();
   }
 
   changeTab(index) {
