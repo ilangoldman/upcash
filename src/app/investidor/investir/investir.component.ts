@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-investir',
@@ -8,9 +9,10 @@ import { InvestimentoService } from '../../_service/investimento/investimento.se
   styleUrls: ['./investir.component.css']
 })
 export class InvestirComponent implements OnInit {
-  private empresaID;
-  private resumo;
-  private ofertas = [];
+  public empresaID;
+  public resumo;
+  public ofertas = [];
+  public oferta = 2000;
 
   constructor(
     public dialogRef: MatDialogRef<InvestirComponent>,
@@ -22,8 +24,8 @@ export class InvestirComponent implements OnInit {
     this.displayOfertas();
   }
 
-  investir(valor) {
-    this.investimentoService.investir(this.empresaID, valor);
+  investir() {
+    this.investimentoService.investir(this.empresaID, this.oferta);
     this.dialogRef.close();
   }
 

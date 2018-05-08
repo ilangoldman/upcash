@@ -6,6 +6,12 @@
     /* text-align: center; */
 }
 
+.align-items {
+    text-align: center;    
+    display: flex;
+    justify-content: space-between;
+}
+
 .subheader {
     border-top: 1px solid whitesmoke;
     height: 40px;
@@ -15,14 +21,9 @@
     color: orange;
 }
 
-.space {
-    flex: 1 1 auto;    
-}
 
 .header .user-menu {
     font-size: .6875rem;
-    /* margin-right: 0; */
-    /* flex: 1 1 auto; */
     width: 60px;
     text-align: right;
 }

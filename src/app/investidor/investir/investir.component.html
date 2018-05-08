@@ -1,14 +1,14 @@
-<h1 mat-dialog-title>Investir</h1>
+<h1 mat-dialog-title>Investir: <br> {{resumo.empresa}}</h1>
 <div mat-dialog-content>
   <section class="mat-typography">
-    <mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-list cols="2" rowHeight="4:3">
       <mat-grid-tile>
         <h3>Valor da Oferta:</h3>
       </mat-grid-tile>
 
       <mat-grid-tile>
-        <mat-form-field>
-          <mat-select placeholder="Escolha um valor" #oferta name="valor">
+        <mat-form-field class="fit">
+          <mat-select placeholder="Escolha um valor" [(value)]="oferta">
             <mat-option *ngFor="let opt of ofertas" [value]="opt">
               {{opt | currencyFormat}}
             </mat-option>
@@ -28,8 +28,8 @@
         <h3>Plano de Pagamento: </h3>
       </mat-grid-tile>
 
-      <mat-grid-tile>
-        <p>{{this.resumo.parcelas.total}} de {{this.resumo.parcelas.valor | currencyFormat}}</p>
+      <mat-grid-tile class="align-center">
+        <p>{{this.resumo.parcelas.total}} parcelas de {{this.resumo.parcelas.valor | currencyFormat}}</p>
       </mat-grid-tile>
 
       <mat-grid-tile>
@@ -58,5 +58,5 @@
 </div>
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close]="">Fechar</button>
-  <button mat-raised-button color="warn" (click)="investir(oferta.value)" cdkFocusInitial>Investir</button>
+  <button mat-raised-button color="warn" (click)="investir(oferta)" cdkFocusInitial>Investir</button>
 </div>

@@ -1,28 +1,24 @@
 
 <mat-toolbar class="header" color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row class="align-items">
     <button mat-icon-button (click)="sidenav.open()">
       <mat-icon>menu</mat-icon>
     </button>
-    <span class="space"></span>
-    <span class="space"></span>
-    <span class="space"></span>
     <span>
       Up<span class="cash-logo">CASH</span>
     </span>
-    <span class="space"></span>  
     <div class="user-menu">
       Olá {{user.nome}}
-    </div>
-    <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
-      <mat-icon>{{userMenuIcon}}</mat-icon>
-    </button>
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
+        <mat-icon>{{userMenuIcon}}</mat-icon>
+      </button>
+    </div>    
   </mat-toolbar-row>
 
-  <mat-toolbar-row class="subheader">
-    <span class="space"></span>
+  <mat-toolbar-row class="subheader align-items">
+    <div></div>
     <span>{{activePage}}</span>
-    <span class="space"></span>    
+    <div></div>    
   </mat-toolbar-row>
 </mat-toolbar>
 

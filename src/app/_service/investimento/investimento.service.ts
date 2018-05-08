@@ -12,6 +12,7 @@ export class InvestimentoService {
 
   getResumoInvestir(id) {
     const investir = {
+      empresa: 'Nascetur Ridiculus Mus Institute',
       ofertas: {
         min: 500,
         max: 4000,
