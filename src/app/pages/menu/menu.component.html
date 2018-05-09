@@ -1,0 +1,86 @@
+<mat-toolbar class="header" color="primary">
+  <mat-toolbar-row class="align-items">
+    <button mat-icon-button (click)="sidenav.open()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>
+      Up<span class="cash-logo">CASH</span>
+    </span>
+    <div class="user-menu">
+      Olá {{user.nome}}
+      <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
+        <mat-icon>{{userMenuIcon}}</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row class="subheader align-items">
+    <div></div>
+    <span>{{activePage}}</span>
+    <div></div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-menu #userMenu="matMenu" [overlapTrigger]="false" (closed)="closeUserMenu()">
+  <button mat-menu-item *ngFor="let item of mainUserMenu" (click)="goto(item)">
+    <mat-icon>{{item.icon}}</mat-icon>
+    <span>{{item.text}}</span>
+  </button>
+</mat-menu>
+
+<mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
+  <mat-sidenav #sidenav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="0">
+    <p>
+      <button mat-button (click)="sidenav.close()">
+        <mat-icon (click)="sidenav.close()">arrow_back</mat-icon>
+      </button>
+    </p>
+
+    <section *ngIf="tipo==='investidor'" id="user-info" class="mat-typography" (click)="goto({page: 'perfil'})">
+      <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">
+      </mat-progress-spinner>
+      <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
+
+      <div class="info-text">
+        <p>Nivel {{user.nivel}}</p>
+        <h1>{{user.nome}}</h1>
+      </div>
+    </section>
+
+    <section *ngIf="tipo==='empresa'" id="user-info" class="mat-typography" (click)="openPerfilEmpresa()">
+      <!-- <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem"></mat-progress-spinner> -->
+      <!-- <mat-icon class="nivel-icon">{{user.icon}}</mat-icon> -->
+    
+      <div class="align-items">
+        <!-- <p>Nivel {{user.nivel}}</p> -->
+        <div></div>
+        <h1>{{user.empresa}}</h1>
+        <div></div>
+      </div>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <mat-list>
+      <mat-list-item *ngFor="let item of menuItems">
+        <button class="list-button" mat-button (click)="goto(item)">
+          <mat-icon matListIcon>{{item.icon}}</mat-icon>
+          {{item.text}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+
+
+    <mat-toolbar class="footer">
+      <button class="list-button" mat-button>
+        <mat-icon matListIcon>help</mat-icon>
+        Suporte
+      </button>
+    </mat-toolbar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

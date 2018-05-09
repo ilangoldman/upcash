@@ -1,9 +1,9 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { Chart } from 'chart.js';
-import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { InvestimentoService } from 'app/_service/investimento/investimento.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
-import { PerfilEmpresaComponent } from '../../perfil-empresa/perfil-empresa.component';
+import { PerfilEmpresaComponent } from 'app/empresa/perfil-empresa/perfil-empresa.component';
 
 @Component({
   selector: 'app-carteira',

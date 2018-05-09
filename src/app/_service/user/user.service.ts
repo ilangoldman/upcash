@@ -19,6 +19,8 @@ export class UserService {
     const user = {
       nome: 'Ilan',
       email: 'investidor@upcash.com',
+      // empresa: 'Nascetur Ridiculus Mus Institute',
+      empresa: 'Goldman Ltda',
       tipo: 'I',
       icon: 'android',
       pontos: 482,

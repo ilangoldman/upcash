@@ -1,17 +1,25 @@
 import { Routes, RouterModule } from '@angular/router';
 
+import { LoginComponent } from './pages/login/login.component';
+import { NotificacaoComponent } from './pages/notificacao/notificacao.component';
+
 // Paginas do Investidor
 import { InvestidorComponent } from './investidor/investidor.component';
-import { HomeComponent } from './investidor/home/home.component';
 import { InvestimentoComponent } from './investidor/investimento/investimento.component';
 import { CarteiraComponent } from './investidor/carteira/carteira.component';
-import { LoginComponent } from './login/login.component';
-import { PerfilComponent } from './investidor/perfil/perfil.component';
-import { PerfilEmpresaComponent } from './perfil-empresa/perfil-empresa.component';
-import { ConfiguracaoComponent } from './investidor/configuracao/configuracao.component';
-import { NotificacaoComponent } from './investidor/notificacao/notificacao.component';
-import { UserConfigComponent } from './components/user-config/user-config.component';
+import { PerfilInvestidorComponent } from './investidor/perfil/perfil.component';
+import { UserConfigComponent } from './pages/user-config/user-config.component';
+import { HomeInvestidorComponent } from './investidor/home-investidor/home-investidor.component';
+import { ConfigPerfilInvestidorComponent } from './investidor/config-perfil-investidor/config-perfil-investidor.component';
 
+// Paginas da Empresa
+import { EmpresaComponent } from './empresa/empresa.component';
+import { EmprestimoComponent } from './empresa/emprestimo/emprestimo.component';
+import { HomeEmpresaComponent } from './empresa/home-empresa/home-empresa.component';
+import { TransferenciasComponent } from './empresa/transferencias/transferencias.component';
+import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
+import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 
 
@@ -50,55 +58,90 @@ const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
-        data: { state: 'login' }
+        // data: { state: 'login' }
     },
     {
-        path: 'investidor',
-        component: InvestidorComponent,
+        path: 'empresa',
+        component: EmpresaComponent,
         // redirectTo: '/investidor/home',
-        data: { state: 'investidor' },
+        // data: { state: 'empresa' },
         children: [
             {
                 path: 'home',
-                component: HomeComponent,
-                data: { state: 'home' }
+                component: HomeEmpresaComponent
             },
             {
-                path: 'carteira',
-                component: CarteiraComponent,
-                data: { state: 'carteira' }
+                path: 'emprestimos',
+                component: EmprestimoComponent
             },
             {
-                path: 'investimento',
-                component: InvestimentoComponent,
-                data: { state: 'investimento' }
+                path: 'transferencias',
+                component: TransferenciasComponent
             },
             {
                 path: 'perfil',
-                component: PerfilComponent,
-                data: { state: 'perfil' }
-            },
-            {
-                path: 'empresa/:id',
-                component: PerfilEmpresaComponent,
-                data: { state: 'empresa' }
+                component: PerfilEmpresaComponent
             },
             {
                 path: 'configuracao',
                 redirectTo: 'configuracao/perfil'
             },
-            {
-                path: 'configuracao/perfil',
-                component: ConfiguracaoComponent,
-            },
-            {
-                path: 'configuracao/acesso',
-                component: UserConfigComponent
-            },
+                {
+                    path: 'configuracao/perfil',
+                    component: ConfigPerfilEmpresaComponent,
+                },
+                {
+                    path: 'configuracao/acesso',
+                    component: UserConfigComponent
+                },
             {
                 path: 'notificacoes',
-                component: NotificacaoComponent,
-                data: { state: 'notificacoes' }
+                component: NotificacaoComponent
+            }
+        ]
+    },
+    {
+        path: 'investidor',
+        component: InvestidorComponent,
+        // redirectTo: '/investidor/home',
+        // data: { state: 'investidor' },
+        children: [
+            {
+                path: 'home',
+                component: HomeInvestidorComponent
+            },
+            {
+                path: 'carteira',
+                component: CarteiraComponent
+            },
+            {
+                path: 'investimento',
+                component: InvestimentoComponent
+            },
+            {
+                path: 'perfil',
+                component: PerfilInvestidorComponent
+            },
+            // {
+            //     path: 'empresa/:id',
+            //     component: PerfilEmpresaComponent,
+            //     data: { state: 'empresa' }
+            // },
+            {
+                path: 'configuracao',
+                redirectTo: 'configuracao/perfil'
+            },
+                {
+                    path: 'configuracao/perfil',
+                    component: ConfigPerfilInvestidorComponent,
+                },
+                {
+                    path: 'configuracao/acesso',
+                    component: UserConfigComponent
+                },
+            {
+                path: 'notificacoes',
+                component: NotificacaoComponent
             }
         ]
     }

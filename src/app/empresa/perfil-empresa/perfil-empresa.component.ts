@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild, ElementRef, Inject } from '@angular/core';
-import { InvestimentoService } from '../_service/investimento/investimento.service';
+import { InvestimentoService } from 'app/_service/investimento/investimento.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Chart } from 'chart.js';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { InvestirComponent } from '../investidor/investir/investir.component';
+import { InvestirComponent } from 'app/investidor/investir/investir.component';
 
 @Component({
   selector: 'app-perfil-empresa',

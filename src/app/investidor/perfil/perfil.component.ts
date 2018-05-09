@@ -8,7 +8,7 @@ import { PontuacaoDialogComponent } from './pontuacao-dialog/pontuacao-dialog.co
   templateUrl: './perfil.component.html',
   styleUrls: ['./perfil.component.css']
 })
-export class PerfilComponent implements OnInit {
+export class PerfilInvestidorComponent implements OnInit {
   private user;
   private pontos;
   private beneficios;

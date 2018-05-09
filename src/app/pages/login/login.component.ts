@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import * as anime from 'animejs';
-import { LoginService } from '../_service/login/login.service';
+import { LoginService } from 'app/_service/login/login.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router
-  ) { }
+  ) {
+    if (loginService.isLogged()) {
+      this.router.navigate([this.loginService.getTipo() + '/home']);
+    }
+  }
 
   ngOnInit() {
   }
@@ -43,7 +47,7 @@ export class LoginComponent implements OnInit {
   }
 
   completeLogin() {
-    this.router.navigate(['/investidor/home']);
+    this.router.navigate([this.loginService.getTipo() + '/home']);
   }
 
   erroLogin() {

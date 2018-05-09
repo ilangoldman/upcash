@@ -12,12 +12,14 @@ export class LoginService {
     if (usuario === 'investidor@upcash.com' && senha === '123456') {
       login = {
         token: '321654',
-        email: usuario
+        email: usuario,
+        tipo: 'investidor'
       };
     } else if (usuario === 'empresa@upcash.com' && senha === '654321') {
       login = {
         token: '123456',
-        email: usuario
+        email: usuario,
+        tipo: 'empresa'
       };
     }
 
@@ -39,6 +41,19 @@ export class LoginService {
 
   isLogged(): boolean {
     if (localStorage.getItem('login')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  getTipo() {
+    const login = JSON.parse(localStorage.getItem('login'));
+    return login.tipo;
+  }
+
+  checkTipo(tipo) {
+    if (this.getTipo() === tipo) {
       return true;
     } else {
       return false;

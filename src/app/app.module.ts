@@ -32,31 +32,48 @@ import { MatIconModule,
   MatFormFieldControl,
   MatSnackBarModule,
   MatStepperModule} from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Services
 import { UserService } from './_service/user/user.service';
 import { LoginService } from './_service/login/login.service';
 import { InvestimentoService } from './_service/investimento/investimento.service';
+import { NotificacaoService } from './_service/notificacao/notificacao.service';
 
-// Components
+// Telas
 import { AppComponent } from './app.component';
+
+// Components - Elementos
+import { SearchComponent } from './components/search/search.component';
+
+// Paginas Padrao
+import { NotificacaoComponent } from './pages/notificacao/notificacao.component';
+import { MensagemComponent } from './pages/notificacao/mensagem/mensagem.component';
+import { UserConfigComponent } from './pages/user-config/user-config.component';
+
+import { LoginComponent } from './pages/login/login.component';
+// TODO -> Cadastro (Signup)
+
+// Investidor
 import { InvestidorComponent } from './investidor/investidor.component';
-import { HomeComponent } from './investidor/home/home.component';
+import { HomeInvestidorComponent } from './investidor/home-investidor/home-investidor.component';
 import { CarteiraComponent } from './investidor/carteira/carteira.component';
 import { InvestimentoComponent } from './investidor/investimento/investimento.component';
-import { SearchComponent } from './components/search/search.component';
-import { LoginComponent } from './login/login.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { PerfilComponent } from './investidor/perfil/perfil.component';
-import { PerfilEmpresaComponent } from './perfil-empresa/perfil-empresa.component';
-import { ConfiguracaoComponent } from './investidor/configuracao/configuracao.component';
-import { NotificacaoComponent } from './investidor/notificacao/notificacao.component';
-import { PontuacaoDialogComponent } from './investidor/perfil/pontuacao-dialog/pontuacao-dialog.component';
 import { InvestirComponent } from './investidor/investir/investir.component';
-import { NotificacaoService } from './_service/notificacao/notificacao.service';
-import { MensagemComponent } from './investidor/notificacao/mensagem/mensagem.component';
-import { UserConfigComponent } from './components/user-config/user-config.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { PerfilInvestidorComponent } from './investidor/perfil/perfil.component';
+import { PontuacaoDialogComponent } from './investidor/perfil/pontuacao-dialog/pontuacao-dialog.component';
+import { ConfigPerfilInvestidorComponent } from './investidor/config-perfil-investidor/config-perfil-investidor.component';
+
+// Empresa
+import { EmpresaComponent } from './empresa/empresa.component';
+import { EmprestimoComponent } from './empresa/emprestimo/emprestimo.component';
+import { HomeEmpresaComponent } from './empresa/home-empresa/home-empresa.component';
+import { TransferenciasComponent } from './empresa/transferencias/transferencias.component';
+
+import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
+import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
+import { MenuComponent } from './pages/menu/menu.component';
 
 
 
@@ -65,21 +82,26 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     CurrencyFormatPipe,
     InvestidorComponent,
-    HomeComponent,
     CarteiraComponent,
     InvestimentoComponent,
     SearchComponent,
     RatingFormatPipe,
     LoginComponent,
-    LandingPageComponent,
-    PerfilComponent,
+    PerfilInvestidorComponent,
     PerfilEmpresaComponent,
-    ConfiguracaoComponent,
     NotificacaoComponent,
     PontuacaoDialogComponent,
     InvestirComponent,
     MensagemComponent,
-    UserConfigComponent
+    UserConfigComponent,
+    EmpresaComponent,
+    EmprestimoComponent,
+    HomeEmpresaComponent,
+    HomeInvestidorComponent,
+    TransferenciasComponent,
+    ConfigPerfilEmpresaComponent,
+    ConfigPerfilInvestidorComponent,
+    MenuComponent
 ],
   imports: [
     BrowserModule,
