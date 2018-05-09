@@ -122,6 +122,7 @@ export class InvestidorComponent implements OnInit {
   }
 
   openUserMenu() {
+    this.sidenav.close();
     this.userMenuIcon = 'keyboard_arrow_up';
   }
 

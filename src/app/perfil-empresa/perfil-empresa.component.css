@@ -12,10 +12,10 @@
 .close {
     float: left;
 }
-
+/* 
 .avatar {
-    float: left !important;
-}
+    float: left;
+} */
 
 .progress {
     text-align: center;

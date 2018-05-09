@@ -30,7 +30,8 @@ import { MatIconModule,
   MatExpansionModule,
   MatFormFieldModule,
   MatFormFieldControl,
-  MatSnackBarModule} from '@angular/material';
+  MatSnackBarModule,
+  MatStepperModule} from '@angular/material';
 
 // Services
 import { UserService } from './_service/user/user.service';
@@ -102,7 +103,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatExpansionModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatStepperModule
   ],
   providers: [
     UserService,
