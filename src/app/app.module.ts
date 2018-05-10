@@ -74,6 +74,9 @@ import { TransferenciasComponent } from './empresa/transferencias/transferencias
 import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
 import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-emprestimo.component';
+import { EmprestimoService } from './_service/emprestimo/emprestimo.service';
+import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.component';
 
 
 
@@ -101,7 +104,9 @@ import { MenuComponent } from './pages/menu/menu.component';
     TransferenciasComponent,
     ConfigPerfilEmpresaComponent,
     ConfigPerfilInvestidorComponent,
-    MenuComponent
+    MenuComponent,
+    DetalheEmprestimoComponent,
+    SolicitacaoComponent
 ],
   imports: [
     BrowserModule,
@@ -132,13 +137,15 @@ import { MenuComponent } from './pages/menu/menu.component';
     UserService,
     LoginService,
     InvestimentoService,
-    NotificacaoService
+    NotificacaoService,
+    EmprestimoService
   ],
   entryComponents: [
     PontuacaoDialogComponent,
     InvestirComponent,
     MensagemComponent,
-    PerfilEmpresaComponent
+    PerfilEmpresaComponent,
+    SolicitacaoComponent
   ],
   bootstrap: [AppComponent]
 })

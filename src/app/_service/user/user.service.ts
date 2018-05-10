@@ -21,7 +21,6 @@ export class UserService {
       email: 'investidor@upcash.com',
       // empresa: 'Nascetur Ridiculus Mus Institute',
       empresa: 'Goldman Ltda',
-      tipo: 'I',
       icon: 'android',
       pontos: 482,
       ptsProximoNivel: 500,

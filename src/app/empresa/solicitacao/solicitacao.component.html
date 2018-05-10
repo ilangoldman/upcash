@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>Novo emprestimo:</h1>
+<div mat-dialog-content>
+  <section class="mat-typography">
+    <mat-grid-list cols="2" rowHeight="4:3">
+      <mat-grid-tile>
+        <h3>Valor da Solicitação:</h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="fit">
+          <mat-select placeholder="Escolha um valor" [(value)]="emprestimo">
+            <mat-option *ngFor="let emp of emprestimos" [value]="emp">
+              {{emp | currencyFormat}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Motivo: </h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field class="fit">
+          <textarea matInput #motivoInput [(value)]="motivo"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <h3>Parcelas: </h3>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <!-- <p>{{this.resumo.parcelas.total}} parcelas de {{this.resumo.parcelas.valor | currencyFormat}}</p> -->
+        <mat-form-field class="fit">
+          <mat-select placeholder="Escolha um valor" [(value)]="parcela">
+            <mat-option *ngFor="let p of parcelas" [value]="p">
+              {{p}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </section>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="">Fechar</button>
+  <button mat-raised-button color="warn" (click)="solicitar(motivoInput.value)" cdkFocusInitial>Solicitar</button>
+</div>

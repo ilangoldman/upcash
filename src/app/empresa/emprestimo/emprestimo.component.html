@@ -1,3 +1,46 @@
-<p>
-  emprestimo works!
-</p>
+<!--   -->
+
+<!-- <div class="carteira"> -->
+  <!-- <div> -->
+
+    <div class="margin">      
+      <button mat-raised-button color="accent" class="btn-emprestimo" (click)="solicitar()">PEDIR EMPRESTIMO</button>
+    </div>
+
+    <!-- <app-search (output)="search($event)"></app-search> -->
+
+    <!-- <mat-card class="margin emprestimos"> -->
+      <!-- <mat-card-content> -->
+        <mat-list class="emprestimos-list">
+          <mat-list-item class="item-list" *ngFor="let emprestimo of emprestimos" [ngClass]="borderStatus(emprestimo.status)">
+
+            <!-- <h2 mat-line class="text-wrap">{{emprestimo.nome}}</h2> -->
+            <p mat-line>
+              Status: {{emprestimo.status}}
+            </p>
+            <p mat-line>
+              Prazo: {{emprestimo.prazo}} meses / Taxa: {{emprestimo.taxa}}% a.a
+            </p>
+            <p mat-line>
+              Total: {{emprestimo.pedido | currencyFormat}}
+            </p>
+              <p mat-line>
+                Investido: {{emprestimo.investido |  currencyFormat}}
+              </p>
+              <p mat-line  *ngIf="emprestimo.pago">
+                Pago: {{emprestimo.pago | currencyFormat}}
+              </p>
+
+            <div  *ngIf="emprestimo.porcentagem!=100">
+              <p class="progress-spinner">{{emprestimo.porcentagem}}%</p>
+              <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="emprestimo.porcentagem">
+              </mat-progress-spinner>
+            </div>
+
+            <mat-divider></mat-divider>
+          </mat-list-item>
+        </mat-list>
+      <!-- </mat-card-content> -->
+    <!-- </mat-card> -->
+  <!-- </div> -->
+<!-- </div> -->

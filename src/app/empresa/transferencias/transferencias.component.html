@@ -1,3 +1,33 @@
-<p>
-  transferencias works!
-</p>
+<mat-card class="margin align-center">
+  <mat-card-title-group>
+  </mat-card-title-group>
+  <mat-card-content>
+    <h3>Próxima Parcela</h3>
+    <h1>{{proximo.data}}</h1>
+    <h4>{{ proximo.valor | currencyFormat }}</h4>
+
+    <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> 
+  </mat-card-content>
+</mat-card>
+
+<mat-list class="parcelas-list">
+  <mat-list-item class="item-list" *ngFor="let parcela of emprestimo.parcelas" [ngClass]="borderStatus(parcela.status)">
+    <h4 mat-line>
+      Parcela {{parcela.id}}/{{emprestimo.numParcelas}}
+    </h4>
+    <!-- <h2 mat-line class="text-wrap">{{emprestimo.nome}}</h2> -->
+    <p mat-line>
+      Status: {{parcela.status}}
+    </p>
+    <p mat-line>
+      Valor: {{emprestimo.valorParcela | currencyFormat}}
+    </p>
+    <p mat-line>
+      Emprestimo: {{emprestimo.pago | currencyFormat}} / {{emprestimo.total | currencyFormat}}
+    </p>
+    <p class="align-center">
+      Data {{parcela.data}}
+    </p>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>

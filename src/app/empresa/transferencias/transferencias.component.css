@@ -1,0 +1,15 @@
+.margin {
+    margin: 14px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.pago {
+    border-left: 5px solid green;
+}
+
+.atraso {
+    border-left: 5px solid red;
+}
