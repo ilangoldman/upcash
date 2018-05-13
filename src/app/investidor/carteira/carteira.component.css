@@ -9,23 +9,6 @@
 }
 
 /* lista de investimentos */
-/* 
-.item-list:hover {
-    cursor: pointer;
-    background: olivedrab;
-} */
-
-.item-list.sucesso {
-    border-left: 5px solid green;
-}
-
-.item-list.atencao {
-    border-left: 5px solid orangered;
-}
-
-.item-list.erro {
-    border-left: 5px solid red;
-}
 
 .investimentos-list {
     padding: 0;

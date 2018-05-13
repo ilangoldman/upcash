@@ -1,10 +1,13 @@
-<mat-toolbar class="header" color="primary">
+<div class="header">
+
+<mat-toolbar class="mat-elevation-z12" color="primary">
   <mat-toolbar-row class="align-items">
     <button mat-icon-button (click)="sidenav.open()">
       <mat-icon>menu</mat-icon>
     </button>
     <span>
-      Up<span class="cash-logo">CASH</span>
+      Up
+      <span class="cash-logo">CASH</span>
     </span>
     <div class="user-menu">
       Olá {{user.nome}}
@@ -20,6 +23,7 @@
     <div></div>
   </mat-toolbar-row>
 </mat-toolbar>
+</div>
 
 <mat-menu #userMenu="matMenu" [overlapTrigger]="false" (closed)="closeUserMenu()">
   <button mat-menu-item *ngFor="let item of mainUserMenu" (click)="goto(item)">

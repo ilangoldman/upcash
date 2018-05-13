@@ -1,0 +1,5 @@
+@import './status.scss';
+
+@mixin components-theme($theme) {
+  @include status-theme($theme);
+}

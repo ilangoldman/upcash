@@ -41,7 +41,7 @@
         <mat-card class="margin investimentos">
           <mat-card-content>
             <mat-list class="investimentos-list">
-              <mat-list-item class="item-list" *ngFor="let empresa of investimentos" (click)="openEmpresa(empresa.id)" [ngClass]="borderStatus(empresa.status)">
+              <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openEmpresa(empresa.id)" [ngClass]="borderStatus(empresa.status)">
                 
                 <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
                 <p mat-line>
@@ -61,14 +61,15 @@
                 <!-- <button class="more-btn" mat-icon-button>
                   <mat-icon>more_vert</mat-icon>
                 </button> -->
-                
-                <p class="progress-spinner" *ngIf="empresa.porcentagem!=100">{{empresa.porcentagem}}%</p>
-                <mat-progress-spinner
-                  class="progress-spinner"
-                  [diameter]="50" 
-                  [value]="empresa.porcentagem"
-                  color="{{(empresa.porcentagem==100?'green':'primary')}}">
-                </mat-progress-spinner>
+                <div *ngIf="empresa.porcentagem!=100">
+                  <p class="progress-spinner">{{empresa.porcentagem}}%</p>
+                  <mat-progress-spinner
+                    class="progress-spinner"
+                    [diameter]="50" 
+                    [value]="empresa.porcentagem"
+                    color="primary">
+                  </mat-progress-spinner>
+                </div>                
 
                 <mat-divider></mat-divider>
               </mat-list-item>
