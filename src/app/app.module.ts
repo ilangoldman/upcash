@@ -77,6 +77,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-emprestimo.component';
 import { EmprestimoService } from './_service/emprestimo/emprestimo.service';
 import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.component';
+import { CardEmprestimoComponent } from './components/card-emprestimo/card-emprestimo.component';
 
 
 
@@ -106,7 +107,8 @@ import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.componen
     ConfigPerfilInvestidorComponent,
     MenuComponent,
     DetalheEmprestimoComponent,
-    SolicitacaoComponent
+    SolicitacaoComponent,
+    CardEmprestimoComponent
 ],
   imports: [
     BrowserModule,

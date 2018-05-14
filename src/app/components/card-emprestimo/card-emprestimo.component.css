@@ -1,0 +1,36 @@
+
+.margin {
+    /* padding: 14px; */
+    margin: 14px;
+}
+
+/* Card de Investimentos */
+
+.progress {
+    text-align: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.align-info {
+    /* margin: 0 auto; */
+    text-align: center;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.dash {
+    border: 1px solid gray;
+}
+
+.btn {
+    padding: 0 7px;
+}
+
+.btn-investir {
+    width: 100%;
+}

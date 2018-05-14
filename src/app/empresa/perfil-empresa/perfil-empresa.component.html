@@ -31,8 +31,8 @@
         <div></div>
       </div>
       <p class="progress">
-        {{empresa.obtido | currencyFormat}} de
-        <b>{{empresa.emprestimo | currencyFormat}}</b>
+        {{empresa.recebido | currencyFormat}} de
+        <b>{{empresa.total | currencyFormat}}</b>
       </p>
       <mat-progress-bar mode="determinate" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}"></mat-progress-bar>
     </mat-card-content>

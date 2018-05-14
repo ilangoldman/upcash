@@ -10,8 +10,8 @@
   </mat-card-content>
 </mat-card>
 
-<mat-list class="parcelas-list">
-  <mat-list-item class="item-list" *ngFor="let parcela of emprestimo.parcelas" [ngClass]="borderStatus(parcela.status)">
+<mat-list class="status">
+  <mat-list-item class="status-item" *ngFor="let parcela of emprestimo.parcelas" [ngClass]="borderStatus(parcela.status)">
     <h4 mat-line>
       Parcela {{parcela.id}}/{{emprestimo.numParcelas}}
     </h4>

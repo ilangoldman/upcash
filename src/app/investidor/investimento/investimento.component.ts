@@ -23,32 +23,6 @@ export class InvestimentoComponent implements OnInit {
     this.getInvestimento();
   }
 
-  openEmpresa(id) {
-    const empRef = this.dialog.open(PerfilEmpresaComponent, {
-      width: '100vw',
-      height: '100vh',
-      maxWidth: '100vw',
-      autoFocus: false,
-      data: { id: id }
-    });
-
-    empRef.afterClosed().subscribe(result => {
-      // this.getNotificacoes();
-    });
-  }
-
-  investir(id) {
-    const dialogRef = this.dialog.open(InvestirComponent, {
-      width: '320px',
-      data: { id: id }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      // console.log('The dialog was closed');
-    });
-  }
-
-
   gotoEmpresa(id) {
     // TODO
     // console.log(id);

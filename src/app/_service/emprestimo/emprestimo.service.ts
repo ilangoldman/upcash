@@ -25,6 +25,23 @@ export class EmprestimoService {
     return template;
   }
 
+  getEmprestimoAtual() {
+    const e = {
+      id: 1,
+      motivo: 'Expansão',
+      status: 'Solicitado',
+      taxa: 3,
+      prazo: 24,
+      investido: 0,
+      total: 50000,
+      porcentagem: 0,
+      nome: 'Duis Dignissim Company',
+      rating: 2,
+      logo: 'logo-emp2.jpg'
+    };
+    return e;
+  }
+
   getEmprestimos() {
     const emprestimos = [
       {
@@ -34,8 +51,11 @@ export class EmprestimoService {
         taxa: 3,
         prazo: 24,
         investido: 0,
-        pedido: 50000,
-        porcentagem: 0
+        total: 50000,
+        porcentagem: 0,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       },
       {
         id: 2,
@@ -44,8 +64,11 @@ export class EmprestimoService {
         taxa: 3,
         prazo: 24,
         investido: 25000,
-        pedido: 50000,
-        porcentagem: 99
+        total: 50000,
+        porcentagem: 99,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       },
       {
         id: 3,
@@ -54,8 +77,11 @@ export class EmprestimoService {
         taxa: 3,
         prazo: 24,
         investido: 2350,
-        pedido: 50000,
-        porcentagem: 1
+        total: 50000,
+        porcentagem: 1,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       },
       {
         id: 4,
@@ -65,8 +91,11 @@ export class EmprestimoService {
         prazo: 24,
         investido: 50000,
         pago: 40000,
-        pedido: 50000,
-        porcentagem: 80
+        total: 50000,
+        porcentagem: 80,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       },
       {
         id: 4,
@@ -76,8 +105,11 @@ export class EmprestimoService {
         prazo: 24,
         investido: 50000,
         pago: 40000,
-        pedido: 50000,
-        porcentagem: 80
+        total: 50000,
+        porcentagem: 80,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       },
       {
         id: 5,
@@ -87,8 +119,11 @@ export class EmprestimoService {
         prazo: 24,
         investido: 50000,
         pago: 50000,
-        pedido: 50000,
-        porcentagem: 100
+        total: 50000,
+        porcentagem: 100,
+        nome: 'Duis Dignissim Company',
+        rating: 2,
+        logo: 'logo-emp2.jpg'
       }
     ];
     return emprestimos;

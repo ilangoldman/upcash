@@ -1,10 +1,14 @@
-.empresa {
+/* .empresa {
     font-weight: 500 !important;
-}
+} */
 
-.new {
-    /* background-color: rgba(189, 178, 178, 0.904); */
-    color: orange;
+/* .new {
+    color: orange; 
+}
+*/
+
+.mensagem-item {
+    cursor: pointer;
 }
 
 .data {

@@ -12,6 +12,8 @@ import { SolicitacaoComponent } from '../solicitacao/solicitacao.component';
 export class EmprestimoComponent implements OnInit {
 
   private emprestimos;
+  // private empresa;
+  private emprestimoAtual;
 
   constructor(
     private emprestimoService: EmprestimoService,
@@ -19,6 +21,7 @@ export class EmprestimoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getEmprestimoAtual();
     this.getEmprestimos();
   }
 
@@ -35,6 +38,10 @@ export class EmprestimoComponent implements OnInit {
 
   getEmprestimos() {
     this.emprestimos = this.emprestimoService.getEmprestimos();
+  }
+
+  getEmprestimoAtual() {
+    this.emprestimoAtual = this.emprestimoService.getEmprestimoAtual();
   }
 
   // search(value) {

@@ -1,4 +1,4 @@
-@mixin status-theme($theme) {
+@mixin mensagens-theme($theme) {
 
     $primary: map-get($theme, primary);
     $accent: map-get($theme, accent);
@@ -6,17 +6,9 @@
     $background: map-get($theme, background);
     $foreground: map-get($theme, foreground);
 
-    .status-item {
-        &.sucesso, &.entrada, &.pago {
-            border-left: 5px solid mat-color($primary);
-        }
-
-        &.atencao {
+    .mensagem-item {
+        &.nova {
             border-left: 5px solid mat-color($accent);
-        }
-
-        &.erro, &.saida, &.atraso {
-            border-left: 5px solid mat-color($warn);        
         }
 
         &:hover, &:active, &:focus {

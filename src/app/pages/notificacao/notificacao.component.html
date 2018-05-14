@@ -1,5 +1,5 @@
 <mat-list>
-  <mat-list-item *ngFor="let msg of mensagens" [ngClass]="{ 'new': msg.lida == false }" (click)="openMsg(msg)">
+  <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens" [ngClass]="{ 'nova': msg.lida == false }" (click)="openMsg(msg)">
     <img matListAvatar src="assets/logo/{{msg.logo}}" />
     
       <h2 mat-line class="empresa text-wrap">{{msg.empresa}}</h2>

@@ -1,5 +1,7 @@
 @import './status.scss';
+@import './mensagens.scss';
 
 @mixin components-theme($theme) {
   @include status-theme($theme);
+  @include mensagens-theme($theme);  
 }
