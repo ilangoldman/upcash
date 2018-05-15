@@ -1,0 +1,39 @@
+<!-- main -->
+<!-- <div> -->
+  <mat-accordion class="margin">
+
+    <mat-expansion-panel class="margin"*ngFor="let item of movimentacao">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{item.data}}
+        </mat-panel-title>
+        <mat-panel-description>
+          {{item.total | currencyFormat}}
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+    
+      <mat-list *ngFor="let entrada of item.investido">
+        <mat-list-item color="accent">
+            <mat-icon matListIcon color="accent">arrow_drop_down</mat-icon>
+            <p>{{entrada.empresa}}</p>
+            <p class="align-right">{{entrada.valor | currencyFormat}}</p>
+          </mat-list-item>
+      </mat-list>
+
+      <mat-list *ngFor="let saida of item.parcelas">
+        <mat-list-item color="primary">
+          <mat-icon matListIcon color="primary" *ngIf="saida.status=='pago'">arrow_drop_up</mat-icon>
+          <mat-icon matListIcon color="warn" *ngIf="saida.status=='atraso'">error</mat-icon>
+          <p>{{saida.empresa}}</p>
+          <p class="align-right">{{saida.num}}/{{saida.total}}</p>
+          <p class="align-right">{{saida.liquido | currencyFormat}}</p>
+        </mat-list-item>
+      </mat-list>
+    
+    </mat-expansion-panel>
+
+  </mat-accordion>
+<!-- </div> -->
+
+<!-- fab -->
+<button mat-fab color="accent" class="filter" (click)="openFiltro()"><mat-icon>filter_list</mat-icon></button>

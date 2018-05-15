@@ -1,30 +1,3 @@
-<div class="header">
-
-<mat-toolbar class="mat-elevation-z12" color="primary">
-  <mat-toolbar-row class="align-items">
-    <button mat-icon-button (click)="sidenav.open()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>
-      Up
-      <span class="cash-logo">CASH</span>
-    </span>
-    <div class="user-menu">
-      Olá {{user.nome}}
-      <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
-        <mat-icon>{{userMenuIcon}}</mat-icon>
-      </button>
-    </div>
-  </mat-toolbar-row>
-
-  <mat-toolbar-row class="subheader align-items">
-    <div></div>
-    <span>{{activePage}}</span>
-    <div></div>
-  </mat-toolbar-row>
-</mat-toolbar>
-</div>
-
 <mat-menu #userMenu="matMenu" [overlapTrigger]="false" (closed)="closeUserMenu()">
   <button mat-menu-item *ngFor="let item of mainUserMenu" (click)="goto(item)">
     <mat-icon>{{item.icon}}</mat-icon>
@@ -66,12 +39,21 @@
     <mat-divider></mat-divider>
 
     <mat-list>
-      <mat-list-item *ngFor="let item of menuItems">
-        <button class="list-button" mat-button (click)="goto(item)">
-          <mat-icon matListIcon>{{item.icon}}</mat-icon>
-          {{item.text}}
-        </button>
-      </mat-list-item>
+      <div *ngFor="let item of menuItems">
+
+        <mat-list-item>
+          <button class="list-button" mat-button (click)="goto(item)">
+            <mat-icon matListIcon>{{item.icon}}</mat-icon>
+            {{item.text}}
+          </button>
+        </mat-list-item>
+        <mat-list-item *ngFor="let subitem of item.submenu">
+          <button mat-button (click)="goto(subitem)">
+            <mat-icon matListIcon></mat-icon>
+            {{subitem.text}}
+          </button>
+        </mat-list-item>
+      </div>
     </mat-list>
 
 
@@ -85,6 +67,33 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
+    <div class="header">
+    
+      <mat-toolbar class="mat-elevation-z12" color="primary">
+        <mat-toolbar-row class="align-items">
+          <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>
+            Up
+            <span class="cash-logo">CASH</span>
+          </span>
+          <div class="user-menu">
+            Olá {{user.nome}}
+            <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
+              <mat-icon>{{userMenuIcon}}</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar-row>
+    
+        <mat-toolbar-row class="subheader align-items">
+          <div></div>
+          <span>{{activePage}}</span>
+          <div></div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,0 +1,22 @@
+.align-info {
+    /* margin: 0 auto; */
+    text-align: center;    
+    display: flex;
+    justify-content: space-between;
+}
+
+.align-right {
+    /* text-align: right; */
+    margin-right: 0;
+    margin-left: auto; 
+}
+
+.margin {
+    margin: 14px;
+}
+
+.filter {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}

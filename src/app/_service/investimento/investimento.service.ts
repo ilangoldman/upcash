@@ -106,12 +106,133 @@ export class InvestimentoService {
     return carteira;
   }
 
-  getMovimentacao() {
+  getResumoMovimentacao() {
     const movimentacao = {
       entrada: [50, 100, 540, 420, 650, 320, 260],
       saida: [-200, -500, -200, -300, -100, 0, -300],
       datas: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul']
     };
+    return movimentacao;
+  }
+
+  getMovimentacao() {
+    const movimentacao = [
+      {
+        data: '12/06/2018',
+        total: -7900,
+        investido: [
+          {
+            empresa: 'Ananke Tecnologia',
+            valor: 2000
+          },
+          {
+            empresa: 'Line Up Logística Consulting',
+            valor: 6000
+          }
+        ],
+        parcelas: [
+          {
+            empresa: 'Line Up Logística Consulting',
+            status: 'pago',
+            num: 5,
+            total: 24,
+            bruto: 102.18,
+            principal: 100.42,
+            Rendimentos: 1.76,
+            ir: 0.40,
+            liquido: 101.78
+          },
+          {
+            empresa: 'Line Up Logística Consulting',
+            status: 'atraso',
+            num: 2,
+            total: 24,
+            bruto: 102.65,
+            principal: 100.84,
+            Rendimentos: 1.81,
+            ir: 0.41,
+            liquido: 102.24
+          },
+        ]
+      },
+      {
+        data: '15/06/2018',
+        total: -2000,
+        investido: [
+          {
+            empresa: 'Ananke Tecnologia',
+            valor: 2000
+          }
+        ],
+        // parcelas: [ ]
+      },
+      {
+        data: '20/06/2018',
+        total: 204.58,
+        parcelas: [
+          {
+            empresa: 'Line Up Logística Consulting',
+            status: 'pago',
+            num: 5,
+            total: 24,
+            bruto: 102.18,
+            principal: 100.42,
+            Rendimentos: 1.76,
+            ir: 0.40,
+            liquido: 101.78
+          },
+          {
+            empresa: 'Line Up Logística Consulting',
+            status: 'atraso',
+            num: 2,
+            total: 24,
+            bruto: 102.65,
+            principal: 100.84,
+            Rendimentos: 1.81,
+            ir: 0.41,
+            liquido: 102.24
+          },
+        ]
+      },
+      {
+        data: '12/06/2018',
+        total: -10000,
+        investido: [
+          {
+            empresa: 'Ananke Tecnologia',
+            valor: 2000
+          },
+          {
+            empresa: 'Line Up Logística Consulting',
+            valor: 6000
+          }
+        ],
+        parcelas: [
+          {
+            empresa: 'Ananke Tecnologia',
+            status: 'pago',
+            num: 5,
+            total: 24,
+            bruto: 102.18,
+            principal: 100.42,
+            Rendimentos: 1.76,
+            ir: 0.40,
+            liquido: 101.78
+          },
+          {
+            empresa: 'Line Up Logística Consulting',
+            status: 'pago',
+            num: 2,
+            total: 24,
+            bruto: 102.65,
+            principal: 100.84,
+            Rendimentos: 1.81,
+            ir: 0.41,
+            liquido: 102.24
+          },
+        ]
+      },
+    ];
     return movimentacao;
   }
 
@@ -351,7 +472,6 @@ export class InvestimentoService {
         site: 'up.cash',
         endereco: '	R FIDENCIO RAMOS, 302, Torre B 12º Andar, VILA OLIMPIA, SAO PAULO',
         img: [
-          'https://www.nexoos.com.br/thumbor/unsafe/fit-in/750x400/smart/filters:fill(white)/https://br-nexoos.s3.amazonaws.com/uploads_marketplace/image/file/3053/Evento1.jpg',
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEKbScstl06-yeIMqGFFBGaY9TQVAS7NYqyUzggFsedzZyI40','https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU.jpg'
         ]
       },

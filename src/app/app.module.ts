@@ -31,7 +31,10 @@ import { MatIconModule,
   MatFormFieldModule,
   MatFormFieldControl,
   MatSnackBarModule,
-  MatStepperModule} from '@angular/material';
+  MatStepperModule,
+  MatButtonToggleModule,
+  MatDatepickerModule,
+  MatNativeDateModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Services
@@ -78,6 +81,9 @@ import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-e
 import { EmprestimoService } from './_service/emprestimo/emprestimo.service';
 import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.component';
 import { CardEmprestimoComponent } from './components/card-emprestimo/card-emprestimo.component';
+import { MovimentacaoComponent } from './investidor/movimentacao/movimentacao.component';
+import { DetalheParcelaComponent } from './investidor/movimentacao/detalhe-parcela/detalhe-parcela.component';
+import { FiltroMovimentacaoComponent } from './investidor/movimentacao/filtro-movimentacao/filtro-movimentacao.component';
 
 
 
@@ -108,7 +114,10 @@ import { CardEmprestimoComponent } from './components/card-emprestimo/card-empre
     MenuComponent,
     DetalheEmprestimoComponent,
     SolicitacaoComponent,
-    CardEmprestimoComponent
+    CardEmprestimoComponent,
+    MovimentacaoComponent,
+    DetalheParcelaComponent,
+    FiltroMovimentacaoComponent
 ],
   imports: [
     BrowserModule,
@@ -133,7 +142,10 @@ import { CardEmprestimoComponent } from './components/card-emprestimo/card-empre
     MatFormFieldModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatStepperModule
+    MatStepperModule,
+    MatButtonToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     UserService,
@@ -147,7 +159,8 @@ import { CardEmprestimoComponent } from './components/card-emprestimo/card-empre
     InvestirComponent,
     MensagemComponent,
     PerfilEmpresaComponent,
-    SolicitacaoComponent
+    SolicitacaoComponent,
+    FiltroMovimentacaoComponent
   ],
   bootstrap: [AppComponent]
 })

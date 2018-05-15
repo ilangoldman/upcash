@@ -20,6 +20,7 @@ import { TransferenciasComponent } from './empresa/transferencias/transferencias
 import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
 import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { MovimentacaoComponent } from './investidor/movimentacao/movimentacao.component';
 
 
 
@@ -110,8 +111,16 @@ const routes: Routes = [
                 path: 'home',
                 component: HomeInvestidorComponent
             },
+            // {
+            //     path: 'carteira',
+            //     component: CarteiraComponent
+            // },
             {
-                path: 'carteira',
+                path: 'movimentacao',
+                component: MovimentacaoComponent
+            },
+            {
+                path: 'empresas-investidas',
                 component: CarteiraComponent
             },
             {

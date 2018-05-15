@@ -88,15 +88,17 @@ export class MenuComponent implements OnInit {
   }
 
   goto(url) {
-    if (url.page === 'logout') {
-      this.loginService.logout();
-      this.router.navigate(['']);
-    } else {
-      this.activePage = url.text;
-      this.router.navigate([this.tipo + '/' + url.page]);
-      // this.router.navigate([this.loginService.getTipo() + '/home']);
+    if (url.page !== undefined) {
+      if (url.page === 'logout') {
+        this.loginService.logout();
+        this.router.navigate(['']);
+      } else {
+        this.activePage = url.text;
+        this.router.navigate([this.tipo + '/' + url.page]);
+        // this.router.navigate([this.loginService.getTipo() + '/home']);
+      }
+      this.sidenav.close();
     }
-    this.sidenav.close();
   }
 
   openUserMenu() {

@@ -11,14 +11,19 @@ export class CurrencyFormatPipe implements PipeTransform {
     decimalDelimiter: string = ',',
     chunkLength: number = 3): string {
 
+    let sign = '';
     // value /= 100;
+    if (value < 0) {
+      sign = '- ';
+      value *= -1;
+    }
 
     const result = '\\d(?=(\\d{' + chunkLength + '})+' + (decimalLength > 0 ? '\\D' : '$') + ')';
     // tslint:disable-next-line:no-bitwise
     const num = value.toFixed(Math.max(0, ~~decimalLength));
 
     // tslint:disable-next-line:max-line-length
-    return currencySign + (decimalDelimiter ? num.replace('.', decimalDelimiter) : num).replace(new RegExp(result, 'g'), '$&' + chunkDelimiter);
+    return sign + currencySign + (decimalDelimiter ? num.replace('.', decimalDelimiter) : num).replace(new RegExp(result, 'g'), '$&' + chunkDelimiter);
   }
 
 }

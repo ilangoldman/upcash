@@ -127,7 +127,7 @@ export class CarteiraComponent implements OnInit {
   }
 
   displayMovimentacao() {
-    const movimentacao = this.investimentoService.getMovimentacao();
+    const movimentacao = this.investimentoService.getResumoMovimentacao();
 
     const entradaData = {
       label: 'Entrada',
