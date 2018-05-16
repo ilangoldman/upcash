@@ -2,11 +2,15 @@
 <!-- <div> -->
   <mat-accordion class="margin">
 
-    <mat-expansion-panel class="margin"*ngFor="let item of movimentacao">
+    <mat-expansion-panel *ngFor="let item of movimentacao">
       <mat-expansion-panel-header>
         <mat-panel-title>
+          <span class="status-teste"></span>
           {{item.data}}
         </mat-panel-title>
+        <mat-panel-description>
+          {{item.total | currencyFormat}}
+        </mat-panel-description>
         <mat-panel-description>
           {{item.total | currencyFormat}}
         </mat-panel-description>

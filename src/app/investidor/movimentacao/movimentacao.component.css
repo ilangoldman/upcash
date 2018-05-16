@@ -20,3 +20,7 @@
     right: 16px;
     bottom: 16px;
 }
+
+.status-teste {
+    border: 5px solid orange;
+}
