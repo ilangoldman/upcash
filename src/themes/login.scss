@@ -1,0 +1,25 @@
+@mixin login-theme($theme) {
+
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    .login {
+        .login-button.erro {
+            background-color: mat-color($warn);
+        }
+
+        .login-form {
+            background-color: mat-color($background, background);
+        }
+
+        & {
+            background-color: mat-color($background, card);
+        }
+
+
+    }
+
+}

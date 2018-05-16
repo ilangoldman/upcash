@@ -1,16 +1,20 @@
 @import '~@angular/material/theming';
 @import 'themes/components.scss';
+@import 'themes/login.scss';
+@import 'themes/logo.scss';
 
 @include mat-core();
 
 $main-primary: mat-palette($mat-teal,600,900,100);
-// $main-primary: mat-palette($mat-gray,800,400,900);
 $main-accent:  mat-palette($mat-orange,600);
 $main-warn:    mat-palette($mat-red);
 
 $main-theme: mat-dark-theme($main-primary, $main-accent, $main-warn);
 
 @include angular-material-theme($main-theme);
+@include login-theme($main-theme);
+@include logo-theme($main-theme);
+
 
 // STATUS THEME
 
@@ -26,50 +30,138 @@ $status-theme: mat-light-theme($status-primary, $status-accent, $status-warn);
 
 @include components-theme($status-theme);
 
+
+
+
+
+
+
+
+
+
+
+
 // HEADER THEME
 
-$header-primary: mat-palette($mat-gray,800);
-$header-accent:  mat-palette($mat-orange,600);
-$header-warn:    mat-palette($mat-red);
+// $header-primary: mat-palette($mat-gray,800);
+// $header-accent:  mat-palette($mat-orange,600);
+// $header-warn:    mat-palette($mat-red);
 
-$header-theme: mat-light-theme($header-primary, $header-accent, $header-warn);
-
-.header {
-    @include angular-material-theme($header-theme);
-}
+// $header-theme: mat-light-theme($header-primary, $header-accent, $header-warn);
+// $header-dark-theme: mat-dark-theme($header-primary, $header-accent, $header-warn);
+// @include login-theme($header-dark-theme);
 
 
+// .header {
+//   @include angular-material-theme($header-theme);
+// }
 
 
-$mat-optional-color: (
-  50: #ffebee,
-  100: #ffcdd2,
-  200: #ef9a9a,
-  300: #e57373,
-  400: #ef5350,
-  500: #f44336,
-  600: #e53935,
-  700: #d32f2f,
-  800: #c62828,
-  900: #b71c1c,
-  A100: #ff8a80,
-  A200: #ff5252,
-  A400: #ff1744,
-  A700: #d50000,
-  contrast: (
-    50: $black-87-opacity,
-    100: $black-87-opacity,
-    200: $black-87-opacity,
-    300: $black-87-opacity,
-    400: $black-87-opacity,
-    500: white,
-    600: white,
-    700: white,
-    800: $white-87-opacity,
-    900: $white-87-opacity,
-    A100: $black-87-opacity,
-    A200: white,
-    A400: white,
-    A700: white,
-  )
-);
+
+
+// $mat-optional-color: (
+//   50: #ffebee,
+//   100: #ffcdd2,
+//   200: #ef9a9a,
+//   300: #e57373,
+//   400: #ef5350,
+//   500: #f44336,
+//   600: #e53935,
+//   700: #d32f2f,
+//   800: #c62828,
+//   900: #b71c1c,
+//   A100: #ff8a80,
+//   A200: #ff5252,
+//   A400: #ff1744,
+//   A700: #d50000,
+//   contrast: (
+//     50: $black-87-opacity,
+//     100: $black-87-opacity,
+//     200: $black-87-opacity,
+//     300: $black-87-opacity,
+//     400: $black-87-opacity,
+//     500: white,
+//     600: white,
+//     700: white,
+//     800: $white-87-opacity,
+//     900: $white-87-opacity,
+//     A100: $black-87-opacity,
+//     A200: white,
+//     A400: white,
+//     A700: white,
+//   )
+// );
+
+
+
+// // Background palette for light themes.
+// $mat-light-theme-background: (
+//   status-bar: map_get($mat-grey, 300),
+//   app-bar:    map_get($mat-grey, 100),
+//   background: map_get($mat-grey, 50),
+//   hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+//   card:       white,
+//   dialog:     white,
+//   disabled-button: rgba(black, 0.12),
+//   raised-button: white,
+//   focused-button: $dark-focused,
+//   selected-button: map_get($mat-grey, 300),
+//   selected-disabled-button: map_get($mat-grey, 400),
+//   disabled-button-toggle: map_get($mat-grey, 200),
+//   unselected-chip: map_get($mat-grey, 300),
+//   disabled-list-option: map_get($mat-grey, 200),
+// );
+
+// // Background palette for dark themes.
+// $mat-dark-theme-background: (
+//   status-bar: black,
+//   app-bar:    map_get($mat-grey, 900),
+//   background: #303030,
+//   hover:      rgba(white, 0.04), // TODO(kara): check style with Material Design UX
+//   card:       map_get($mat-grey, 800),
+//   dialog:     map_get($mat-grey, 800),
+//   disabled-button: rgba(white, 0.12),
+//   raised-button: map-get($mat-grey, 800),
+//   focused-button: $light-focused,
+//   selected-button: map_get($mat-grey, 900),
+//   selected-disabled-button: map_get($mat-grey, 800),
+//   disabled-button-toggle: black,
+//   unselected-chip: map_get($mat-grey, 700),
+//   disabled-list-option: black,
+// );
+
+// // Foreground palette for light themes.
+// $mat-light-theme-foreground: (
+//   base:              black,
+//   divider:           $dark-dividers,
+//   dividers:          $dark-dividers,
+//   disabled:          $dark-disabled-text,
+//   disabled-button:   rgba(black, 0.26),
+//   disabled-text:     $dark-disabled-text,
+//   hint-text:         $dark-disabled-text,
+//   secondary-text:    $dark-secondary-text,
+//   icon:              rgba(black, 0.54),
+//   icons:             rgba(black, 0.54),
+//   text:              rgba(black, 0.87),
+//   slider-min:        rgba(black, 0.87),
+//   slider-off:        rgba(black, 0.26),
+//   slider-off-active: rgba(black, 0.38),
+// );
+
+// // Foreground palette for dark themes.
+// $mat-dark-theme-foreground: (
+//   base:              white,
+//   divider:           $light-dividers,
+//   dividers:          $light-dividers,
+//   disabled:          $light-disabled-text,
+//   disabled-button:   rgba(white, 0.3),
+//   disabled-text:     $light-disabled-text,
+//   hint-text:         $light-disabled-text,
+//   secondary-text:    $light-secondary-text,
+//   icon:              white,
+//   icons:             white,
+//   text:              white,
+//   slider-min:        white,
+//   slider-off:        rgba(white, 0.3),
+//   slider-off-active: rgba(white, 0.3),
+// );

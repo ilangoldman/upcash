@@ -21,7 +21,6 @@ export class FiltroMovimentacaoComponent implements OnInit {
   filtrar(val, date) {
     console.log(val);
     console.log(date);
-    
     this.dialogRef.close();
   }
 
