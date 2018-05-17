@@ -26,25 +26,18 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('onInit');
-    
     // const thisC = this;
     // setTimeout(function() {
     //   thisC.splashScreen();
 
     // }, 500);
     // this.splashScreen();
-    // this.play();
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngAfterViewInit() {
-    // console.log('afterViewInit');
     this.splashScreen();
   }
-
-  // ngAfterViewChecked() {
-
-  // }
 
 
   getEmailErrorMessage() {

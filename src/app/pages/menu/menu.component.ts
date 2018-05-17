@@ -43,6 +43,7 @@ export class MenuComponent implements OnInit {
   @Input() menuItems;
   @Input() tipo;
   private activeItem;
+  public tabSelected = 0;
 
   constructor(
     private router: Router,
@@ -62,6 +63,26 @@ export class MenuComponent implements OnInit {
     this.displayUserInfo();
     // this.sidenav.open();
   }
+
+  changeTab(index) {
+    this.tabSelected = index;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   select(item, event) {
     this.activeItem = item;

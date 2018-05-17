@@ -1,33 +1,4 @@
-
-<mat-toolbar class="header" color="primary">
-  <mat-toolbar-row class="align-items">
-    <button mat-icon-button (click)="sidenav.open()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>
-      Up<span class="cash-logo">CASH</span>
-    </span>
-    <div class="user-menu">
-      Olá {{user.nome}}
-      <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
-        <mat-icon>{{userMenuIcon}}</mat-icon>
-      </button>
-    </div>    
-  </mat-toolbar-row>
-
-  <mat-toolbar-row class="subheader align-items">
-    <div></div>
-    <span>{{activePage}}</span>
-    <div></div>    
-  </mat-toolbar-row>
-</mat-toolbar>
-
 <mat-menu #userMenu="matMenu" [overlapTrigger]="false" (closed)="closeUserMenu()">
-  <!-- <button mat-menu-item>
-    <mat-icon>home</mat-icon>
-    Meus dados
-  </button> -->
-
   <button mat-menu-item *ngFor="let item of mainUserMenu" (click)="goto(item)">
     <mat-icon>{{item.icon}}</mat-icon>
     <span>{{item.text}}</span>
@@ -42,8 +13,8 @@
       </button>
     </p>
 
-    <section id="user-info" class="mat-typography" (click)="goto({page: 'perfil'})">
-      <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">        
+    <section *ngIf="tipo==='investidor'" id="user-info" class="mat-typography" (click)="goto({page: 'perfil'})">
+      <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">
       </mat-progress-spinner>
       <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
 
@@ -53,117 +24,76 @@
       </div>
     </section>
 
+    <section *ngIf="tipo==='empresa'" id="user-info" class="mat-typography" (click)="openPerfilEmpresa()">
+      <!-- <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem"></mat-progress-spinner> -->
+      <!-- <mat-icon class="nivel-icon">{{user.icon}}</mat-icon> -->
+
+      <div class="align-items">
+        <!-- <p>Nivel {{user.nivel}}</p> -->
+        <div></div>
+        <h1>{{user.empresa}}</h1>
+        <div></div>
+      </div>
+    </section>
+
     <mat-divider></mat-divider>
 
     <mat-list>
-      <mat-list-item *ngFor="let item of mainSideNav">
-        <button class="list-button" mat-button (click)="goto(item)">
-          <mat-icon matListIcon>{{item.icon}}</mat-icon>
-          {{item.text}}
-        </button>
-      </mat-list-item>
-    
-      <!-- <mat-list-item>
-        <button class="list-button" mat-button (click)="goto('home')">
-          <mat-icon matListIcon>home</mat-icon>
-          <span>Home</span>
-        </button>
-      </mat-list-item>
-    
-    
-      <mat-list-item>
-        <button class="list-button" mat-button (click)="goto('carteira')">
-          <mat-icon matListIcon>account_balance_wallet</mat-icon>
-          <span>Carteira</span>
-        </button>
-      </mat-list-item>
-    
-    
-      <mat-list-item>
-        <button class="list-button" mat-button (click)="goto('investimento')">
-          <mat-icon matListIcon>monetization_on</mat-icon>
-          <span>Investimentos</span>
-        </button>
-      </mat-list-item> -->
+      <div *ngFor="let item of menuItems">
+
+        <mat-list-item>
+          <button class="list-button" mat-button (click)="goto(item)">
+            <mat-icon matListIcon>{{item.icon}}</mat-icon>
+            {{item.text}}
+          </button>
+        </mat-list-item>
+        <mat-list-item *ngFor="let subitem of item.submenu">
+          <button mat-button (click)="goto(subitem)">
+            <mat-icon matListIcon></mat-icon>
+            {{subitem.text}}
+          </button>
+        </mat-list-item>
+      </div>
     </mat-list>
-        
-     
+
+
 
     <mat-toolbar class="footer">
-        <button class="list-button" mat-button>
-          <mat-icon matListIcon>help</mat-icon>
-          Suporte
-        </button>
+      <button class="list-button" mat-button>
+        <mat-icon matListIcon>help</mat-icon>
+        Suporte
+      </button>
     </mat-toolbar>
   </mat-sidenav>
 
   <mat-sidenav-content>
+    <div class="header">
+
+      <mat-toolbar class="mat-elevation-z12" color="primary">
+        <mat-toolbar-row class="align-items">
+          <button mat-icon-button (click)="sidenav.open()">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span>
+            Up
+            <span class="cash-logo">CASH</span>
+          </span>
+          <div class="user-menu">
+            Olá {{user.nome}}
+            <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
+              <mat-icon>{{userMenuIcon}}</mat-icon>
+            </button>
+          </div>
+        </mat-toolbar-row>
+
+        <mat-toolbar-row class="subheader align-items">
+          <div></div>
+          <span>{{activePage}}</span>
+          <div></div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-
-<!-- <button mat-icon-button [matMenuTriggerFor]="appMenu">
-  <mat-icon>more_vert</mat-icon>
-</button> -->
-
-
-
-
-<!-- <mat-list-item *ngFor="let item of mainSideNav" [ngClass]="{ 'active': item == activeItem }">
-    <button class="list-button" mat-button (click)="select(item, $event)">
-      <mat-icon matListIcon>{{item.icon}}</mat-icon>
-      {{item.text}}
-    </button>
-  </mat-list-item> -->
-
-<!--  -->
-
-
-<!-- Accordion Menu -->
-<!-- <mat-accordion displayMode="flat">
-  <mat-expansion-panel hideToggle="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>home</mat-icon>
-        Home
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
-
-
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>account_balance_wallet</mat-icon>
-        Carteira
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-
-    <mat-list-item>
-
-      <button mat-button (click)="goto('carteira')">
-        <span>Movimentação</span>
-      </button>
-    </mat-list-item>
-
-    <mat-list-item>
-
-      <button mat-button (click)="goto('carteira')">
-        <span>Empresas Investidas</span>
-      </button>
-    </mat-list-item>
-
-  </mat-expansion-panel>
-
-  <mat-expansion-panel hideToggle="true">
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        <mat-icon>monetization_on</mat-icon>
-        <span>Investimentos</span>
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-  </mat-expansion-panel>
-
-</mat-accordion> -->

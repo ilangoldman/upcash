@@ -13,14 +13,14 @@ import { LoginService } from '../_service/login/login.service';
 export class InvestidorComponent implements OnInit {
   private items = [
     {
-      icon: 'home',
-      text: 'Home',
+      icon: 'dashboard',
+      text: 'Overview',
       page: 'home'
     },
     {
       icon: 'account_balance_wallet',
       text: 'Carteira',
-      // page: 'carteira',
+      page: 'carteira',
       submenu: [
         {
           text: 'Movimentação',
@@ -36,7 +36,17 @@ export class InvestidorComponent implements OnInit {
       icon: 'monetization_on',
       text: 'Investimentos',
       page: 'investimento'
-    }
+    },
+    {
+      icon: 'announcement',
+      text: 'Notificações',
+      page: 'notificacoes'
+    },
+    {
+      icon: 'account_circle',
+      text: 'Perfil',
+      page: 'perfil'
+    },
   ];
 
   private tipo = 'investidor';

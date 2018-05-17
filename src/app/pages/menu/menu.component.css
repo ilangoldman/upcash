@@ -1,4 +1,44 @@
-.header {
+.menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+}
+
+.align-tabs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.router {
+    background-color: aqua;
+    border: 10px solid white;
+    margin-top: 40px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Backup */
+
+/* .header {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,28 +57,17 @@
     height: 40px;
 }
 
-.cash-logo {
-    color: orange;
-}
-
-
 .header .user-menu {
     font-size: .6875rem;
     width: 60px;
     text-align: right;
 }
-/* 
-.header .user-menu mat-icon {
-    font-size: .6875rem;    
-    vertical-align: bottom;    
-} */
 
 .header span {
     text-align: center;
 }
 
 .icon {
-    /* padding: 0 14px; */
     padding-right: 14px;
 }
 
@@ -49,13 +78,6 @@
     left: 0;
     right: 0;
 }
-
-/* .active {
-    color: orange;
-    border-right: 5px solid orange;
-    color: dark-orange;
-    transition: 0.3s all ease-in-out;
-} */
 
 .list-button {
     width: 100%;
@@ -83,9 +105,6 @@
     font-size: 40px;
     width: fit-content;
     height: fit-content;
-    /* margin-left: -50px;
-    margin-top: -14px; */
-    /* border: 1px solid green; */
 }
 
 .footer {
@@ -98,8 +117,7 @@
 .footer .list-button {
     width: 100%;
     height: 100%;
-    /* text-align: left; */
-}
+} */
 
 /* @media only screen and (max-width: 960px) {
     sidenav.open()

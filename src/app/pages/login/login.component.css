@@ -67,12 +67,7 @@
 
 #content {
     opacity: 0;
-    /* display: none; */
 }
-
-/* #content.show {
-    display: inherit;
-} */
 
 
 
@@ -83,22 +78,7 @@ body {
   margin: 0;
   background-color: black;
 } */
-/* 
-button {
-  display: block;
-  margin: 0 auto;
-  border-radius: 3px;
-  background-color: #ff6666;
-  color: white;
-  border: none;
-  text-transform: uppercasse;
-  padding: 10px 30px;
-  margin-top: 40px;
-  transition: background-color 0.3s ease;
-}
-button:hover {
-  background-color: #ff3333;
-} */
+
 
 svg {
   display: block;
@@ -120,22 +100,8 @@ svg {
     stroke-dasharray:
 } */
 
-/* 
-path {
-  fill: #000;
-  stroke: #ff6666;
-  stroke-width: 1;
-}
-path#i0 {
-  stroke: #cc5252;
-}
-path#i0.fadein {
-  fill: #cc5252;
-}
- */
 
 .fadein {
-  /* fill: #ff6666; */
   -moz-transition: fill 0.6s ease-in 0.1s;
   -o-transition: fill 0.6s ease-in 0.1s;
   -webkit-transition: fill 0.6s ease-in;

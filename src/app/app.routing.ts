@@ -111,10 +111,10 @@ const routes: Routes = [
                 path: 'home',
                 component: HomeInvestidorComponent
             },
-            // {
-            //     path: 'carteira',
-            //     component: CarteiraComponent
-            // },
+            {
+                path: 'carteira',
+                component: CarteiraComponent
+            },
             {
                 path: 'movimentacao',
                 component: MovimentacaoComponent

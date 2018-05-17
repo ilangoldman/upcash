@@ -2,6 +2,7 @@
 @import 'themes/components.scss';
 @import 'themes/login.scss';
 @import 'themes/logo.scss';
+@import 'themes/menu.scss';
 
 @include mat-core();
 
@@ -14,7 +15,7 @@ $main-theme: mat-dark-theme($main-primary, $main-accent, $main-warn);
 @include angular-material-theme($main-theme);
 @include login-theme($main-theme);
 @include logo-theme($main-theme);
-
+@include menu-theme($main-theme);
 
 // STATUS THEME
 

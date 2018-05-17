@@ -1,99 +1,78 @@
-<mat-menu #userMenu="matMenu" [overlapTrigger]="false" (closed)="closeUserMenu()">
-  <button mat-menu-item *ngFor="let item of mainUserMenu" (click)="goto(item)">
-    <mat-icon>{{item.icon}}</mat-icon>
-    <span>{{item.text}}</span>
-  </button>
-</mat-menu>
+<!-- <mat-card>
+  <mat-card-content> -->
+<div class="menu">
 
-<mat-sidenav-container class="sidenav-container" (backdropClick)="sidenav.close()">
-  <mat-sidenav #sidenav [mode]="'over'" [fixedInViewport]="true" [fixedTopGap]="0">
-    <p>
-      <button mat-button (click)="sidenav.close()">
-        <mat-icon (click)="sidenav.close()">arrow_back</mat-icon>
-      </button>
-    </p>
+  <nav mat-tab-nav-bar>
+    <div class="align-tabs">
 
-    <section *ngIf="tipo==='investidor'" id="user-info" class="mat-typography" (click)="goto({page: 'perfil'})">
-      <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">
-      </mat-progress-spinner>
-      <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
+      <a mat-tab-link 
+        class="tab"
+        *ngFor="let tab of menuItems" 
+        [routerLink]="tab.page" 
+        #rla="routerLinkActive" 
+        [active]="rla.isActive"
+        routerLinkActive>
+        <mat-icon>{{tab.icon}}</mat-icon>
+        <div *ngIf="rla.isActive">&nbsp;{{tab.text}}</div>
+      </a>
 
-      <div class="info-text">
-        <p>Nivel {{user.nivel}}</p>
-        <h1>{{user.nome}}</h1>
-      </div>
-    </section>
-
-    <section *ngIf="tipo==='empresa'" id="user-info" class="mat-typography" (click)="openPerfilEmpresa()">
-      <!-- <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem"></mat-progress-spinner> -->
-      <!-- <mat-icon class="nivel-icon">{{user.icon}}</mat-icon> -->
-    
-      <div class="align-items">
-        <!-- <p>Nivel {{user.nivel}}</p> -->
-        <div></div>
-        <h1>{{user.empresa}}</h1>
-        <div></div>
-      </div>
-    </section>
-
-    <mat-divider></mat-divider>
-
-    <mat-list>
-      <div *ngFor="let item of menuItems">
-
-        <mat-list-item>
-          <button class="list-button" mat-button (click)="goto(item)">
-            <mat-icon matListIcon>{{item.icon}}</mat-icon>
-            {{item.text}}
-          </button>
-        </mat-list-item>
-        <mat-list-item *ngFor="let subitem of item.submenu">
-          <button mat-button (click)="goto(subitem)">
-            <mat-icon matListIcon></mat-icon>
-            {{subitem.text}}
-          </button>
-        </mat-list-item>
-      </div>
-    </mat-list>
-
-
-
-    <mat-toolbar class="footer">
-      <button class="list-button" mat-button>
-        <mat-icon matListIcon>help</mat-icon>
-        Suporte
-      </button>
-    </mat-toolbar>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <div class="header">
-    
-      <mat-toolbar class="mat-elevation-z12" color="primary">
-        <mat-toolbar-row class="align-items">
-          <button mat-icon-button (click)="sidenav.open()">
-            <mat-icon>menu</mat-icon>
-          </button>
-          <span>
-            Up
-            <span class="cash-logo">CASH</span>
-          </span>
-          <div class="user-menu">
-            Olá {{user.nome}}
-            <button mat-icon-button [matMenuTriggerFor]="userMenu" (click)="openUserMenu()">
-              <mat-icon>{{userMenuIcon}}</mat-icon>
-            </button>
-          </div>
-        </mat-toolbar-row>
-    
-        <mat-toolbar-row class="subheader align-items">
-          <div></div>
-          <span>{{activePage}}</span>
-          <div></div>
-        </mat-toolbar-row>
-      </mat-toolbar>
     </div>
 
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </nav>
+</div>
+
+<div class="router">
+  <router-outlet></router-outlet>
+</div>
+
+    
+    <!-- <mat-tab-group color="accent" class="menu" (selectedIndexChange)="changeTab($event)"> 
+
+      <mat-tab *ngFor="let tab of menuItems; let i = index" label="{{tab.text}}">
+        <ng-template mat-tab-label>
+          <mat-icon>{{tab.icon}}</mat-icon>
+          <div *ngIf="tabSelected==i">{{tab.text}}</div>
+        </ng-template>
+        No content
+      </mat-tab>
+    </mat-tab-group> -->
+      
+      
+      <!-- <mat-tab label="Dashboard">
+        <ng-template mat-tab-label>
+          <mat-icon>monetization_on</mat-icon>
+          <div *ngIf="tabSelected==0">Geral</div>
+        </ng-template>
+        No content
+      </mat-tab>
+      <mat-tab label="Carteira">
+        <ng-template mat-tab-label>
+          <mat-icon>monetization_on</mat-icon>
+          <div *ngIf="tabSelected==1">Financeiro</div>
+        </ng-template>
+        No content
+      </mat-tab>
+      <mat-tab label="Investimentos">
+        <ng-template mat-tab-label>
+          <mat-icon>monetization_on</mat-icon>
+          <div *ngIf="tabSelected==2">Analise</div>
+        </ng-template>
+         No content
+      </mat-tab>
+      <mat-tab label="Notificações">
+        <ng-template mat-tab-label>
+          <mat-icon>monetization_on</mat-icon>
+          <div *ngIf="tabSelected==3">Investimento</div>
+        </ng-template>
+        No content  
+      </mat-tab>
+      <mat-tab label="Configurações">
+        <ng-template mat-tab-label>
+          <mat-icon>monetization_on</mat-icon>
+          <div *ngIf="tabSelected==3">Investimento</div>
+        </ng-template>
+        No content
+      </mat-tab> -->
+    
+  <!-- </mat-card-content>
+</mat-card> -->
