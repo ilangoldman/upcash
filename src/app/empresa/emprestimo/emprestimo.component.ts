@@ -21,7 +21,7 @@ export class EmprestimoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //this.getEmprestimoAtual();
+    // this.getEmprestimoAtual();
     this.getEmprestimos();
   }
 

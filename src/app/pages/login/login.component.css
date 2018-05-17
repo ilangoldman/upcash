@@ -13,6 +13,14 @@
     width: 80vw;    
 }
 
+.login {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 
 /* .btn {
     margin: 14px !important;
@@ -98,8 +106,20 @@ svg {
   /* overflow: hidden; */
   width: 100px;
   height: 210px;
-  /* border: 2px solid blue; */
 }
+
+.path {
+    fill: rgba(0,0,0,0.0);
+    stroke: rgba(0,0,0,0.0);
+    transition: fill 0.5s, stroke 0.5s;
+}
+
+/* fazer animacao css */
+/* 
+.animation{
+    stroke-dasharray:
+} */
+
 /* 
 path {
   fill: #000;

@@ -17,9 +17,9 @@
         stroke-width: 1;
 
         &#i0 {
-            stroke: mat-color($accent,default, 500);
+            // stroke: mat-color($accent,default, 500);
             &.fadein {
-            fill: mat-color($accent);
+                // fill: mat-color($accent);
             }
         }
         }
