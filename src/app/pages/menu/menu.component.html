@@ -1,78 +1,32 @@
-<!-- <mat-card>
-  <mat-card-content> -->
+
+<div class="menu-background">
+</div>
+
 <div class="menu">
 
-  <nav mat-tab-nav-bar>
-    <div class="align-tabs">
 
-      <a mat-tab-link 
-        class="tab"
-        *ngFor="let tab of menuItems" 
-        [routerLink]="tab.page" 
-        #rla="routerLinkActive" 
-        [active]="rla.isActive"
-        routerLinkActive>
-        <mat-icon>{{tab.icon}}</mat-icon>
-        <div *ngIf="rla.isActive">&nbsp;{{tab.text}}</div>
-      </a>
-
+    
+    <div class="tabs mat-elevation-z8">
+      
+      <nav mat-tab-nav-bar color="accent">
+        <div class="align-tabs">
+          <a mat-tab-link 
+            class="tab"
+            *ngFor="let tab of menuItems" 
+            [routerLink]="tab.page" 
+            #rla="routerLinkActive" 
+            routerLinkActive>
+            <!-- [active]="rla.isActive" -->
+            
+            <mat-icon>{{tab.icon}}</mat-icon>
+            <div *ngIf="rla.isActive">&nbsp;{{tab.text}}</div>
+          </a>
+        </div>
+      </nav>
+    </div>
+    
+    <div class="router">
+      <router-outlet></router-outlet>
     </div>
 
-  </nav>
 </div>
-
-<div class="router">
-  <router-outlet></router-outlet>
-</div>
-
-    
-    <!-- <mat-tab-group color="accent" class="menu" (selectedIndexChange)="changeTab($event)"> 
-
-      <mat-tab *ngFor="let tab of menuItems; let i = index" label="{{tab.text}}">
-        <ng-template mat-tab-label>
-          <mat-icon>{{tab.icon}}</mat-icon>
-          <div *ngIf="tabSelected==i">{{tab.text}}</div>
-        </ng-template>
-        No content
-      </mat-tab>
-    </mat-tab-group> -->
-      
-      
-      <!-- <mat-tab label="Dashboard">
-        <ng-template mat-tab-label>
-          <mat-icon>monetization_on</mat-icon>
-          <div *ngIf="tabSelected==0">Geral</div>
-        </ng-template>
-        No content
-      </mat-tab>
-      <mat-tab label="Carteira">
-        <ng-template mat-tab-label>
-          <mat-icon>monetization_on</mat-icon>
-          <div *ngIf="tabSelected==1">Financeiro</div>
-        </ng-template>
-        No content
-      </mat-tab>
-      <mat-tab label="Investimentos">
-        <ng-template mat-tab-label>
-          <mat-icon>monetization_on</mat-icon>
-          <div *ngIf="tabSelected==2">Analise</div>
-        </ng-template>
-         No content
-      </mat-tab>
-      <mat-tab label="Notificações">
-        <ng-template mat-tab-label>
-          <mat-icon>monetization_on</mat-icon>
-          <div *ngIf="tabSelected==3">Investimento</div>
-        </ng-template>
-        No content  
-      </mat-tab>
-      <mat-tab label="Configurações">
-        <ng-template mat-tab-label>
-          <mat-icon>monetization_on</mat-icon>
-          <div *ngIf="tabSelected==3">Investimento</div>
-        </ng-template>
-        No content
-      </mat-tab> -->
-    
-  <!-- </mat-card-content>
-</mat-card> -->

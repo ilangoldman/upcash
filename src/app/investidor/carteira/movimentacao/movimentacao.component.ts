@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { InvestimentoService } from 'app/_service/investimento/investimento.service';
 import { MatDialog } from '@angular/material';
 import { FiltroMovimentacaoComponent } from './filtro-movimentacao/filtro-movimentacao.component';
 

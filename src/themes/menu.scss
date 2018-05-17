@@ -7,10 +7,20 @@
     $foreground: map-get($theme, foreground);
 
     .menu {
+        // & {
+        //     background-color: mat-color($background, background);
+        // }
+
+        .tabs {
+            background-color: mat-color($background, card);
+        }
+
+    }
+
+    .menu-background {
         & {
             background-color: mat-color($background, background);
         }
-
     }
 
 }

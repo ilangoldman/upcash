@@ -60,7 +60,7 @@ export class MenuComponent implements OnInit {
     if (!this.loginService.checkTipo(this.tipo)) {
       this.router.navigate([this.loginService.getTipo() + '/home']);
     }
-    this.displayUserInfo();
+    // this.displayUserInfo();
     // this.sidenav.open();
   }
 
@@ -84,50 +84,50 @@ export class MenuComponent implements OnInit {
 
 
 
-  select(item, event) {
-    this.activeItem = item;
-    this.sidenav.close();
-    this.goto(item.page);
-  }
+  // select(item, event) {
+  //   this.activeItem = item;
+  //   this.sidenav.close();
+  //   this.goto(item.page);
+  // }
 
-  displayUserInfo() {
-    this.user = this.userService.getUser();
-  }
+  // displayUserInfo() {
+  //   this.user = this.userService.getUser();
+  // }
 
-  openPerfilEmpresa(id) {
-    const empRef = this.dialog.open(PerfilEmpresaComponent, {
-      width: '100vw',
-      height: '100vh',
-      maxWidth: '100vw',
-      autoFocus: false,
-      data: { id: id }
-    });
+  // openPerfilEmpresa(id) {
+  //   const empRef = this.dialog.open(PerfilEmpresaComponent, {
+  //     width: '100vw',
+  //     height: '100vh',
+  //     maxWidth: '100vw',
+  //     autoFocus: false,
+  //     data: { id: id }
+  //   });
 
-    empRef.afterClosed().subscribe(result => {
-      // this.getNotificacoes();
-    });
-  }
+  //   empRef.afterClosed().subscribe(result => {
+  //     // this.getNotificacoes();
+  //   });
+  // }
 
-  goto(url) {
-    if (url.page !== undefined) {
-      if (url.page === 'logout') {
-        this.loginService.logout();
-        this.router.navigate(['']);
-      } else {
-        this.activePage = url.text;
-        this.router.navigate([this.tipo + '/' + url.page]);
-        // this.router.navigate([this.loginService.getTipo() + '/home']);
-      }
-      this.sidenav.close();
-    }
-  }
+  // goto(url) {
+  //   if (url.page !== undefined) {
+  //     if (url.page === 'logout') {
+  //       this.loginService.logout();
+  //       this.router.navigate(['']);
+  //     } else {
+  //       this.activePage = url.text;
+  //       this.router.navigate([this.tipo + '/' + url.page]);
+  //       // this.router.navigate([this.loginService.getTipo() + '/home']);
+  //     }
+  //     this.sidenav.close();
+  //   }
+  // }
 
-  openUserMenu() {
-    this.sidenav.close();
-    this.userMenuIcon = 'keyboard_arrow_up';
-  }
+  // openUserMenu() {
+  //   this.sidenav.close();
+  //   this.userMenuIcon = 'keyboard_arrow_up';
+  // }
 
-  closeUserMenu() {
-    this.userMenuIcon = 'keyboard_arrow_down';
-  }
+  // closeUserMenu() {
+  //   this.userMenuIcon = 'keyboard_arrow_down';
+  // }
 }

@@ -81,9 +81,11 @@ import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-e
 import { EmprestimoService } from './_service/emprestimo/emprestimo.service';
 import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.component';
 import { CardEmprestimoComponent } from './components/card-emprestimo/card-emprestimo.component';
-import { MovimentacaoComponent } from './investidor/movimentacao/movimentacao.component';
-import { DetalheParcelaComponent } from './investidor/movimentacao/detalhe-parcela/detalhe-parcela.component';
-import { FiltroMovimentacaoComponent } from './investidor/movimentacao/filtro-movimentacao/filtro-movimentacao.component';
+import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movimentacao.component';
+import { DetalheParcelaComponent } from './investidor/carteira/movimentacao/detalhe-parcela/detalhe-parcela.component';
+import { FiltroMovimentacaoComponent } from './investidor/carteira/movimentacao/filtro-movimentacao/filtro-movimentacao.component';
+import { InvestimentoEmpresaComponent } from './investidor/carteira/investimento-empresa/investimento-empresa.component';
+import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 
 
 
@@ -117,7 +119,9 @@ import { FiltroMovimentacaoComponent } from './investidor/movimentacao/filtro-mo
     CardEmprestimoComponent,
     MovimentacaoComponent,
     DetalheParcelaComponent,
-    FiltroMovimentacaoComponent
+    FiltroMovimentacaoComponent,
+    InvestimentoEmpresaComponent,
+    AcompanharEmpresasComponent
 ],
   imports: [
     BrowserModule,

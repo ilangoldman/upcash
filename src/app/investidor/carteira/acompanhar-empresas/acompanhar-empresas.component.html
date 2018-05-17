@@ -1,0 +1,28 @@
+
+<mat-card class="margin card-investimentos-list">
+  <mat-nav-list class="investimentos-list">
+    <mat-list-item class="status-item" *ngFor="let empresa of investimentos">
+      <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
+      <a matLine href="investidor/parcelas" class="text text-wrap">{{ empresa.nome }}</a>
+      <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
+
+      <button mat-button class="valor" (click)="showInfo(empresa)">
+        <p>
+          {{empresa.investido | currencyFormat}}
+        </p> 
+        <!-- <p>de</p> -->
+        <p>
+          {{empresa.emprestimo | currencyFormat}}
+        </p>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>arrow_right</mat-icon>
+      </button>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-nav-list>
+</mat-card>
+
+<button mat-fab color="accent" class="filter" (click)="openFiltro()">
+  <mat-icon>filter_list</mat-icon>
+</button>
