@@ -1,9 +1,9 @@
 
 <mat-card class="margin card-investimentos-list">
   <mat-nav-list class="investimentos-list">
-    <mat-list-item class="status-item" *ngFor="let empresa of investimentos">
+    <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openInvestimento(empresa.id)">
       <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
-      <a matLine href="investidor/parcelas" class="text text-wrap">{{ empresa.nome }}</a>
+      <a matLine class="text text-wrap">{{ empresa.nome }}</a>
       <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
 
       <button mat-button class="valor" (click)="showInfo(empresa)">
