@@ -34,86 +34,132 @@ export class InvestimentoService {
 
   getResumoCarteira() {
     const resumoCarteira = {
-      retorno: 10.85,
-      investimentos: 32,
-      finalizados: 10,
-      receber: 324234,
-      retirado: 324321,
-      investido: 2130131
+      total: 2358213,
+      principal: 2152352,
+      juros: 205861,
     };
     return resumoCarteira;
   }
 
-  getDistribuicaoCarteira(r) {
-    let carteira;
-    switch (r) {
-      case 'A':
-        carteira = {
-          rating: ['A1', 'A2', 'A3'],
-          quantidade: [17, 30, 23],
-          cor: [
-            'rgba(26, 194, 176, 1)',
-            'rgba(242, 122, 48, 1)',
-            'blue',
-            'orange',
-            'green'
-          ]
-        };
-        break;
-
-      case 'B':
-        carteira = {
-          rating: ['B1', 'B2', 'B3', 'B3', 'B4', 'B5', 'B6'],
-          quantidade: [17, 30, 23, 23, 35, 54],
-          cor: [
-            'rgba(26, 194, 176, 1)',
-            'rgba(242, 122, 48, 1)',
-            'blue',
-            'orange',
-            'green'
-          ]
-        };
-        break;
-
-      case 'A1':
-        carteira = {
-          rating: ['Morbi Sit Company', 'At Corporation', 'Curabitur Consulting'],
-          quantidade: [22400, 93500, 12400],
-          cor: [
-            'rgba(26, 194, 176, 1)',
-            'rgba(242, 122, 48, 1)',
-            'blue',
-            'orange',
-            'green'
-          ]
-        };
-        break;
-
-      default:
-        carteira = {
-          rating: ['A', 'B', 'C', 'D', 'E'],
-          quantidade: [17, 30, 23, 54, 12],
-          cor: [
-            'rgba(26, 194, 176, 1)',
-            'rgba(242, 122, 48, 1)',
-            'blue',
-            'orange',
-            'green'
-          ]
-        };
-        break;
-    }
-    return carteira;
-  }
-
   getResumoMovimentacao() {
     const movimentacao = {
-      entrada: [50, 100, 540, 420, 650, 320, 260],
-      saida: [-200, -500, -200, -300, -100, 0, -300],
-      datas: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul']
+      total: 23152345,
+      extrato: [
+        {
+          empresa: 'Peaky Blinders Ltda',
+          data: '20/05/2018',
+          valor: 314
+        },
+        {
+          empresa: 'Shelby Ltda',
+          data: '20/05/2018',
+          valor: -6000
+        },
+        {
+          empresa: 'Vingardium Leviosa',
+          data: '21/05/2018',
+          valor: 546
+        },
+        {
+          empresa: 'Kaleesi',
+          data: '22/05/2018',
+          valor: 654
+        },
+        {
+          empresa: 'The North',
+          data: '25/05/2018',
+          valor: 234
+        },
+        {
+          empresa: 'Lanisters',
+          data: '25/05/2018',
+          valor: -4000
+        },
+        {
+          empresa: 'Squirtles Rules the World',
+          data: '25/05/2018',
+          valor: -3500
+        },
+        {
+          empresa: 'Sanders Company',
+          data: '26/05/2018',
+          valor: 112
+        }
+      ]
     };
     return movimentacao;
   }
+
+  // getDistribuicaoCarteira(r) {
+  //   let carteira;
+  //   switch (r) {
+  //     case 'A':
+  //       carteira = {
+  //         rating: ['A1', 'A2', 'A3'],
+  //         quantidade: [17, 30, 23],
+  //         cor: [
+  //           'rgba(26, 194, 176, 1)',
+  //           'rgba(242, 122, 48, 1)',
+  //           'blue',
+  //           'orange',
+  //           'green'
+  //         ]
+  //       };
+  //       break;
+
+  //     case 'B':
+  //       carteira = {
+  //         rating: ['B1', 'B2', 'B3', 'B3', 'B4', 'B5', 'B6'],
+  //         quantidade: [17, 30, 23, 23, 35, 54],
+  //         cor: [
+  //           'rgba(26, 194, 176, 1)',
+  //           'rgba(242, 122, 48, 1)',
+  //           'blue',
+  //           'orange',
+  //           'green'
+  //         ]
+  //       };
+  //       break;
+
+  //     case 'A1':
+  //       carteira = {
+  //         rating: ['Morbi Sit Company', 'At Corporation', 'Curabitur Consulting'],
+  //         quantidade: [22400, 93500, 12400],
+  //         cor: [
+  //           'rgba(26, 194, 176, 1)',
+  //           'rgba(242, 122, 48, 1)',
+  //           'blue',
+  //           'orange',
+  //           'green'
+  //         ]
+  //       };
+  //       break;
+
+  //     default:
+  //       carteira = {
+  //         rating: ['A', 'B', 'C', 'D', 'E'],
+  //         quantidade: [17, 30, 23, 54, 12],
+  //         cor: [
+  //           'rgba(26, 194, 176, 1)',
+  //           'rgba(242, 122, 48, 1)',
+  //           'blue',
+  //           'orange',
+  //           'green'
+  //         ]
+  //       };
+  //       break;
+  //   }
+  //   return carteira;
+  // }
+
+  // getResumoMovimentacao() {
+  //   const movimentacao = {
+  //     entrada: [50, 100, 540, 420, 650, 320, 260],
+  //     saida: [-200, -500, -200, -300, -100, 0, -300],
+  //     datas: ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul']
+  //   };
+  //   return movimentacao;
+  // }
 
   getMovimentacao() {
     const movimentacao = [
