@@ -26,7 +26,8 @@
 }
 
 .tab { 
-    width: fit-content;
+    width: fit-content !important;
+    /* border: 1px solid blue;  */
 }
 
 .align-tabs {

@@ -22,7 +22,7 @@ import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.
 import { MenuComponent } from './pages/menu/menu.component';
 import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movimentacao.component';
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
-import { InvestimentoEmpresaComponent } from './investidor/carteira/investimento-empresa/investimento-empresa.component';
+import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
 
 
 
@@ -127,7 +127,7 @@ const routes: Routes = [
                 },
                 {
                     path: 'parcelas',
-                    component: InvestimentoEmpresaComponent
+                    component: ParcelasComponent
                 },
             {
                 path: 'investimento',

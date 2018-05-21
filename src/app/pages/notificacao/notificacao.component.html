@@ -1,13 +1,15 @@
 <mat-list>
-  <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens" [ngClass]="{ 'nova': msg.lida == false }" (click)="openMsg(msg)">
-    <img matListAvatar src="assets/logo/{{msg.logo}}" />
+  <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens" (click)="openMsg(msg)">
+    <div class="status-mensagem" [ngClass]="{ 'nova': msg.lida == false }"></div>
+
+    <mat-icon mat-list-icon>{{msg.icon}}</mat-icon>
     
-      <h2 mat-line class="empresa text-wrap">{{msg.empresa}}</h2>
-      
-      <!-- <p mat-line>&nbsp;</p> -->
-      <p mat-line>{{msg.titulo}}</p>
-      
-      <p class="data">{{msg.data}}</p>
+    <h2 mat-line>{{msg.titulo}}</h2>
+    
+    <!-- <p mat-line>&nbsp;</p> -->
+    <p mat-line>{{msg.descricao}}</p>
+    
+    <p class="data">{{msg.data}}</p>
       
       <!-- <button class="more-btn" mat-icon-button>
         <mat-icon>more_vert</mat-icon>
@@ -15,3 +17,7 @@
     <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
+
+<button mat-fab color="accent" class="fab-button">
+  <mat-icon>add</mat-icon>
+</button>

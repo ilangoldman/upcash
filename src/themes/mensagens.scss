@@ -7,7 +7,7 @@
     $foreground: map-get($theme, foreground);
 
     .mensagem-item {
-        &.nova {
+        .status-mensagem.nova {
             border-left: 5px solid mat-color($accent);
         }
 

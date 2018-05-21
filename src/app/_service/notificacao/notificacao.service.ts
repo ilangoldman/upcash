@@ -11,40 +11,32 @@ export class NotificacaoService {
         id: 0,
         titulo: 'Última parcela paga com sucesso',
         descricao: 'Última parcela paga com sucesso',
-        flag: false,
+        icon: 'error',
         lida: false,
-        empresa: 'UpCash',
-        logo: 'logo-emp.jpg',
         data: '22/04/2018 22:35'
       },
       {
         id: 1,
         titulo: 'Essa empresa quebrou!',
         descricao: 'skdjngf',
-        flag: true,
         lida: false,
-        empresa: 'Nexoos',
-        logo: 'logo-emp2.jpg',
+        icon: 'notification_important',
         data: '22/04/2018 22:35'
       },
       {
         id: 2,
         titulo: 'saudfn',
         descricao: 'skdjngf',
-        flag: false,
         lida: true,
-        empresa: 'Goldman Ltda',
-        logo: 'logo-emp.jpg',
+        icon: 'vpn_key',
         data: '22/04/2018 22:35'
       },
       {
         id: 3,
         titulo: 'Parcela atrasada',
         descricao: 'skdjngf',
-        flag: true,
         lida: false,
-        empresa: 'Biva',
-        logo: 'logo-emp2.jpg',
+        icon: 'next_week',
         data: '22/04/2018 22:35'
       },
     ];

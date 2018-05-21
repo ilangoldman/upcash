@@ -14,3 +14,21 @@
 .data {
     text-align: center;
 }
+/* 
+.text {
+    position: relative;
+    left: 14px;
+} */
+
+.status-mensagem {
+    position: absolute;
+    left: 7px;
+    top: 14px;
+    height: 60%;
+}
+
+.fab-button {
+    position: fixed;
+    right: 16px;
+    bottom: 16px; 
+}
