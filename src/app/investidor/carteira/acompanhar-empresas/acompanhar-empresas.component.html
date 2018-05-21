@@ -1,27 +1,39 @@
+<div class="background">
 
-<mat-card class="margin card-investimentos-list">
-  <mat-nav-list class="investimentos-list">
-    <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openInvestimento(empresa.id)">
-      <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
-      <a matLine class="text text-wrap">{{ empresa.nome }}</a>
-      <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
+  <mat-toolbar class="mat-elevation-z8 align-tabs">
+    <button mat-icon-button (click)="goback()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Empresas Investidas</h1>
+    <button mat-icon-button disabled>
+      <!-- <mat-icon>search</mat-icon> -->
+    </button>
+  </mat-toolbar>
 
-      <button mat-button class="valor" (click)="showInfo(empresa)">
-        <p>
-          {{empresa.investido | currencyFormat}}
-        </p> 
-        <!-- <p>de</p> -->
-        <p>
-          {{empresa.emprestimo | currencyFormat}}
-        </p>
-      </button>
-      <button mat-icon-button>
-        <mat-icon>arrow_right</mat-icon>
-      </button>
-      <mat-divider></mat-divider>
-    </mat-list-item>
-  </mat-nav-list>
-</mat-card>
+  <mat-card class="margin card-investimentos-list">
+    <mat-nav-list class="investimentos-list">
+      <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openInvestimento(empresa.id)">
+        <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
+        <a matLine class="text text-wrap">{{ empresa.nome }}</a>
+        <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
+
+        <button mat-button class="valor" (click)="showInfo(empresa)">
+          <p>
+            {{empresa.investido | currencyFormat}}
+          </p> 
+          <!-- <p>de</p> -->
+          <p>
+            {{empresa.emprestimo | currencyFormat}}
+          </p>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>arrow_right</mat-icon>
+        </button>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-card>
+</div>
 
 <button mat-fab color="accent" class="filter" (click)="openFiltro()">
   <mat-icon>filter_list</mat-icon>

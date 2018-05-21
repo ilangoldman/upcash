@@ -1,0 +1,109 @@
+/* .container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: auto;
+} */
+
+
+/* Header Card */
+
+.close {
+    float: left;
+}
+
+.progress {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+.progress-percentage {
+    position: absolute;
+    top: 12px;
+    right: 33px;
+    /* border: 1px solid blue; */
+    font-size: 1.6em;
+}
+
+.progress-percentage span {
+    font-size: 0.6em;
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    padding-bottom: 0;
+}
+
+/* FAB Button Investir */
+
+.extended-fab-investir {
+    height: 48px;
+    border-radius: 24px;
+    
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    
+    width: 132px;
+    margin-left: -66px; 
+
+    z-index: 15;
+}
+
+/* Outros */
+
+.tab-group {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin-top: 14px;
+    width: 100%;
+}
+
+.tab-content {
+    padding: 14px;
+    text-align: justify;    
+}
+
+/* div.scroll {
+    transform: translateY(100px);
+    transition: 0.3 all ease-in-out;
+} */
+
+
+.scrollable-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.scrollable-x {
+    width: max-content;
+}
+
+.fotos {
+    height: 200px;
+    margin-right: 14px;
+}
+
+.info-geral {
+    text-align: center;
+    margin: 14px;
+    margin-bottom: 38px;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.cidade {
+    margin-top: 16px !important;
+}

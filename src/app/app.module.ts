@@ -162,7 +162,8 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
     MensagemComponent,
     PerfilEmpresaComponent,
     SolicitacaoComponent,
-    FiltroMovimentacaoComponent
+    FiltroMovimentacaoComponent,
+    DetalheEmprestimoComponent
   ],
   bootstrap: [AppComponent]
 })

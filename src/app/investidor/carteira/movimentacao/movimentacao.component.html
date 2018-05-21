@@ -1,5 +1,16 @@
-<!-- main -->
-<!-- <div> -->
+
+<div class="background">
+
+  <mat-toolbar class="mat-elevation-z8 align-tabs">
+    <button mat-icon-button (click)="goback()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Movimentação</h1>
+    <button mat-icon-button disabled>
+      <!-- <mat-icon>search</mat-icon> -->
+    </button>
+  </mat-toolbar>
+
   <mat-accordion>
 
     <mat-expansion-panel *ngFor="let item of movimentacao">
@@ -35,7 +46,7 @@
     </mat-expansion-panel>
 
   </mat-accordion>
-<!-- </div> -->
+</div>
 
 <!-- fab -->
 <button mat-fab color="accent" class="filter" (click)="openFiltro()"><mat-icon>filter_list</mat-icon></button>

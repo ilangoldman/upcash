@@ -503,6 +503,15 @@ export class InvestimentoService {
       geral: {
         descricao: 'Nascida em 1991 na cidade de Ribeirão Preto - SP, a SVC Laser sempre esteve focada em trazer as melhores soluções de acordo com o perfil de cada cliente.Atuando inicialmente junto ao segmento gráfico, a empresa se destacou com os produtos das marcas HP e Risograph, conquistando a confiança deste mercado que se caracteriza por uma exigência muito alta de qualidade nas impressões e uma sensibilidade aguçada quanto aos custos de investimento e manutenção das máquinas.',
         motivo: 'Será utilizado na aquisição de novos equipamentos para show room, com ampliação do mesmo e consequente incremento da capacidade de demonstração de nossos produtos e serviços para novos clientes.Além disso, parte do recurso será destinada a implantação de novo sistema de gestão de locação e gestão de help desk com consequente melhora do atendimento do departamento de serviços.',
+        avalista: 'Ilan',
+        fundacao: '21/03/2018',
+        setor: 'Consultoria',
+        cidade: 'São Luis do Piratininga',
+        img: [
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEKbScstl06-yeIMqGFFBGaY9TQVAS7NYqyUzggFsedzZyI40','https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU.jpg'
+        ]
+      },
+      outros: {
         acionistas: [
           {
             nome: 'Ilan Goldman',
@@ -513,15 +522,10 @@ export class InvestimentoService {
             porcentagem: 50
           }
         ],
-        avalista: 'Ilan',
-        cnpj: '03.980.538/0001-06',
-        empregados: 23,
-        fundacao: '21/03/2018',
         site: 'up.cash',
         endereco: '	R FIDENCIO RAMOS, 302, Torre B 12º Andar, VILA OLIMPIA, SAO PAULO',
-        img: [
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqEKbScstl06-yeIMqGFFBGaY9TQVAS7NYqyUzggFsedzZyI40','https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU.jpg'
-        ]
+        cnpj: '03.980.538/0001-06',
+        empregados: 23,
       },
       analise: {
         comentario: 'bla bla bla',

@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { PerfilEmpresaComponent } from '../../empresa/perfil-empresa/perfil-empresa.component';
 import { InvestirComponent } from '../../investidor/investir/investir.component';
+import { DetalheEmprestimoComponent } from '../../pages/detalhe-emprestimo/detalhe-emprestimo.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-emprestimo',
@@ -12,24 +13,27 @@ export class CardEmprestimoComponent implements OnInit {
   @Input() empresa;
 
   constructor(
+    public router: Router,
     public dialog: MatDialog
   ) { }
 
   ngOnInit() {
+    // this.openEmpresa(2);
   }
 
   openEmpresa(id) {
-    const empRef = this.dialog.open(PerfilEmpresaComponent, {
-      width: '100vw',
-      height: '100vh',
-      maxWidth: '100vw',
-      autoFocus: false,
-      data: { id: id }
-    });
+    this.router.navigate(['detalhe-empresa/' + id]);
+    // const empRef = this.dialog.open(DetalheEmprestimoComponent, {
+    //   width: '100vw',
+    //   height: '100vh',
+    //   maxWidth: '100vw',
+    //   autoFocus: false,
+    //   data: { id: id }
+    // });
 
-    empRef.afterClosed().subscribe(result => {
-      // this.getNotificacoes();
-    });
+    // empRef.afterClosed().subscribe(result => {
+    //   // this.getNotificacoes();
+    // });
   }
 
   investir(id) {

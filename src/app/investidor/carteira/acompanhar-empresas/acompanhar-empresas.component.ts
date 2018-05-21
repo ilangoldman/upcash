@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestimentoService } from '../../../_service/investimento/investimento.service';
 import { MatDialog } from '@angular/material';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-acompanhar-empresas',
@@ -12,11 +13,16 @@ export class AcompanharEmpresasComponent implements OnInit {
 
   constructor(
     private investimentoService: InvestimentoService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private location: Location
   ) { }
 
   ngOnInit() {
     this.getInvestimento();
+  }
+
+  goback() {
+    this.location.back();
   }
 
   getInvestimento() {

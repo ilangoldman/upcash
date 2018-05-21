@@ -47,7 +47,7 @@ export class CarteiraComponent implements OnInit {
   // }
 
   goto(url) {
-    this.router.navigate(['investidor/' + url]);
+    this.router.navigate([url]);
   }
 
   getResumoInvestimento() {

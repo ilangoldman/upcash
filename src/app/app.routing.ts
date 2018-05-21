@@ -23,6 +23,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movimentacao.component';
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
+import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-emprestimo.component';
 
 
 
@@ -104,6 +105,30 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'detalhe-empresa/:id',
+        component: DetalheEmprestimoComponent
+    },
+    {
+        path: 'movimentacao',
+        component: MovimentacaoComponent
+    },
+    {
+        path: 'empresas-investidas',
+        component: AcompanharEmpresasComponent
+    },
+    {
+        path: 'parcelas',
+        component: ParcelasComponent
+    },
+    {
+        path: 'configuracao',
+        component: ConfigPerfilInvestidorComponent,
+    },
+    // {
+    //     path: 'configuracao/acesso',
+    //     component: UserConfigComponent
+    // },
+    {
         path: 'investidor',
         component: InvestidorComponent,
         // redirectTo: '/investidor/home',
@@ -117,18 +142,6 @@ const routes: Routes = [
                 path: 'carteira',
                 component: CarteiraComponent
             },
-                {
-                    path: 'movimentacao',
-                    component: MovimentacaoComponent
-                },
-                {
-                    path: 'empresas-investidas',
-                    component: AcompanharEmpresasComponent
-                },
-                {
-                    path: 'parcelas',
-                    component: ParcelasComponent
-                },
             {
                 path: 'investimento',
                 component: InvestimentoComponent
@@ -137,23 +150,6 @@ const routes: Routes = [
                 path: 'perfil',
                 component: PerfilInvestidorComponent
             },
-            // {
-            //     path: 'empresa/:id',
-            //     component: PerfilEmpresaComponent,
-            //     data: { state: 'empresa' }
-            // },
-            {
-                path: 'configuracao',
-                redirectTo: 'configuracao/perfil'
-            },
-                {
-                    path: 'configuracao/perfil',
-                    component: ConfigPerfilInvestidorComponent,
-                },
-                {
-                    path: 'configuracao/acesso',
-                    component: UserConfigComponent
-                },
             {
                 path: 'notificacoes',
                 component: NotificacaoComponent

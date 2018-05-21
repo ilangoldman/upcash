@@ -1,21 +1,21 @@
 
 <!-- Card Empresas Investidas -->
-
+  
 <mat-card class="margin">
   <mat-card-title-group>
-      <mat-card-subtitle>Rendimentos</mat-card-subtitle>
-      <mat-card-title class="title">{{ investimentos.total | currencyFormat: 2 }}</mat-card-title>
+    <mat-card-subtitle>Rendimentos</mat-card-subtitle>
+    <mat-card-title class="title">{{ investimentos.total | currencyFormat: 2 }}</mat-card-title>
   </mat-card-title-group>
-
+  
   <div class="linear-graph">
     <div class="principal" [ngStyle]="{ 'width': percentPrincipal + '%' }"></div>
     <div class="juros" [ngStyle]="{ 'width': percentJuros + '%' }"></div>
   </div>
-
+  
   <mat-card-content>
     <mat-list>
       <section class="mat-typography">
-
+        
         <mat-list-item>
           <div class="category principal"></div>
           <h2 class="text">Principal</h2>
@@ -23,7 +23,7 @@
           <p class="value">{{ investimentos.principal | currencyFormat: 2:'' }}</p>
           <mat-divider></mat-divider>
         </mat-list-item>
-
+        
         
         <mat-list-item>
           <div class="category juros"></div>
@@ -31,7 +31,7 @@
           <p class="money-sign">R$</p>
           <p class="value">{{ investimentos.juros | currencyFormat: 2:'' }}</p>
         </mat-list-item>
-      
+        
       </section>
     </mat-list>
   </mat-card-content>
@@ -56,13 +56,13 @@
       <mat-icon *ngIf="!hide">keyboard_arrow_up</mat-icon>      
     </button>
   </mat-card-title-group>
-
+  
   <div class="linear-graph movimentacao"></div>
-
+  
   <mat-card-content [ngStyle]="{ 'display': (hide)?'none':'inherit' }">
     <mat-list>
       <section class="mat-typography">
-
+        
         <mat-list-item *ngFor="let item of movimentacao.extrato">
           <!-- <div class="category principal"></div> -->
           <h2 mat-line>{{item.empresa}}</h2>
@@ -71,12 +71,12 @@
           </section> -->
           <p class="money-sign">R$</p>
           <p class="value">{{item.valor | currencyFormat: 2:''}}</p>
-        <mat-divider></mat-divider>
+          <mat-divider></mat-divider>
           
         </mat-list-item>
-
+        
         <!-- <mat-divider></mat-divider> -->
-
+        
       </section>
     </mat-list>
   </mat-card-content>
@@ -118,44 +118,44 @@
 
 
 <!-- <div class="carteira">
- 
-      <div>
-        <app-search (output)="search($event)"></app-search>
 
-        <mat-card class="margin investimentos">
-          <mat-card-content>
-            <mat-list class="investimentos-list">
-              <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openEmpresa(empresa.id)" [ngClass]="borderStatus(empresa.status)">
-                
-                <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
-                <p mat-line>
-                  Status:
-                  {{empresa.status}}
-                </p>
-                <p mat-line>
-                  Investido: 
-                  {{empresa.investido | currencyFormat}}
-                </p>
-                <p mat-line>
-                  Total:
-                  {{empresa.emprestimo | currencyFormat}}
-                </p>
+    <div>
+      <app-search (output)="search($event)"></app-search>
+
+      <mat-card class="margin investimentos">
+        <mat-card-content>
+          <mat-list class="investimentos-list">
+            <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openEmpresa(empresa.id)" [ngClass]="borderStatus(empresa.status)">
               
-                <div *ngIf="empresa.porcentagem!=100">
-                  <p class="progress-spinner">{{empresa.porcentagem}}%</p>
-                  <mat-progress-spinner
-                    class="progress-spinner"
-                    [diameter]="50" 
-                    [value]="empresa.porcentagem"
-                    color="primary">
-                  </mat-progress-spinner>
-                </div>                
+              <h2 mat-line class="text-wrap">{{empresa.nome}}</h2>
+              <p mat-line>
+                Status:
+                {{empresa.status}}
+              </p>
+              <p mat-line>
+                Investido: 
+                {{empresa.investido | currencyFormat}}
+              </p>
+              <p mat-line>
+                Total:
+                {{empresa.emprestimo | currencyFormat}}
+              </p>
+            
+              <div *ngIf="empresa.porcentagem!=100">
+                <p class="progress-spinner">{{empresa.porcentagem}}%</p>
+                <mat-progress-spinner
+                  class="progress-spinner"
+                  [diameter]="50" 
+                  [value]="empresa.porcentagem"
+                  color="primary">
+                </mat-progress-spinner>
+              </div>                
 
-                <mat-divider></mat-divider>
-              </mat-list-item>
-            </mat-list>
-          </mat-card-content>
-        </mat-card>
-      </div>
-  
+              <mat-divider></mat-divider>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
 </div> -->
