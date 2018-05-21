@@ -6,24 +6,30 @@
 
     <div class="align-info">
       <div></div>
-      <p> Rating
-        <br> {{empresa.rating | ratingFormat}}</p>
+      <p>&nbsp;Rating
+        <br> 
+        <span class="valor"> 
+          {{empresa.rating | ratingFormat}}
+        </span>
+      </p>
       <div class="dash"></div>
       <p>
         Taxa
-        <br> {{empresa.taxa}} % a.a
+        <br> 
+        <span class="valor">{{empresa.taxa}}</span><br>% a.a
       </p>
       <div class="dash"></div>
       <p>
         Prazo
-        <br> {{empresa.prazo}} meses
+        <br> 
+        <span class="valor">{{empresa.prazo}}</span><br>meses
       </p>
       <div></div>
     </div>
 
     <p class="progress">
-      {{empresa.investido | currencyFormat}} de
-      <b>{{empresa.total | currencyFormat}}</b>
+      <span class="v2">{{empresa.investido | currencyFormat}}</span> de
+      <span class="v1">{{empresa.total | currencyFormat}}</span>
     </p>
 
     <mat-progress-bar mode="determinate" [value]="empresa.porcentagem" color="{{(empresa.porcentagem==100?'green':'primary')}}">
@@ -32,10 +38,9 @@
   </mat-card-content>
 
   <mat-card-actions class="btn">
-    <!-- <div></div> -->
-    <!-- <button mat-raised-button color="primary">Mais Detalhes</button> -->
     <button mat-raised-button class="btn-investir" color="accent" (click)="investir(empresa.id)" *ngIf="!empresa.status">INVESTIR</button>
-    <button mat-raised-button class="btn-investir" color="accent" (click)="openEmpresa(empresa.id)" *ngIf="empresa.status">{{empresa.status | uppercase}}</button>
+
+    <button mat-raised-button class="btn-investir" color="accent" (click)="openEmpresa(empresa.id)" *ngIf="empresa.status" disabled>{{empresa.status | uppercase}}</button>
     <!-- <div></div> -->
   </mat-card-actions>
 </mat-card>

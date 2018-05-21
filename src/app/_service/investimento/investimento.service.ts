@@ -359,7 +359,8 @@ export class InvestimentoService {
         taxa: 23,
         prazo: 24,
         investido: 6000,
-        porcentagem: 30
+        porcentagem: 30,
+        status: 'Oferta Realizada'
       },
       {
         id: 1,
@@ -381,7 +382,8 @@ export class InvestimentoService {
         taxa: 23,
         prazo: 24,
         investido: 6000,
-        porcentagem: 0
+        porcentagem: 0,
+        status: 'Lista de Espera'
       },
       {
         id: 3,

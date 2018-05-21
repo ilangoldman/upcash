@@ -23,11 +23,9 @@ export class InvestimentoComponent implements OnInit {
     this.getInvestimento();
   }
 
-  gotoEmpresa(id) {
-    // TODO
-    // console.log(id);
-    this.router.navigate(['/investidor/empresa/' + id]);
-  }
+  // gotoEmpresa(id) {
+  //   this.router.navigate(['/investidor/empresa/' + id]);
+  // }
 
   getInvestimento() {
     this.investimentos = this.investimentoService.getOportunidade();

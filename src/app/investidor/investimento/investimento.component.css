@@ -1,53 +1,6 @@
 
-
-
-
-/* pesquisar na lista */
-
-.form {
-    width: 100%;
+.fab-button {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
 }
-
-.search {
-    padding-top: 0;
-    padding-bottom: 0;    
-}
-
-
-/* lista de investimentos */
-/* 
-
-.investimentos{
-    padding: 0;
-}
-
-.item-list.completed {
-    border-left: 5px solid green;
-}
-
-.investimentos-list {
-    padding: 0;
-}
-
-.text-wrap {
-    word-wrap: break-word !important;
-    white-space: pre-wrap !important;    
-}
-
-.more-btn {
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.progress-spinner {
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-}
-
-p.progress-spinner {
-    position: absolute;
-    right: 24px;
-    bottom: 14px;
-} */

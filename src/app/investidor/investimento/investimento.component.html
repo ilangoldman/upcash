@@ -1,6 +1,6 @@
-<div class="investimento">
-  <app-search (output)="search($event)"></app-search>
 
-  <app-card-emprestimo *ngFor="let empresa of investimentos" [empresa]= "empresa"></app-card-emprestimo> 
-  
-</div>
+<app-card-emprestimo *ngFor="let empresa of investimentos" [empresa]= "empresa"></app-card-emprestimo> 
+
+<button mat-fab class="fab-button">
+  <mat-icon>filter_list</mat-icon>
+</button>
