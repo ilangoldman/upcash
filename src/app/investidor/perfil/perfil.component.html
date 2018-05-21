@@ -1,15 +1,92 @@
-<mat-toolbar class="header" color="accent" (click)="showPoints()">
+<mat-toolbar class="header" color="accent">
+  
   <section id="user-info" class="mat-typography">
+    <mat-progress-spinner class="progress-spinner" [diameter]="70" [value]="user.porcentagem">
+    </mat-progress-spinner>
     <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
   
     <div class="info-text">
-      <p>Nivel {{user.nivel}}</p>
       <h2>{{user.nome}}</h2>
-      <p>{{user.pontos}} / {{user.ptsProximoNivel}} pontos</p>
+      <p>Nivel {{user.nivel}}</p>
+      <!-- <p>{{user.pontos}} / {{user.ptsProximoNivel}} pontos</p> -->
     </div>
   </section>
+  <span class="space-item"></span>
+  <button mat-icon-button (click)="goto('configuracao')">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button [matMenuTriggerFor]="optionsMenu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
 </mat-toolbar>
 
+<mat-menu #optionsMenu="matMenu" [overlapTrigger]="false">
+  <button mat-menu-item *ngFor="let item of moreOptions">
+    <mat-icon>{{item.icon}}</mat-icon>
+    <span>{{item.text}}</span>
+  </button>
+</mat-menu>
+
+<!-- (click)="showPoints()" -->
+
+<mat-accordion class="margin">
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>Conquistas</mat-panel-title>
+      <mat-panel-description>
+         {{user.pontos}} / {{user.ptsProximoNivel}} pontos
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+      <mat-list-item *ngFor="let ponto of pontos; let last = last">
+        <mat-icon matListIcon>{{ponto.icon}}</mat-icon>
+        <p class="item-title">{{ponto.titulo}}</p>
+        <p class="item-value">+ {{ponto.numPontos | number: '2.0-0'}} pontos</p>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Beneficios</mat-panel-title>
+      <mat-panel-description>
+        {{user.beneficios}} disponíveis
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-list>
+      <mat-list-item *ngFor="let beneficio of beneficios; let last = last">
+        <mat-icon matListIcon>{{beneficio.icon}}</mat-icon>
+        <p class="item-title">{{beneficio.titulo}}</p>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>Amigos</mat-panel-title>
+    </mat-expansion-panel-header>
+    
+    <mat-list>
+      <mat-list-item *ngFor="let amigo of amigos; let last = last">
+        <mat-icon matListIcon>{{amigo.badge}}</mat-icon>
+        <p class="item-title">{{amigo.nome}}</p>
+        <button mat-raised-button color="primary" class="item-button"> Reenviar</button>
+        <mat-divider *ngIf="!last"></mat-divider>
+      </mat-list-item>
+    </mat-list>
+
+    <button mat-raised-button color="accent" class="btn-invite"> CONVIDAR AMIGOS</button>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+<!-- 
 <div class="content">
 
   <section id="pontos" class="mat-typography scrollable-container">
@@ -17,7 +94,6 @@
     <div class="scrollable-x">
       <mat-card *ngFor="let ponto of pontos" class="margin scrollable-card">
         <mat-card-content >
-           <!-- (click)="flipCard=!flipCard" [ngClass]="{ 'flip-card': flipCard == true}" -->
           <div *ngIf="!flipCard">
 
             <mat-icon class="pontos-icon" [ngClass]="{'completo': ponto.completo==1}">{{ponto.icon}}</mat-icon>
@@ -36,21 +112,6 @@
   
   <mat-divider></mat-divider>
   
-  <section id="amigos" class="mat-typography scrollable-container">
-    <h3 class="subheader">Amigos</h3>
-    <div class="scrollable-x">
-      <mat-card *ngFor="let amigo of amigos" class="margin scrollable-card">
-        <mat-card-content>
-          <mat-icon>{{amigo.badge}}</mat-icon>
-          <h3>{{amigo.nome}}</h3>
-          <!-- <p>{{ponto.descricao}}</p> -->
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </section>
-  
-  <mat-divider></mat-divider>
-  
   <section id="beneficios" class="mat-typography scrollable-container">
     <h3 class="subheader">Beneficios</h3>
     <div class="scrollable-x">
@@ -63,4 +124,18 @@
     </div>
   </section>
 
-</div>
+  <mat-divider></mat-divider>
+  
+  <section id="amigos" class="mat-typography scrollable-container">
+    <h3 class="subheader">Amigos</h3>
+    <div class="scrollable-x">
+      <mat-card *ngFor="let amigo of amigos" class="margin scrollable-card">
+        <mat-card-content>
+          <mat-icon>{{amigo.badge}}</mat-icon>
+          <h3>{{amigo.nome}}</h3>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+</div> -->

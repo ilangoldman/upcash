@@ -1,26 +1,70 @@
+.header {
+    position: relative;
+    /* top: 50px; */
+    height: 80px;
+    /* z-index: 5; */
+    /* padding: 14px !important; */
+}
+
+.progress-spinner {
+    position: relative;
+    top: 7px;
+}
+
+.nivel-icon {
+    position: absolute;
+    top: 18px;
+    left: 31px;
+    /* border: 1px solid blue; */
+    font-size: 40px;
+    width: fit-content;
+    height: fit-content;
+    /* font-size: 40px;
+    width: fit-content;
+    height: fit-content;
+    margin-right: 14px; */
+}
+
+.info-text {
+    position: relative;
+    left: 14px;
+}
+
+.space-item {
+    flex: 1 1 auto;
+}
+
 #user-info p, #user-info .progress-spinner, #user-info .info-text {
     display: inline-block;
 }
 
+.item-value {
+    position: absolute;
+    right: 14px;
+    top: -3px;
+}
+
+.item-title {
+    position: relative;
+    left: 7px;
+}
+
+.item-button {
+    position: absolute;
+    right: 14px;
+}
+
+.btn-invite {
+   width: 100%;
+   margin: 14px 0; 
+}
+
+/* 
+
+
+
 .info-text p {
     margin-bottom: 0;
-}
-
-.nivel-icon {
-    /* position: absolute; */
-    /* top: 84px; */
-    /* left: 22px; */
-    font-size: 60px;
-    width: fit-content;
-    height: fit-content;
-    margin-right: 14px;
-}
-
-.header {
-    position: fixed;
-    top: 50px;
-    height: 100px;
-    z-index: 5;
 }
 
 .margin {
@@ -57,7 +101,6 @@
 
 .scrollable-card {
     width: 100px;
-    /* height: 180px; */
     text-align: center;
     display: inline-block;
     vertical-align: top;
@@ -74,17 +117,4 @@
 
 #pontos h4 {
     margin-top: 7px;
-}
-
-/* #pontos mat-card-content h3 {
-    bottom: 0;
-} */
-
-#beneficios mat-card {
-    /* border-radius: 50%; */
-}
-
-/* .flip-card {
-    transform: rotateY(180deg);
-    transition: 0.5s all ease-in-out;
 } */

@@ -25,7 +25,8 @@ export class UserService {
       pontos: 482,
       ptsProximoNivel: 500,
       nivel: 5,
-      porcentagem: 82
+      porcentagem: 82,
+      beneficios: 3
     };
     return user;
   }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_service/user/user.service';
 import { MatDialog } from '@angular/material';
 import { PontuacaoDialogComponent } from './pontuacao-dialog/pontuacao-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -14,9 +15,21 @@ export class PerfilInvestidorComponent implements OnInit {
   private beneficios;
   private amigos;
 
+  private moreOptions = [
+    {
+      icon: 'help',
+      text: 'Suporte'
+    },
+    {
+      icon: 'exit_to_app',
+      text: 'Sair'
+    }
+  ];
+
   constructor(
     private userService: UserService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -51,6 +64,10 @@ export class PerfilInvestidorComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  goto(url) {
+    this.router.navigate(['investidor/' + url])
   }
 
 }
