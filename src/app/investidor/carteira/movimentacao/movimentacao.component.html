@@ -5,12 +5,9 @@
     <mat-expansion-panel *ngFor="let item of movimentacao">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          <span class="status-teste"></span>
+          <!-- <div class="status" [ngClass]="borderStatus(empresa.status)"></div> -->
           {{item.data}}
         </mat-panel-title>
-        <mat-panel-description>
-          {{item.total | currencyFormat}}
-        </mat-panel-description>
         <mat-panel-description>
           {{item.total | currencyFormat}}
         </mat-panel-description>
@@ -18,19 +15,20 @@
     
       <mat-list *ngFor="let entrada of item.investido">
         <mat-list-item color="accent">
-            <mat-icon matListIcon color="accent">arrow_drop_down</mat-icon>
-            <p>{{entrada.empresa}}</p>
-            <p class="align-right">{{entrada.valor | currencyFormat}}</p>
+            <mat-icon matListIcon color="accent">remove</mat-icon>
+            <p class="name text-wrap">{{entrada.empresa}}</p>
+            <!-- <p class="align-right">{{entrada.valor | currencyFormat}}</p> -->
+            <p class="real-sign">R$ </p>
+            <p class="valor">{{entrada.valor | currencyFormat: 0:''}}</p>
           </mat-list-item>
       </mat-list>
 
       <mat-list *ngFor="let saida of item.parcelas">
         <mat-list-item color="primary">
-          <mat-icon matListIcon color="primary" *ngIf="saida.status=='pago'">arrow_drop_up</mat-icon>
-          <mat-icon matListIcon color="warn" *ngIf="saida.status=='atraso'">error</mat-icon>
-          <p>{{saida.empresa}}</p>
-          <p class="align-right">{{saida.num}}/{{saida.total}}</p>
-          <p class="align-right">{{saida.liquido | currencyFormat}}</p>
+          <mat-icon matListIcon color="primary">add</mat-icon>
+          <p class="name">{{saida.empresa}}</p>
+          <p class="real-sign">R$ </p>
+          <p class="valor">{{saida.liquido | currencyFormat: 2:''}}</p>
         </mat-list-item>
       </mat-list>
     

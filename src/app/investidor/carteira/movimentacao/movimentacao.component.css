@@ -11,9 +11,9 @@
     margin-left: auto; 
 }
 
-.margin {
+/* .margin {
     margin: 14px;
-}
+} */
 
 .filter {
     position: fixed;
@@ -21,6 +21,30 @@
     bottom: 16px;
 }
 
-.status-teste {
-    border: 5px solid orange;
+.text-wrap {
+    word-wrap: break-word !important;
+    white-space: pre-wrap !important;    
 }
+
+.name {
+    /* width: fit-content; */
+    position: absolute;
+    left: 55px;
+    right: 80px;
+    top: 0;
+}
+
+
+.real-sign {
+    position: absolute;
+    right: 60px;
+    top:0;
+}
+
+.valor {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+

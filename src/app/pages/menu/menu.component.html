@@ -3,11 +3,8 @@
 </div>
 
 <div class="menu">
-
-
-    
-    <div class="tabs mat-elevation-z8">
-      
+  
+    <div *ngIf="tabs" class="tabs mat-elevation-z8">
       <nav mat-tab-nav-bar color="accent">
         <div class="align-tabs">
           <a mat-tab-link 
@@ -23,6 +20,18 @@
           </a>
         </div>
       </nav>
+    </div>
+
+    <div *ngIf="!tabs">
+      <mat-toolbar class="tabs mat-elevation-z8 align-tabs">
+        <button mat-icon-button (click)="goback()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h1>Hello World</h1>
+        <button mat-icon-button disabled>
+          <!-- <mat-icon>search</mat-icon> -->
+        </button>
+      </mat-toolbar>
     </div>
     
     <div class="router">

@@ -172,14 +172,13 @@ export class InvestimentoService {
             valor: 2000
           },
           {
-            empresa: 'Line Up Logística Consulting',
+            empresa: 'Line Up Logística Consulting Limited Edition By Shelby SA',
             valor: 6000
           }
         ],
         parcelas: [
           {
             empresa: 'Line Up Logística Consulting',
-            status: 'pago',
             num: 5,
             total: 24,
             bruto: 102.18,
@@ -190,7 +189,6 @@ export class InvestimentoService {
           },
           {
             empresa: 'Line Up Logística Consulting',
-            status: 'atraso',
             num: 2,
             total: 24,
             bruto: 102.65,
@@ -218,7 +216,6 @@ export class InvestimentoService {
         parcelas: [
           {
             empresa: 'Line Up Logística Consulting',
-            status: 'pago',
             num: 5,
             total: 24,
             bruto: 102.18,
@@ -229,7 +226,6 @@ export class InvestimentoService {
           },
           {
             empresa: 'Line Up Logística Consulting',
-            status: 'atraso',
             num: 2,
             total: 24,
             bruto: 102.65,
@@ -256,7 +252,6 @@ export class InvestimentoService {
         parcelas: [
           {
             empresa: 'Ananke Tecnologia',
-            status: 'pago',
             num: 5,
             total: 24,
             bruto: 102.18,
@@ -267,7 +262,6 @@ export class InvestimentoService {
           },
           {
             empresa: 'Line Up Logística Consulting',
-            status: 'pago',
             num: 2,
             total: 24,
             bruto: 102.65,

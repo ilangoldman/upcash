@@ -1,6 +1,6 @@
 .menu-background {
     position: fixed;
-    top: 0;
+    top: -50px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -23,6 +23,10 @@
     position: sticky;
     top: 0;
     z-index: 12;
+}
+
+.tab { 
+    width: fit-content;
 }
 
 .align-tabs {

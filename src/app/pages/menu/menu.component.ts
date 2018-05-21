@@ -14,6 +14,7 @@ export class MenuComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
   private user;
   private activePage = 'Home';
+  private tabs = true;
 
   private userMenuIcon = 'keyboard_arrow_down';
   private mainUserMenu = [
@@ -64,9 +65,14 @@ export class MenuComponent implements OnInit {
     // this.sidenav.open();
   }
 
-  changeTab(index) {
-    this.tabSelected = index;
+  goback() {
+    this.tabs = true;
   }
+
+
+  // changeTab(index) {
+  //   this.tabSelected = index;
+  // }
 
 
 
