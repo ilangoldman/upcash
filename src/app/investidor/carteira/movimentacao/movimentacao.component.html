@@ -34,12 +34,12 @@
           </mat-list-item>
       </mat-list>
 
-      <mat-list *ngFor="let saida of item.parcelas">
-        <mat-list-item color="primary">
+      <mat-list *ngFor="let parcela of item.parcelas">
+        <mat-list-item color="primary" (click)="openParcela(parcela.id,parcela.num)">
           <mat-icon matListIcon color="primary">add</mat-icon>
-          <p class="name">{{saida.empresa}}</p>
+          <p class="name">{{parcela.empresa}}</p>
           <p class="real-sign">R$ </p>
-          <p class="valor">{{saida.liquido | currencyFormat: 2:''}}</p>
+          <p class="valor">{{parcela.liquido | currencyFormat: 2:''}}</p>
         </mat-list-item>
       </mat-list>
     

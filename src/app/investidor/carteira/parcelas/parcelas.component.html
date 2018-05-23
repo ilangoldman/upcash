@@ -44,8 +44,8 @@
   </div>
 
   <mat-accordion>
-    <mat-expansion-panel *ngFor="let parcela of parcelas.parcelas; let i = index" disabled="{{parcela.disable}}">
-      <mat-expansion-panel-header class="status-item">
+    <mat-expansion-panel *ngFor="let parcela of parcelas.parcelas; let i = index" [disabled]="(parcela.status=='pendente')?true:false" [expanded]="(i==openParcela)?true:false" [ngClass]="{ 'focus': i==openParcela }">
+    <mat-expansion-panel-header class="status-item">
         <mat-panel-title>
           <div class="status status-flag" [ngClass]="borderStatus(parcela.status)"></div>
           {{i}}

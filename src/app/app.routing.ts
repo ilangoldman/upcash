@@ -108,6 +108,10 @@ const routes: Routes = [
         component: ParcelasComponent
     },
     {
+        path: 'parcelas/:id/:numParcela',
+        component: ParcelasComponent
+    },
+    {
         path: 'configuracao',
         component: ConfigPerfilInvestidorComponent,
     },

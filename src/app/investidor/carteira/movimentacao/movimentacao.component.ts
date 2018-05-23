@@ -3,6 +3,7 @@ import { InvestimentoService } from 'app/_service/investimento/investimento.serv
 import { MatDialog } from '@angular/material';
 import { FiltroMovimentacaoComponent } from './filtro-movimentacao/filtro-movimentacao.component';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movimentacao',
@@ -15,7 +16,8 @@ export class MovimentacaoComponent implements OnInit {
   constructor(
     private investimentoService: InvestimentoService,
     public dialog: MatDialog,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -42,5 +44,9 @@ export class MovimentacaoComponent implements OnInit {
 
   goback() {
     this.location.back();
+  }
+
+  openParcela(id, numParcela) {
+    this.router.navigate(['parcelas/' + id + '/' + numParcela]);
   }
 }

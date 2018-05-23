@@ -179,7 +179,8 @@ export class InvestimentoService {
         parcelas: [
           {
             empresa: 'Line Up Logística Consulting',
-            num: 5,
+            id: 2,
+            num: 3,
             total: 24,
             bruto: 102.18,
             principal: 100.42,
@@ -189,7 +190,8 @@ export class InvestimentoService {
           },
           {
             empresa: 'Line Up Logística Consulting',
-            num: 2,
+            num: 0,
+            id: 2,
             total: 24,
             bruto: 102.65,
             principal: 100.84,
@@ -216,7 +218,8 @@ export class InvestimentoService {
         parcelas: [
           {
             empresa: 'Line Up Logística Consulting',
-            num: 5,
+            num: 1,
+            id: 4,
             total: 24,
             bruto: 102.18,
             principal: 100.42,
@@ -227,6 +230,7 @@ export class InvestimentoService {
           {
             empresa: 'Line Up Logística Consulting',
             num: 2,
+            id: 3,
             total: 24,
             bruto: 102.65,
             principal: 100.84,
@@ -252,7 +256,8 @@ export class InvestimentoService {
         parcelas: [
           {
             empresa: 'Ananke Tecnologia',
-            num: 5,
+            num: 4,
+            id: 1,
             total: 24,
             bruto: 102.18,
             principal: 100.42,
@@ -263,6 +268,7 @@ export class InvestimentoService {
           {
             empresa: 'Line Up Logística Consulting',
             num: 2,
+            id: 4,
             total: 24,
             bruto: 102.65,
             principal: 100.84,
@@ -286,7 +292,6 @@ export class InvestimentoService {
       parcelas: [
         {
           status: 'pago',
-          disable: false,
           data: '20/02/2018',
           valor: 120,
           bruto: 123,
@@ -298,7 +303,6 @@ export class InvestimentoService {
         },
         {
           status: 'pago',
-          disable: false,
           data: '20/03/2018',
           valor: 120,
           bruto: 123,
@@ -310,7 +314,6 @@ export class InvestimentoService {
         },
         {
           status: 'pago',
-          disable: false,
           data: '22/04/2018',
           valor: 120,
           bruto: 123,
@@ -322,7 +325,6 @@ export class InvestimentoService {
         },
         {
           status: 'pago',
-          disable: false,
           data: '21/05/2018',
           valor: 120,
           bruto: 123,
@@ -334,7 +336,6 @@ export class InvestimentoService {
         },
         {
           status: 'atraso',
-          disable: false,
           data: '20/06/2018',
           valor: 120,
           bruto: 123,
@@ -346,7 +347,6 @@ export class InvestimentoService {
         },
         {
           status: 'pendente',
-          disable: true,
           data: '20/07/2018',
           valor: 120
         }

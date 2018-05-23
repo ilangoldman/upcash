@@ -87,3 +87,7 @@
 .sub-fab.open {
     transform: translateY(0px);
 }
+
+.focus {
+    scroll-snap-destination: 0;
+}

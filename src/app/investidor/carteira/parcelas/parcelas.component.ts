@@ -15,6 +15,7 @@ export class ParcelasComponent implements OnInit {
     open: false
   };
   public empID;
+  public openParcela;
 
   constructor(
     private investimentoService: InvestimentoService,
@@ -25,6 +26,9 @@ export class ParcelasComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.empID = params['id'];
       this.parcelas = this.investimentoService.getInvestimento(this.empID);
+
+      this.openParcela = params['numParcela'];
+      // if ()
     });
   }
 
