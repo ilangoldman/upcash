@@ -12,12 +12,12 @@
 
   <mat-card class="margin card-investimentos-list">
     <mat-nav-list class="investimentos-list">
-      <mat-list-item class="status-item" *ngFor="let empresa of investimentos" (click)="openInvestimento(empresa.id)">
+      <mat-list-item class="status-item" *ngFor="let empresa of investimentos; let last=last" (click)="openInvestimento(empresa.id)">
         <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
-        <a matLine class="text text-wrap">{{ empresa.nome }}</a>
+        <a matLine class="text">{{ empresa.nome }}</a>
         <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
 
-        <button mat-button class="valor" (click)="showInfo(empresa)">
+        <button mat-button class="valor" disabled>
           <p>
             {{empresa.investido | currencyFormat}}
           </p> 
@@ -26,10 +26,10 @@
             {{empresa.emprestimo | currencyFormat}}
           </p>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button disabled>
           <mat-icon>arrow_right</mat-icon>
         </button>
-        <mat-divider></mat-divider>
+        <mat-divider *ngIf="!last"></mat-divider>
       </mat-list-item>
     </mat-nav-list>
   </mat-card>

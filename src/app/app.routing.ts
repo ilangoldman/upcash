@@ -18,12 +18,11 @@ import { EmprestimoComponent } from './empresa/emprestimo/emprestimo.component';
 import { HomeEmpresaComponent } from './empresa/home-empresa/home-empresa.component';
 import { TransferenciasComponent } from './empresa/transferencias/transferencias.component';
 import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
-import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movimentacao.component';
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
-import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-emprestimo.component';
+import { DetalheEmprestimoComponent } from './investidor/investimento/detalhe-emprestimo/detalhe-emprestimo.component';
 
 
 
@@ -83,21 +82,9 @@ const routes: Routes = [
                 component: TransferenciasComponent
             },
             {
-                path: 'perfil',
-                component: PerfilEmpresaComponent
-            },
-            {
                 path: 'configuracao',
-                redirectTo: 'configuracao/perfil'
+                component: ConfigPerfilEmpresaComponent,
             },
-                {
-                    path: 'configuracao/perfil',
-                    component: ConfigPerfilEmpresaComponent,
-                },
-                {
-                    path: 'configuracao/acesso',
-                    component: UserConfigComponent
-                },
             {
                 path: 'notificacoes',
                 component: NotificacaoComponent

@@ -3,7 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatSidenav, MatDialog } from '@angular/material';
 import { UserService } from 'app/_service/user/user.service';
 import { LoginService } from 'app/_service/login/login.service';
-import { PerfilEmpresaComponent } from '../../empresa/perfil-empresa/perfil-empresa.component';
 
 @Component({
   selector: 'app-menu',

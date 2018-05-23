@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { InvestirComponent } from '../../investidor/investir/investir.component';
-import { DetalheEmprestimoComponent } from '../../pages/detalhe-emprestimo/detalhe-emprestimo.component';
+import { InvestirComponent } from '../../investidor/investimento/investir/investir.component';
+import { DetalheEmprestimoComponent } from '../../investidor/investimento/detalhe-emprestimo/detalhe-emprestimo.component';
 import { Router } from '@angular/router';
 
 @Component({

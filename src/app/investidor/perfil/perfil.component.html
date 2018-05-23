@@ -21,7 +21,7 @@
 </mat-toolbar>
 
 <mat-menu #optionsMenu="matMenu" [overlapTrigger]="false">
-  <button mat-menu-item *ngFor="let item of moreOptions">
+  <button mat-menu-item *ngFor="let item of moreOptions" (click)="submenuAction(item.action)">
     <mat-icon>{{item.icon}}</mat-icon>
     <span>{{item.text}}</span>
   </button>

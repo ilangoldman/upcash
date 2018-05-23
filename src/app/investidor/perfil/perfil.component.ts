@@ -3,6 +3,7 @@ import { UserService } from '../../_service/user/user.service';
 import { MatDialog } from '@angular/material';
 import { PontuacaoDialogComponent } from './pontuacao-dialog/pontuacao-dialog.component';
 import { Router } from '@angular/router';
+import { LoginService } from '../../_service/login/login.service';
 
 @Component({
   selector: 'app-perfil',
@@ -18,18 +19,21 @@ export class PerfilInvestidorComponent implements OnInit {
   private moreOptions = [
     {
       icon: 'help',
-      text: 'Suporte'
+      text: 'Suporte',
+      action: ''
     },
     {
       icon: 'exit_to_app',
-      text: 'Sair'
+      text: 'Sair',
+      action: 'logout'
     }
   ];
 
   constructor(
     private userService: UserService,
     public dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit() {
@@ -67,7 +71,19 @@ export class PerfilInvestidorComponent implements OnInit {
   }
 
   goto(url) {
-    this.router.navigate(['investidor/' + url])
+    this.router.navigate([url]);
+  }
+
+  submenuAction(action) {
+    switch (action) {
+      case 'logout':
+        this.loginService.logout();
+        this.router.navigate(['']);
+        break;
+
+      default:
+        break;
+    }
   }
 
 }

@@ -16,9 +16,14 @@
     left: 28px;
 }
 
+.empresa {
+    border: 1px solid red;
+    width: 65%;
+}
+
 .money-sign {
     position: absolute;
-    right: 114px;
+    right: 94px;
 }
 
 .value {
@@ -29,7 +34,6 @@
 .action-btn {
     width: 100%;
 }
-
 
 
 .title {

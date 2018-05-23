@@ -3,7 +3,6 @@ import { Chart } from 'chart.js';
 import { InvestimentoService } from 'app/_service/investimento/investimento.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
-import { PerfilEmpresaComponent } from 'app/empresa/perfil-empresa/perfil-empresa.component';
 
 @Component({
   selector: 'app-carteira',

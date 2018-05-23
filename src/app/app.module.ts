@@ -34,7 +34,8 @@ import { MatIconModule,
   MatStepperModule,
   MatButtonToggleModule,
   MatDatepickerModule,
-  MatNativeDateModule} from '@angular/material';
+  MatNativeDateModule,
+  MatTooltipModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Services
@@ -62,7 +63,7 @@ import { InvestidorComponent } from './investidor/investidor.component';
 import { HomeInvestidorComponent } from './investidor/home-investidor/home-investidor.component';
 import { CarteiraComponent } from './investidor/carteira/carteira.component';
 import { InvestimentoComponent } from './investidor/investimento/investimento.component';
-import { InvestirComponent } from './investidor/investir/investir.component';
+import { InvestirComponent } from './investidor/investimento/investir/investir.component';
 
 import { PerfilInvestidorComponent } from './investidor/perfil/perfil.component';
 import { PontuacaoDialogComponent } from './investidor/perfil/pontuacao-dialog/pontuacao-dialog.component';
@@ -74,10 +75,9 @@ import { EmprestimoComponent } from './empresa/emprestimo/emprestimo.component';
 import { HomeEmpresaComponent } from './empresa/home-empresa/home-empresa.component';
 import { TransferenciasComponent } from './empresa/transferencias/transferencias.component';
 
-import { PerfilEmpresaComponent } from './empresa/perfil-empresa/perfil-empresa.component';
 import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
 import { MenuComponent } from './pages/menu/menu.component';
-import { DetalheEmprestimoComponent } from './pages/detalhe-emprestimo/detalhe-emprestimo.component';
+import { DetalheEmprestimoComponent } from './investidor/investimento/detalhe-emprestimo/detalhe-emprestimo.component';
 import { EmprestimoService } from './_service/emprestimo/emprestimo.service';
 import { SolicitacaoComponent } from './empresa/solicitacao/solicitacao.component';
 import { CardEmprestimoComponent } from './components/card-emprestimo/card-emprestimo.component';
@@ -99,7 +99,6 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
     RatingFormatPipe,
     LoginComponent,
     PerfilInvestidorComponent,
-    PerfilEmpresaComponent,
     NotificacaoComponent,
     PontuacaoDialogComponent,
     InvestirComponent,
@@ -147,7 +146,8 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
     MatStepperModule,
     MatButtonToggleModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatTooltipModule
   ],
   providers: [
     UserService,
@@ -160,7 +160,6 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
     PontuacaoDialogComponent,
     InvestirComponent,
     MensagemComponent,
-    PerfilEmpresaComponent,
     SolicitacaoComponent,
     FiltroMovimentacaoComponent,
     DetalheEmprestimoComponent

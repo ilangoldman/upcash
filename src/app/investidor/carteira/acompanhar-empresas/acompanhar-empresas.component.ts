@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InvestimentoService } from '../../../_service/investimento/investimento.service';
 import { MatDialog } from '@angular/material';
 import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-acompanhar-empresas',
@@ -14,7 +15,8 @@ export class AcompanharEmpresasComponent implements OnInit {
   constructor(
     private investimentoService: InvestimentoService,
     private dialog: MatDialog,
-    private location: Location
+    private location: Location,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,11 +32,7 @@ export class AcompanharEmpresasComponent implements OnInit {
   }
 
   openInvestimento(id) {
-    console.log(id);
-  }
-
-  showInfo(tt) {
-    console.log(tt);
+    this.router.navigate(['parcelas/' + id]);
   }
 
   borderStatus(status) {

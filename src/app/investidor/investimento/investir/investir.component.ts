@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
-import { InvestimentoService } from '../../_service/investimento/investimento.service';
+import { InvestimentoService } from 'app/_service/investimento/investimento.service';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -13,6 +13,8 @@ export class InvestirComponent implements OnInit {
   public resumo;
   public ofertas = [];
   public oferta = 2000;
+
+  public descTaxa = 'Rating - Taxa';
 
   constructor(
     public dialogRef: MatDialogRef<InvestirComponent>,

@@ -4,14 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Chart } from 'chart.js';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { InvestirComponent } from 'app/investidor/investir/investir.component';
+import { InvestirComponent } from '../investir/investir.component';
 
 @Component({
-  selector: 'app-perfil-empresa',
-  templateUrl: './perfil-empresa.component.html',
-  styleUrls: ['./perfil-empresa.component.css']
+  selector: 'app-detalhe-emprestimo',
+  templateUrl: './detalhe-emprestimo.component.html',
+  styleUrls: ['./detalhe-emprestimo.component.css']
 })
-export class PerfilEmpresaComponent implements OnInit {
+export class DetalheEmprestimoComponent implements OnInit {
   @ViewChild('faturamentoChart') canvasFaturamento: ElementRef;
   @ViewChild('ratingChart') canvasRating: ElementRef;
 
@@ -28,18 +28,16 @@ export class PerfilEmpresaComponent implements OnInit {
     private router: Router,
     private location: Location,
     public dialog: MatDialog,
-    public dialogRef: MatDialogRef<PerfilEmpresaComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    // public dialogRef: MatDialogRef<DetalheEmprestimoComponent>,
+    // @Inject(MAT_DIALOG_DATA) public data: any
   ) {
-    this.empresa = this.investimentoService.getEmpresa(data.id);
-    this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
+    this.route.params.subscribe(params => {
+      this.empresa = this.investimentoService.getEmpresa(params['id']);
+    });
+    
+    // this.empresa = this.investimentoService.getEmpresa(data.id);
+    // this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
     this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);
-
-    // this.route.params.subscribe(params => {
-    //   this.empresa = this.investimentoService.getEmpresa(params['id']);
-    //   this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
-    //   this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);
-    // });
   }
 
   ngOnInit() {
@@ -47,6 +45,7 @@ export class PerfilEmpresaComponent implements OnInit {
     this.displayRating();
     this.displayParcelas();
   }
+
 
   investir() {
     const dialogRef = this.dialog.open(InvestirComponent, {
@@ -60,7 +59,7 @@ export class PerfilEmpresaComponent implements OnInit {
   }
 
   close() {
-    // this.location.back();
+    this.location.back();
   }
 
   changeTab(index) {
@@ -166,4 +165,5 @@ export class PerfilEmpresaComponent implements OnInit {
       }
     }
   }
+
 }

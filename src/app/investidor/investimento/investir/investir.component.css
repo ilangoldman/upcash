@@ -1,0 +1,17 @@
+.fit {
+    width: 100%;
+}
+
+.align-center {
+    text-align: center;
+}
+
+ .align-left /deep/ figure {
+     justify-content: flex-start !important;
+ }
+/* 
+.align-left {
+    text-align: left;
+    display: flex;
+    justify-content: left !important;
+} */
