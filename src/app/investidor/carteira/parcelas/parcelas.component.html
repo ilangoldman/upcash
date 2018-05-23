@@ -28,12 +28,20 @@
     </div>
   </section>
 
-  <button mat-mini-fab class="fab-more">
-    <mat-icon>more_vert</mat-icon>
+  <button mat-mini-fab class="fab-more" (click)="toogleFAB()">
+    <mat-icon>{{fab.text}}</mat-icon>
   </button>
-  <!-- <button mat-mini-fab>
-    <mat-icon>add</mat-icon>
-  </button> -->
+  <div class="sub-fab" [ngClass]="{ 'open': fab.open == true }">
+    <button mat-mini-fab matTooltip="Adcionar contrato" matTooltipPosition="before">
+      <mat-icon>insert_drive_file</mat-icon>
+    </button>
+    <button mat-mini-fab matTooltip="Adcionar comprovante" matTooltipPosition="before">
+      <mat-icon>receipt</mat-icon>
+    </button>
+    <button mat-mini-fab matTooltip="Ver mais detalhes da empresa" matTooltipPosition="before" (click)="openEmpresa()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
 
   <mat-accordion>
     <mat-expansion-panel *ngFor="let parcela of parcelas.parcelas; let i = index" disabled="{{parcela.disable}}">

@@ -17,14 +17,38 @@
 }
 
 .tab { 
-    width: fit-content !important;
+    /* width: min-content !important; */
     /* border: 1px solid blue;  */
+    /* display: inline-block;     */
+    /* display: inline-block; */
+    /* align-items: center; */
+
+    padding: 4px;
+    min-width: 48px;
+
+}
+
+.tab:focus /deep/ {
+    outline: none;
+    background-color: inherit !important;
+
+}
+
+.position-tabs {
+    /* position: relative; */
+    /* top: 0;
+    left: 0;
+    right: 0; */
+    /* width: 100vw; */
+    /* border: 1px solid red; */
 }
 
 .align-tabs {
-    width: 100%;
+    /* position: absolute; */
+    /* width: 100%; */
+    width: 100vw;    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 

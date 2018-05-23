@@ -278,6 +278,7 @@ export class InvestimentoService {
 
   getInvestimento(idEmpresa) {
     const investimento = {
+      empresa: idEmpresa,
       pago: 2143,
       numParcelas: 5,
       numPago: 4,

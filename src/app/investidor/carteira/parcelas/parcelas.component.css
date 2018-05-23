@@ -68,3 +68,22 @@
     margin-top: -20px;
     z-index: 20;
 }
+
+.sub-fab {
+    position: fixed;
+    right: 16px;
+    top: 55px;
+    margin-top: 20px; 
+    width: 40px;
+
+    transform: translateY(-168px);
+    transition: all ease-in-out 0.3s;
+}
+
+.sub-fab button {
+    margin-top: 16px;
+}
+
+.sub-fab.open {
+    transform: translateY(0px);
+}
