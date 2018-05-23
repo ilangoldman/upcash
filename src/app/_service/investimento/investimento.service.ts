@@ -276,7 +276,85 @@ export class InvestimentoService {
     return movimentacao;
   }
 
-  getInvestimento() {
+  getInvestimento(idEmpresa) {
+    const investimento = {
+      pago: 2143,
+      numParcelas: 5,
+      numPago: 4,
+      numAtraso: 1,
+      parcelas: [
+        {
+          status: 'pago',
+          disable: false,
+          data: '20/02/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          disable: false,
+          data: '20/03/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          disable: false,
+          data: '22/04/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          disable: false,
+          data: '21/05/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'atraso',
+          disable: false,
+          data: '20/06/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 40,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pendente',
+          disable: true,
+          data: '20/07/2018',
+          valor: 120
+        }
+      ]
+    };
+    return investimento;
+  }
+
+  getEmpresasInvestidas() {
     const investimento = [
       {
         id: 0,

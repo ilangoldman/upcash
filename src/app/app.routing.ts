@@ -104,7 +104,7 @@ const routes: Routes = [
         component: AcompanharEmpresasComponent
     },
     {
-        path: 'parcelas',
+        path: 'parcelas/:id',
         component: ParcelasComponent
     },
     {

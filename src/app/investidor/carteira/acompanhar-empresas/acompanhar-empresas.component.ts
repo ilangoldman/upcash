@@ -28,7 +28,7 @@ export class AcompanharEmpresasComponent implements OnInit {
   }
 
   getInvestimento() {
-    this.investimentos = this.investimentoService.getInvestimento();
+    this.investimentos = this.investimentoService.getEmpresasInvestidas();
   }
 
   openInvestimento(id) {

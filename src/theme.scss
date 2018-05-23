@@ -31,7 +31,21 @@ $status-theme: mat-light-theme($status-primary, $status-accent, $status-warn);
 
 @include components-theme($status-theme);
 
+// GRAPH THEME
 
+$graph-primary: mat-palette($mat-gray,700);
+$graph-theme: mat-dark-theme($graph-primary, $status-primary, $status-warn);
+
+.graph {
+    @include angular-material-theme($graph-theme);
+}
+
+$foreground: map-get($main-theme, foreground);
+.text-white {
+    & {
+        color: mat-color($foreground, text);
+    }
+}
 
 
 
