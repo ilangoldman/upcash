@@ -24,18 +24,23 @@ export class TransferenciasComponent implements OnInit {
   }
 
   getProxParcela() {
-    this.proximo = this.emprestimoService.getProximaParcela();
+    for (let i = 0; i < this.emprestimo.parcelas.length; i++) {
+      if (this.emprestimo.parcelas[i].status === 'pendente') {
+        this.proximo = this.emprestimo.parcelas[i];
+        break;
+      }
+    }
   }
 
   borderStatus(status) {
     let statusClass = '';
     switch (status) {
-      case 'Pago':
-        statusClass = 'pago';
+      case 'atraso':
+        statusClass = 'erro';
         break;
 
-      case 'Atraso':
-        statusClass = 'atraso';
+      case 'pago':
+        statusClass = 'sucesso';
         break;
     }
 

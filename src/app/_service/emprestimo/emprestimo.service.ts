@@ -131,37 +131,82 @@ export class EmprestimoService {
 
   getPagamento() {
     const pagamento = {
-        total: 50000,
-        pago: 20000,
-        valorParcela: 200,
-        numParcelas: 12,
-        parcelas: [
-          {
-            id: 1,
-            status: 'Pago',
-            data: '22/04'
-          },
-          {
-            id: 2,
-            status: 'Pago',
-            data: '22/05'
-          },
-          {
-            id: 3,
-            status: 'Pago',
-            data: '22/06'
-          },
-          {
-            id: 4,
-            status: 'Pago',
-            data: '22/07'
-          },
-          {
-            id: 5,
-            status: 'Atraso',
-            data: '22/08'
-          }
-        ]
+      total: 50000,
+      pago: 20000,
+      valorParcela: 200,
+      numParcelas: 12,
+      parcelas: [
+        {
+          status: 'pago',
+          data: '20/02/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          data: '20/03/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          data: '22/04/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pago',
+          data: '21/05/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 12,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'atraso',
+          data: '20/06/2018',
+          valor: 120,
+          bruto: 123,
+          principal: 89,
+          rendimentos: 32,
+          multa: 40,
+          ir: 0.43,
+          liquido: 89
+        },
+        {
+          status: 'pendente',
+          data: '20/07/2018',
+          valor: 120
+        },
+        {
+          status: 'pendente',
+          data: '21/08/2018',
+          valor: 120
+        },
+        {
+          status: 'pendente',
+          data: '22/09/2018',
+          valor: 120
+        }
+      ]
       };
     // ];
     return pagamento;

@@ -20,17 +20,7 @@ export class InvestidorComponent implements OnInit {
     {
       icon: 'account_balance_wallet',
       text: 'CARTEIRA',
-      page: 'carteira',
-      submenu: [
-        {
-          text: 'Movimentação',
-          page: 'movimentacao'
-        },
-        {
-          text: 'Empresas Investidas',
-          page: 'empresas-investidas',
-        }
-      ]
+      page: 'carteira'
     },
     {
       icon: 'monetization_on',

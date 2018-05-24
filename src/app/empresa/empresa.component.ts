@@ -9,21 +9,30 @@ export class EmpresaComponent implements OnInit {
 
   private items = [
     {
-      icon: 'home',
-      text: 'Home',
+      icon: 'dashboard',
+      text: 'OVERVIEW',
       page: 'home'
     },
     {
       icon: 'monetization_on',
-      text: 'Emprestimos',
+      text: 'EMPRESTIMOS',
       page: 'emprestimos'
     },
-    // cached
     {
       icon: 'swap_horiz',
-      text: 'Transferencias',
+      text: 'TRANSFERENCIAS',
       page: 'transferencias'
-    }
+    },
+    {
+      icon: 'announcement',
+      text: 'NOTIFICAÇÕES',
+      page: 'notificacoes'
+    },
+    {
+      icon: 'settings',
+      text: 'CONFIGURAÇÕES',
+      page: 'configuracao'
+    },
   ];
 
   private tipo = 'empresa';

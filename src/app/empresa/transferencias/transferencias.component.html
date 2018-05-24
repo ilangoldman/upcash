@@ -2,20 +2,73 @@
   <mat-card-title-group>
   </mat-card-title-group>
   <mat-card-content>
-    <h3>Próxima Parcela</h3>
-    <h1>{{proximo.data}}</h1>
-    <h4>{{ proximo.valor | currencyFormat }}</h4>
+    <section class="mat-typography">
 
-    <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> 
+      <h3>Próxima Parcela</h3>
+      <h1>{{proximo.data}}</h1>
+      <h4>{{ proximo.valor | currencyFormat }}</h4>
+      
+      <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> 
+    </section>
   </mat-card-content>
 </mat-card>
 
-<mat-list class="status">
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let parcela of emprestimo.parcelas; let i = index" [disabled]="(parcela.status=='pendente')?true:false" [ngClass]="{ 'focus': i==openParcela }">
+    <mat-expansion-panel-header class="status-item">
+      <mat-panel-title>
+        <div class="status status-flag" [ngClass]="borderStatus(parcela.status)"></div>
+        {{i}}
+      </mat-panel-title>
+      <mat-panel-description>{{parcela.data}}</mat-panel-description>
+      <mat-panel-description>{{parcela.valor | currencyFormat}}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-list *ngIf="parcela.status != 'pendente'">
+      <mat-list-item>
+        <mat-icon matListIcon></mat-icon>
+        <p>Bruto</p>
+        <p class="value">{{parcela.bruto | currencyFormat}}</p>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListIcon></mat-icon>
+        <mat-icon matListIcon></mat-icon>
+        <p>Principal</p>
+        <p class="value">{{parcela.principal | currencyFormat}}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon></mat-icon>
+        <mat-icon matListIcon></mat-icon>
+        <p>Rendimentos</p>
+        <p class="value">{{parcela.rendimentos | currencyFormat}}</p>
+      </mat-list-item>
+
+      <mat-list-item>
+        <mat-icon matListIcon>add</mat-icon>
+        <p>Multa/Mora</p>
+        <p class="value">{{parcela.multa | currencyFormat}}</p>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon matListIcon>remove</mat-icon>
+        <p>Imposto de Renda</p>
+        <p class="value">{{parcela.ir | currencyFormat : 2}}</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <mat-icon matListIcon>drag_handle</mat-icon>
+        <p>Valor Líquido</p>
+        <p class="value">{{parcela.liquido | currencyFormat}}</p>
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<!-- <mat-list class="status">
   <mat-list-item class="status-item" *ngFor="let parcela of emprestimo.parcelas" [ngClass]="borderStatus(parcela.status)">
     <h4 mat-line>
       Parcela {{parcela.id}}/{{emprestimo.numParcelas}}
     </h4>
-    <!-- <h2 mat-line class="text-wrap">{{emprestimo.nome}}</h2> -->
+    <h2 mat-line class="text-wrap">{{emprestimo.nome}}</h2>
     <p mat-line>
       Status: {{parcela.status}}
     </p>
@@ -30,4 +83,4 @@
     </p>
     <mat-divider></mat-divider>
   </mat-list-item>
-</mat-list>
+</mat-list> -->

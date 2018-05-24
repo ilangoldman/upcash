@@ -5,3 +5,23 @@
 .align-center {
     text-align: center;
 }
+
+
+.status-flag {
+    position: absolute;
+    left: 10px;
+    height: 28px;
+    margin-top: -6px;
+}
+
+
+.money-sign {
+    position: absolute;
+    right: 94px;
+}
+
+.value {
+    position: absolute;
+    right: 14px;
+    top: 0;
+}
