@@ -2,7 +2,6 @@
     overflow: auto;
 }
 
-
 /* Header Card */
 
 .close {
@@ -53,7 +52,13 @@
     z-index: 15;
 }
 
-/* Outros */
+/* Tabs */
+
+.align-tabs {
+    width: 100vw;    
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .tab-group {
     position: sticky;
@@ -64,10 +69,30 @@
     width: 100%;
 }
 
+
+
+::ng-deep .mat-tab-labels {
+    justify-content: space-evenly !important;
+}
+
+::ng-deep .mat-tab-label {   
+    padding: 14px !important;
+}
+
+::ng-deep .mat-tab-header {
+    position: sticky !important;
+    top: 98px;
+    z-index: 15;
+}
+
+
+
 .tab-content {
     padding: 14px;
     text-align: justify;    
 }
+
+/* Tab Content */
 
 /* div.scroll {
     transform: translateY(100px);
@@ -92,7 +117,6 @@
 .info-geral {
     text-align: center;
     margin: 14px;
-    margin-bottom: 38px;
 }
 
 .align-center {
@@ -101,4 +125,29 @@
 
 .cidade {
     margin-top: 16px !important;
+}
+
+.text-wrap {
+    word-wrap: normal;
+    white-space: pre-line !important;
+}
+
+.scroll-button {
+    height: 55px;
+}
+
+.titulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 50px;
+    text-align: left;
+}
+
+.valor {
+    position: absolute;
+    right: 0;
+    width: 45px;
+    top: 0;
+    text-align: center;
 }

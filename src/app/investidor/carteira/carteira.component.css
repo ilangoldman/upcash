@@ -6,9 +6,8 @@
 .category {
     position: absolute;
     left: 14px;
-    top: 14px;
-    height: 50%;
-    /* margin: 14px; */
+    top: 10px;
+    height: 28px;
 }
 
 .text {
@@ -16,19 +15,26 @@
     left: 28px;
 }
 
-.empresa {
-    border: 1px solid red;
-    width: 65%;
-}
-
 .money-sign {
     position: absolute;
-    right: 94px;
+    right: 114px;
 }
 
 .value {
     position: absolute;
     right: 14px;
+}
+
+.money-sign-movimentacao {
+    position: absolute;
+    right: 94px;
+    bottom: 0;    
+}
+
+.value-movimentacao {
+    position: absolute;
+    right: 14px;
+    bottom: 0;
 }
 
 .action-btn {
@@ -40,15 +46,7 @@
     margin-bottom: 0px;
 }
 
-.list-items {
-    /* width: 80px; */
-    /* border: 1px solid white; */
-}
-
-
 .linear-graph {
-    /* width: 100%; */
-    /* border: 1px solid white; */
     margin-top: 0;
     margin-bottom: 14px;
     padding: 0;
@@ -62,14 +60,6 @@
     display: inline-block !important;
     margin: 0;
     padding: 0;
-}
-
-.linear-graph .principal {
-    /* width: 78%; */
-}
-
-.linear-graph .juros {
-    /* width: 19%; */
 }
 
 

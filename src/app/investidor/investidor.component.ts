@@ -14,12 +14,12 @@ export class InvestidorComponent implements OnInit {
   private items = [
     {
       icon: 'dashboard',
-      text: 'Overview',
+      text: 'OVERVIEW',
       page: 'home'
     },
     {
       icon: 'account_balance_wallet',
-      text: 'Carteira',
+      text: 'CARTEIRA',
       page: 'carteira',
       submenu: [
         {
@@ -34,17 +34,17 @@ export class InvestidorComponent implements OnInit {
     },
     {
       icon: 'monetization_on',
-      text: 'Investimentos',
+      text: 'INVESTIMENTOS',
       page: 'investimento'
     },
     {
       icon: 'announcement',
-      text: 'Notificações',
+      text: 'NOTIFICAÇÕES',
       page: 'notificacoes'
     },
     {
       icon: 'account_circle',
-      text: 'Perfil',
+      text: 'PERFIL',
       page: 'perfil'
     },
   ];

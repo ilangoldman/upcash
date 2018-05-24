@@ -41,9 +41,11 @@ $graph-theme: mat-dark-theme($graph-primary, $status-primary, $status-warn);
 }
 
 $foreground: map-get($main-theme, foreground);
-.text-white {
+$background: map-get($main-theme, background);
+
+.mat-tab-header {
     & {
-        color: mat-color($foreground, text);
+        background-color: mat-color($background, background);
     }
 }
 

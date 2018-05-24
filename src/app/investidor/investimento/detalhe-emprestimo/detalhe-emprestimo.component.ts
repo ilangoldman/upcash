@@ -34,7 +34,6 @@ export class DetalheEmprestimoComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.empresa = this.investimentoService.getEmpresa(params['id']);
     });
-    
     // this.empresa = this.investimentoService.getEmpresa(data.id);
     // this.acionistasCol = Object.keys(this.empresa.geral.acionistas[0]);
     this.highlightsCol = Object.keys(this.empresa.financeiro.highlights[0]);

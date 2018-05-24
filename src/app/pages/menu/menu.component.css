@@ -18,10 +18,10 @@
 
 .tab { 
     padding: 4px;
-    min-width: 48px;
+    min-width: 42px;
 }
 
-.tab:focus /deep/ {
+::ng-deep .tab:focus {
     outline: none;
     background-color: inherit !important;
 

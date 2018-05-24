@@ -570,7 +570,7 @@ export class InvestimentoService {
   getEmpresa(id) {
     const empresa = {
       id: 3,
-      nome: 'Goldman Ltda',
+      nome: 'Goldman',
       rating: 7,
       total: 48000,
       logo: 'logo-emp.jpg',
@@ -591,20 +591,129 @@ export class InvestimentoService {
         ]
       },
       outros: {
-        acionistas: [
-          {
-            nome: 'Ilan Goldman',
-            porcentagem: 50
-          },
-          {
-            nome: 'Gabriel Radomysler',
-            porcentagem: 50
-          }
-        ],
-        site: 'up.cash',
-        endereco: '	R FIDENCIO RAMOS, 302, Torre B 12º Andar, VILA OLIMPIA, SAO PAULO',
-        cnpj: '03.980.538/0001-06',
-        empregados: 23,
+
+        cadastro: {
+          'Razao Social': 'UpCash Ltda',
+          'CNPJ': '03.980.538/0001-06',
+          'Endereço': '	R FIDENCIO RAMOS, 302, Torre B 12º Andar, VILA OLIMPIA, SAO PAULO',
+          'Site': 'up.cash',
+          'Responsavel': 'Ilan',
+        },
+        gerencial: {
+          empregados: 23,
+          acionistas: [
+            {
+              nome: 'Ilan Goldman',
+              porcentagem: 50
+            },
+            {
+              nome: 'Gabriel Radomysler',
+              porcentagem: 50
+            }
+          ],
+          administradores: [
+            {
+              nome: 'Ilan Goldman',
+              cargo: 'Gerente',
+            },
+            {
+              nome: 'Gabriel Radomysler',
+              cargo: 'Diretor Administrativo de RH'
+            }
+          ],
+        },
+        operacional: {
+          'Produtos': [
+            {
+              nome: 'Credito empresarial',
+              valor: 70,
+              unidade: '%'
+            },
+            {
+              nome: 'Credito pessoal',
+              valor: 10,
+              unidade: '%'
+            },
+            {
+              nome: 'Atendimento especial',
+              valor: 20,
+              unidade: '%'
+            },
+          ],
+          'Custos': [
+            {
+              nome: 'Pessoal',
+              valor: 80,
+              unidade: '%'
+            },
+            {
+              nome: 'Hardware/Licensas',
+              valor: 20,
+              unidade: '%'
+            }
+          ],
+          'Clientes': [
+            {
+              nome: 'Fundo de Investimento',
+              valor: 30,
+              unidade: '%'
+            },
+            {
+              nome: 'Pessoa Física',
+              valor: 30,
+              unidade: '%'
+            },
+            {
+              nome: 'Empresas',
+              valor: 20,
+              unidade: '%'
+            },
+            {
+              nome: 'Startup',
+              valor: 20,
+              unidade: '%'
+            }
+          ],
+          'Fornecedores': [
+            {
+              nome: 'Google',
+              valor: 70,
+              unidade: '%'
+            },
+            {
+              nome: 'Oracle',
+              valor: 20,
+              unidade: '%'
+            },
+            {
+              nome: 'StackOverflow',
+              valor: 10,
+              unidade: '%'
+            }
+          ],
+          'Concorrentes': [
+            {
+              nome: 'Nexoos',
+              valor: 60,
+              unidade: '%'
+            },
+            {
+              nome: 'Biva'
+            }
+          ],
+          'Prazo Médio': [
+            {
+              nome: 'Recebimento',
+              valor: '30-45',
+              unidade: ' dias'
+            },
+            {
+              nome: 'Pagamento',
+              valor: '0-15',
+              unidade: ' dias'
+            }
+          ]
+        }
       },
       analise: {
         comentario: 'bla bla bla',

@@ -43,6 +43,30 @@ export class NotificacaoService {
     return msg;
   }
 
+  getResumoMensagens() {
+    const msg = [
+      {
+        id: 0,
+        titulo: 'Última parcela paga com sucesso',
+        icon: 'error',
+        data: '22/04 22:35'
+      },
+      {
+        id: 1,
+        titulo: 'Essa empresa quebrou!',
+        icon: 'notification_important',
+        data: '22/04 22:35'
+      },
+      {
+        id: 3,
+        titulo: 'Parcela atrasada',
+        icon: 'next_week',
+        data: '22/04 22:35'
+      },
+    ];
+    return msg;
+  }
+
   readMsg(msg) {
     console.log('Mensagem: ' + msg.id + ' foi lida');
   }

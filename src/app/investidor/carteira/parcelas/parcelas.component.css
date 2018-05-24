@@ -88,6 +88,6 @@
     transform: translateY(0px);
 }
 
-.focus {
+/* .focus {
     scroll-snap-destination: 0;
-}
+} */

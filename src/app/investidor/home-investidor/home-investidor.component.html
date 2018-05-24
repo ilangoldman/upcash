@@ -1,3 +1,68 @@
-<p>
-  home-investidor works!
-</p>
+<div class="text">
+  <mat-card class="margin">
+    <mat-card-content>
+
+      <section id="user-info" class="mat-typography" (click)="goto('perfil')">
+        <div class="nivel">
+          <mat-progress-spinner class="progress-spinner" [diameter]="100" [value]="user.porcentagem">
+          </mat-progress-spinner>
+          <mat-icon class="nivel-icon">{{user.icon}}</mat-icon>
+          <h3>Nivel {{user.nivel}}</h3>
+        </div>
+      
+        <div class="info-text">
+          <div class="align-center middle">
+            <div>
+              <h3>Bem Vindo de volta</h3>
+              <h1>{{user.nome}}</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="margin align-center mat-typography">
+    <mat-card-content>
+      <h1>20 empresas abertas para investimento</h1>
+      <button mat-raised-button color="accent" class="btn-oportunidades" (click)="goto('investimento')">
+        VER OPORTUNIDADES
+      </button>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="margin mat-typography">
+    <mat-card-title-group>
+      <mat-card-title>Notificações</mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
+
+      <mat-list>
+        <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens; let last=last" (click)="openMsg(msg)">
+        
+          <mat-icon mat-list-icon>{{msg.icon}}</mat-icon>
+        
+          <h2 mat-line>{{msg.titulo}}</h2>
+        
+          <!-- <p mat-line>&nbsp;</p> -->
+          <!-- <p mat-line>{{msg.descricao}}</p> -->
+        
+          <p>{{msg.data}}</p>
+        
+          <!-- <button class="more-btn" mat-icon-button>
+                <mat-icon>more_vert</mat-icon>
+              </button> -->
+          <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+
+      
+    </mat-card-content>
+    <mat-card-actions class="align-center">
+      <button mat-button class="btn-oportunidades" (click)="goto('notificacoes')">
+        VER TODAS MENSAGENS
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

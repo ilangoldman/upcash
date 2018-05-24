@@ -63,15 +63,15 @@
     <mat-list>
       <section class="mat-typography">
         
-        <mat-list-item *ngFor="let item of movimentacao.extrato">
+        <mat-list-item *ngFor="let item of movimentacao.extrato; let last=last">
           <!-- <div class="category principal"></div> -->
-          <h2 mat-line class="empresa">{{item.empresa}}</h2>
+          <h2 mat-line>{{item.empresa}}</h2>
           <p mat-line>{{item.data}}</p>
           <!-- <section class="mat-typography">
           </section> -->
-          <p class="money-sign">R$</p>
-          <p class="value">{{item.valor | currencyFormat: 2:''}}</p>
-          <mat-divider></mat-divider>
+          <p class="money-sign-movimentacao">R$</p>
+          <p class="value-movimentacao">{{item.valor | currencyFormat: 2:''}}</p>
+          <mat-divider *ngIf="!last"></mat-divider>
           
         </mat-list-item>
         

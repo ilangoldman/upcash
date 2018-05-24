@@ -22,7 +22,7 @@
 
   <mat-tab-group class="tab-group text" (selectedIndexChange)="changeTab($event)">
     <mat-tab label="Geral">
-      <ng-template mat-tab-label>
+      <ng-template mat-tab-label class="text">
         <mat-icon>donut_small</mat-icon>
         <div *ngIf="tabSelected==0">Geral</div>
       </ng-template>
@@ -79,6 +79,7 @@
             </mat-grid-tile>
           </mat-grid-list>
         </section>
+        <div class="scroll-button"></div>
       </div>
 
     </mat-tab>
@@ -114,6 +115,7 @@
           <mat-header-row *matHeaderRowDef="highlightsCol"></mat-header-row>
           <mat-row *matRowDef="let row; columns: highlightsCol;"></mat-row>
         </mat-table>
+        <div class="scroll-button"></div>        
       </div>
     </mat-tab>
     <mat-tab label="Analise">
@@ -122,7 +124,7 @@
         <div *ngIf="tabSelected==2">Analise</div>
       </ng-template>
         <mat-card class="margin align-center">
-          <h3>RATING</h3>
+          <p>RATING</p>
           <h1>{{empresa.rating | ratingFormat}}</h1>
         </mat-card>
         <mat-card class="margin">
@@ -134,37 +136,104 @@
         <p>Nossa análise</p>
         <p>{{empresa.analise.comentario}}</p>
       </div>
+      <div class="scroll-button"></div>      
     </mat-tab>
     <mat-tab label="Outros">
       <ng-template mat-tab-label>
         <mat-icon>more</mat-icon>
         <div *ngIf="tabSelected==3">Outros</div>
       </ng-template>
-      <div class="tab-content">
-        
-        <mat-accordion>
-          <mat-expansion-panel [expanded]="true">
-            <mat-expansion-panel-header>
-              <mat-panel-title>Cadastro</mat-panel-title>
-            </mat-expansion-panel-header>
-            <!-- <p>{{empresa.geral.descricao}}</p> -->
-          </mat-expansion-panel>
-        
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>Societário/Gerenciais</mat-panel-title>
-            </mat-expansion-panel-header>
-            <!-- <p>{{empresa.geral.motivo}}</p> -->
-          </mat-expansion-panel>
 
-          <mat-expansion-panel>
-            <mat-expansion-panel-header>
-              <mat-panel-title>Operacionais</mat-panel-title>
-            </mat-expansion-panel-header>
-            <!-- <p>{{empresa.geral.motivo}}</p> -->
-          </mat-expansion-panel>
-        </mat-accordion>
+      <ng-template matTabContent>
+        <div class="tab-content">
+          <mat-accordion>
 
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Cadastro</mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-list>
+                <mat-list-item *ngFor="let info of empresa.outros.cadastro | keys; let last=last">
+                  <p matLine>{{info.key}}</p>
+                  <h3 matLine class="text-wrap">{{info.value}}</h3>
+                </mat-list-item>
+                <!-- <mat-divider *ngIf="!last"></mat-divider> -->
+              </mat-list>
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Societário/Gerenciais</mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-list>
+                <mat-list-item>
+                  <p class="titulo">Número de Empregados</p>
+                  <p class="valor">{{empresa.outros.gerencial.empregados}}</p>
+                </mat-list-item>
+              </mat-list>
+
+              <mat-accordion>
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Acionistas</mat-panel-title>
+                  </mat-expansion-panel-header>
+
+                  <mat-list>
+                    <mat-list-item *ngFor="let item of empresa.outros.gerencial.acionistas">
+                      <p class="titulo">{{item.nome}}</p>
+                      <p class="valor">{{item.porcentagem}}%</p>
+                    </mat-list-item>
+                  </mat-list>
+
+                </mat-expansion-panel>
+
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>Administradores</mat-panel-title>
+                  </mat-expansion-panel-header>
+                  
+                  <mat-list>
+                    <mat-list-item *ngFor="let item of empresa.outros.gerencial.administradores">
+                      <p matLine>{{item.nome}}</p>
+                      <p matLine class="text-wrap">{{item.cargo}}</p>
+                    </mat-list-item>
+                  </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+
+
+            </mat-expansion-panel>
+
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Operacionais</mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <mat-accordion>
+                <mat-expansion-panel *ngFor="let info of empresa.outros.operacional | keys; let last=last">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>{{info.key}}</mat-panel-title> 
+                  </mat-expansion-panel-header>
+
+                  <mat-list>
+                    <mat-list-item *ngFor="let item of info.value">
+                      <p class="titulo">{{item.nome}}</p>
+                      <p class="valor">{{item.valor}}{{item.unidade}}</p>
+                    </mat-list-item>
+                  </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+
+            </mat-expansion-panel>
+        
+          </mat-accordion>
+        </div>
+        <div class="scroll-button"></div>
+      </ng-template>
+        
 
         <!-- <h2>Acionistas</h2>
                 <mat-table #acionistas class="table" [dataSource]="empresa.geral.acionistas">
@@ -196,8 +265,8 @@
         
                 <h4>Endereço:</h4>
                 <p>{{empresa.geral.endereco}}</p> -->
-      </div>
+      <!-- </div> -->
     </mat-tab>
   </mat-tab-group>
-
+  
 </div>

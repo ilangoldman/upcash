@@ -85,6 +85,7 @@ import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movime
 import { FiltroMovimentacaoComponent } from './investidor/carteira/movimentacao/filtro-movimentacao/filtro-movimentacao.component';
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
+import { KeysPipe } from './_pipe/keys.pipe';
 
 
 
@@ -118,7 +119,8 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
     MovimentacaoComponent,
     FiltroMovimentacaoComponent,
     AcompanharEmpresasComponent,
-    ParcelasComponent
+    ParcelasComponent,
+    KeysPipe
 ],
   imports: [
     BrowserModule,
