@@ -18,12 +18,16 @@ import { EmprestimoComponent } from './empresa/emprestimo/emprestimo.component';
 import { HomeEmpresaComponent } from './empresa/home-empresa/home-empresa.component';
 import { TransferenciasComponent } from './empresa/transferencias/transferencias.component';
 import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/config-perfil-empresa.component';
+
+
+
 import { MenuComponent } from './pages/menu/menu.component';
 import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movimentacao.component';
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
 import { DetalheEmprestimoComponent } from './investidor/investimento/detalhe-emprestimo/detalhe-emprestimo.component';
 import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 
 
@@ -36,11 +40,6 @@ const routes: Routes = [
     // {
     //     path: '**',
     //     component: NotFound
-    // },
-    // {
-    //     path: 'main',
-    //     redirectTo: '/investidor/home',
-    //     pathMatch: 'full'
     // },
     // {
     //     path: 'home',
@@ -63,6 +62,10 @@ const routes: Routes = [
         path: 'login',
         component: LoginComponent,
         // data: { state: 'login' }
+    },
+    {
+        path: 'cadastro',
+        component: CadastroComponent
     },
     {
         path: 'empresa',
@@ -93,34 +96,6 @@ const routes: Routes = [
         ]
     },
     {
-        path: 'detalhe-empresa/:id',
-        component: DetalheEmprestimoComponent
-    },
-    {
-        path: 'movimentacao',
-        component: MovimentacaoComponent
-    },
-    {
-        path: 'empresas-investidas',
-        component: AcompanharEmpresasComponent
-    },
-    {
-        path: 'parcelas/:id',
-        component: ParcelasComponent
-    },
-    {
-        path: 'parcelas/:id/:numParcela',
-        component: ParcelasComponent
-    },
-    {
-        path: 'configuracao',
-        component: ConfiguracaoComponent,
-    },
-    // {
-    //     path: 'configuracao/acesso',
-    //     component: UserConfigComponent
-    // },
-    {
         path: 'investidor',
         component: InvestidorComponent,
         // redirectTo: '/investidor/home',
@@ -147,7 +122,31 @@ const routes: Routes = [
                 component: NotificacaoComponent
             }
         ]
-    }
+    },
+        {
+            path: 'detalhe-empresa/:id',
+            component: DetalheEmprestimoComponent
+        },
+        {
+            path: 'movimentacao',
+            component: MovimentacaoComponent
+        },
+        {
+            path: 'empresas-investidas',
+            component: AcompanharEmpresasComponent
+        },
+        {
+            path: 'parcelas/:id',
+            component: ParcelasComponent
+        },
+        {
+            path: 'parcelas/:id/:numParcela',
+            component: ParcelasComponent
+        },
+        {
+            path: 'configuracao',
+            component: ConfiguracaoComponent,
+        }
 ];
 
 export const AppRouting = RouterModule.forRoot(routes, {

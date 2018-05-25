@@ -90,8 +90,7 @@ export class LoginComponent implements OnInit {
   }
 
   goto(url) {
-    // TODO
-    // this.router.navigate(['']);
+    this.router.navigate([url]);
   }
 
   splashScreen() {
@@ -104,7 +103,7 @@ export class LoginComponent implements OnInit {
       duration: 3000
     });
     anime({
-      targets: '#content',
+      targets: ['#content', '.footer'],
       opacity: 1,
       delay: 3500,
       duration: 6000

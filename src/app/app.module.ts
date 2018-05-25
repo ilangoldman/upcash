@@ -88,6 +88,7 @@ import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-em
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
 import { KeysPipe } from './_pipe/keys.pipe';
 import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 
 
@@ -123,7 +124,8 @@ import { ConfiguracaoComponent } from './pages/configuracao/configuracao.compone
     AcompanharEmpresasComponent,
     ParcelasComponent,
     KeysPipe,
-    ConfiguracaoComponent
+    ConfiguracaoComponent,
+    CadastroComponent
 ],
   imports: [
     BrowserModule,

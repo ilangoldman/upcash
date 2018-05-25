@@ -19,7 +19,9 @@
             background-color: mat-color($background, card);
         }
 
-
+        .footer {
+            background-color: mat-color($background, background);
+        }
     }
 
 }
