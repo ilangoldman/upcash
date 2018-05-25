@@ -1,11 +1,12 @@
 
-.margin {
-    /* padding: 14px; */
-    margin: 14px;
+.align-center {
+    text-align: center;
+    justify-content: center;    
 }
 
-.align-center {
-    text-align: center
+.superalign-center {
+    text-align: center;
+    /* margin: auto auto; */
 }
 
 .btn-emprestimo {
@@ -15,6 +16,25 @@
 
 .emprestimos{
     padding: 0;
+}
+
+.fix-position {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.first-col {
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    /* text-align: left; */
+}
+
+.second-col {
+    display: inline-block;
+    position: relative;
+    right: -50px;
 }
 
 /* lista de emprestimos */

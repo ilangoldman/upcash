@@ -1,49 +1,29 @@
-<!--   -->
 
-<!-- <div class="carteira"> -->
-  <!-- <div> -->
 
-    <div class="margin" *ngIf="!emprestimoAtual">
-      <button mat-raised-button color="accent" class="btn-emprestimo" (click)="solicitar()">PEDIR EMPRESTIMO</button>
-    </div>
+<div class="margin" *ngIf="!emprestimos.ativo">
+  <button mat-raised-button color="accent" class="btn-emprestimo" (click)="solicitar()">PEDIR EMPRESTIMO</button>
+</div>
 
-    <app-card-emprestimo *ngIf="emprestimoAtual" [empresa]= "emprestimoAtual"></app-card-emprestimo>
-    
+<mat-card class="margin align-center" *ngFor="let emprestimo of emprestimos.solicitado; let i = index">
+  <mat-card-title-group class="align-center">
+    <mat-card-title>Solicitação {{i+1}}</mat-card-title>
+  </mat-card-title-group>
+  <!-- <mat-card-content> -->
+    <section class="mat-typography fix-position">
+      <h3 class="first-col">Data:</h3>
+      <h4 class="second-col">{{emprestimo.prazo}}</h4>
+      <br>
+      <h3 class="first-col">Valor:</h3>
+      <h4 class="second-col">{{emprestimo.total | currencyFormat}}</h4>
+      <br>
+      <h3 class="first-col">Taxa:</h3>
+      <h4 class="second-col">{{emprestimo.taxa}}% a.a</h4>
+    </section>
+  <!-- </mat-card-content> -->
 
-    <!-- <app-search (output)="search($event)"></app-search> -->
-
-    <!-- <mat-card class="margin emprestimos"> -->
-      <!-- <mat-card-content> -->
-        <mat-list class="status">
-          <mat-list-item class="status-item" *ngFor="let emprestimo of emprestimos" [ngClass]="borderStatus(emprestimo.status)">
-
-            <!-- <h2 mat-line class="text-wrap">{{emprestimo.nome}}</h2> -->
-            <p mat-line>
-              Status: {{emprestimo.status}}
-            </p>
-            <p mat-line>
-              Prazo: {{emprestimo.prazo}} meses / Taxa: {{emprestimo.taxa}}% a.a
-            </p>
-            <p mat-line>
-              Total: {{emprestimo.total | currencyFormat}}
-            </p>
-              <p mat-line>
-                Investido: {{emprestimo.investido |  currencyFormat}}
-              </p>
-              <p mat-line  *ngIf="emprestimo.pago">
-                Pago: {{emprestimo.pago | currencyFormat}}
-              </p>
-
-            <div  *ngIf="emprestimo.porcentagem!=100">
-              <p class="progress-spinner">{{emprestimo.porcentagem}}%</p>
-              <mat-progress-spinner class="progress-spinner" [diameter]="50" [value]="emprestimo.porcentagem">
-              </mat-progress-spinner>
-            </div>
-
-            <mat-divider></mat-divider>
-          </mat-list-item>
-        </mat-list>
-      <!-- </mat-card-content> -->
-    <!-- </mat-card> -->
-  <!-- </div> -->
-<!-- </div> -->
+  <mat-card-actions>
+    <button mat-button (click)="goto('transferencias')">
+      {{emprestimo.status | uppercase}}
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -3,6 +3,7 @@ import { InvestimentoService } from '../../_service/investimento/investimento.se
 import { EmprestimoService } from '../../_service/emprestimo/emprestimo.service';
 import { MatDialog } from '@angular/material';
 import { SolicitacaoComponent } from '../solicitacao/solicitacao.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-emprestimo',
@@ -17,11 +18,11 @@ export class EmprestimoComponent implements OnInit {
 
   constructor(
     private emprestimoService: EmprestimoService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    // this.getEmprestimoAtual();
     this.getEmprestimos();
   }
 
@@ -40,8 +41,8 @@ export class EmprestimoComponent implements OnInit {
     this.emprestimos = this.emprestimoService.getEmprestimos();
   }
 
-  getEmprestimoAtual() {
-    this.emprestimoAtual = this.emprestimoService.getEmprestimoAtual();
+  goto(url) {
+    this.router.navigate(['empresa/' + url]);
   }
 
   // search(value) {
