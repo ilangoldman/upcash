@@ -35,7 +35,8 @@ import { MatIconModule,
   MatButtonToggleModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatTooltipModule} from '@angular/material';
+  MatTooltipModule,
+  MatSlideToggleModule} from '@angular/material';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Services
@@ -86,6 +87,7 @@ import { FiltroMovimentacaoComponent } from './investidor/carteira/movimentacao/
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
 import { KeysPipe } from './_pipe/keys.pipe';
+import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
 
 
 
@@ -120,7 +122,8 @@ import { KeysPipe } from './_pipe/keys.pipe';
     FiltroMovimentacaoComponent,
     AcompanharEmpresasComponent,
     ParcelasComponent,
-    KeysPipe
+    KeysPipe,
+    ConfiguracaoComponent
 ],
   imports: [
     BrowserModule,
@@ -149,7 +152,8 @@ import { KeysPipe } from './_pipe/keys.pipe';
     MatButtonToggleModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSlideToggleModule
   ],
   providers: [
     UserService,

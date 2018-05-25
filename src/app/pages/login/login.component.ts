@@ -124,7 +124,7 @@ export class LoginComponent implements OnInit {
       length[i] = l;
       path[i].style.strokeDasharray = l + ' ' + l;
       path[i].style.strokeDashoffset = l;
-      //path[i].style.fill = "none";
+      // path[i].style.fill = "none";
     }
 
     let handle = 0;

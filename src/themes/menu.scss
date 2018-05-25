@@ -21,10 +21,10 @@
         & {
             background-color: mat-color($background, background);
         }
+    }
 
-        .text {
-            color: mat-color($foreground, text);            
-        }
+    .text {
+        color: mat-color($foreground, text);            
     }
 
 }

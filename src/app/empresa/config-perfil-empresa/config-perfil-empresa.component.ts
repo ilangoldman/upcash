@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../../_service/user/user.service';
 import { LoginService } from '../../_service/login/login.service';
+import { FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-config-perfil-empresa',
@@ -8,15 +11,19 @@ import { LoginService } from '../../_service/login/login.service';
 })
 export class ConfigPerfilEmpresaComponent implements OnInit {
 
+  public user;
+
   constructor(
+    private userService: UserService,
     private loginService: LoginService
   ) { }
 
   ngOnInit() {
+    this.getUser();
   }
 
-  logout() {
-    this.loginService.logout();
+  getUser() {
+    this.user = this.userService.getUser();
   }
 
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-config-perfil-investidor',
@@ -9,14 +8,9 @@ import { Location } from '@angular/common';
 export class ConfigPerfilInvestidorComponent implements OnInit {
 
   constructor(
-    private location: Location
   ) { }
 
   ngOnInit() {
-  }
-
-  goback() {
-    this.location.back();
   }
 
 }

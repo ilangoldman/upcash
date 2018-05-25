@@ -23,6 +23,7 @@ import { MovimentacaoComponent } from './investidor/carteira/movimentacao/movime
 import { AcompanharEmpresasComponent } from './investidor/carteira/acompanhar-empresas/acompanhar-empresas.component';
 import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.component';
 import { DetalheEmprestimoComponent } from './investidor/investimento/detalhe-emprestimo/detalhe-emprestimo.component';
+import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
 
 
 
@@ -83,7 +84,7 @@ const routes: Routes = [
             },
             {
                 path: 'configuracao',
-                component: ConfigPerfilEmpresaComponent,
+                component: ConfiguracaoComponent,
             },
             {
                 path: 'notificacoes',
@@ -113,7 +114,7 @@ const routes: Routes = [
     },
     {
         path: 'configuracao',
-        component: ConfigPerfilInvestidorComponent,
+        component: ConfiguracaoComponent,
     },
     // {
     //     path: 'configuracao/acesso',

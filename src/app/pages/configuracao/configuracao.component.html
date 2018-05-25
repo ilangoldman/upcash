@@ -1,0 +1,64 @@
+<div [ngClass]="{ 'background': tipo=='investidor' }">
+  <mat-toolbar *ngIf="tipo=='investidor'" class="mat-elevation-z8 align-tabs">
+    <button mat-icon-button (click)="goback()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1>Configuração</h1>
+    <button mat-icon-button disabled>
+      <!-- <mat-icon>search</mat-icon> -->
+    </button>
+  </mat-toolbar>
+
+<div class="margin">
+
+  <section class="mat-typography">
+
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Informações de Perfil</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <app-config-perfil-empresa *ngIf="tipo=='empresa'"></app-config-perfil-empresa>
+        <app-config-perfil-investidor *ngIf="tipo=='investidor'"></app-config-perfil-investidor>
+
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="align-center">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Informações de Acesso</mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-user-config></app-user-config>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>Notificações</mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <!-- <h4>Receber notificações da plataforma por email?</h4>  -->
+        <mat-slide-toggle [checked]="true">Receber notificações por email</mat-slide-toggle>
+
+      </mat-expansion-panel>
+
+    </mat-accordion>
+
+    <div class="margin">
+      <button mat-raised-button class="btn" color="primary">
+        <mat-icon>help</mat-icon>
+        SUPORTE
+      </button>
+    </div>
+
+    <div class="margin text">
+      <button mat-button class="btn" (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        SAIR
+      </button>
+    </div>
+
+  </section>
+</div>
+
+</div>
