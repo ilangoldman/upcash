@@ -79,6 +79,10 @@ body {
   background-color: black;
 } */
 
+.logo {
+    margin-bottom: -90px; 
+}
+
 
 svg {
   display: block;

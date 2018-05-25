@@ -99,14 +99,14 @@ export class LoginComponent implements OnInit {
 
     anime({
       targets: '.logo',
-      translateY: -50,
-      delay: 2000,
+      translateY: -100,
+      delay: 3000,
       duration: 3000
     });
     anime({
       targets: '#content',
       opacity: 1,
-      delay: 2500,
+      delay: 3500,
       duration: 6000
     });
   }
