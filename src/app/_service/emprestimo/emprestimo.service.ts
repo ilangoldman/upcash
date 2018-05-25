@@ -25,19 +25,26 @@ export class EmprestimoService {
     return template;
   }
 
-  getEmprestimoAtual() {
+  getResumoEmprestimos() {
     const e = {
-      id: 1,
-      motivo: 'Expansão',
-      status: 'Solicitado',
-      taxa: 3,
-      prazo: 24,
-      investido: 0,
-      total: 50000,
-      porcentagem: 0,
-      nome: 'Duis Dignissim Company',
-      rating: 2,
-      logo: 'logo-emp2.jpg'
+      total: 230000,
+      solicitados: [
+        {
+          id: 1,
+          status: 'solicitado',
+          valor: 50000
+        },
+        {
+          id: 2,
+          status: 'pagamento',
+          valor: 80000
+        },
+        {
+          id: 3,
+          status: 'concluido',
+          valor: 100000
+        }
+      ]
     };
     return e;
   }

@@ -40,19 +40,9 @@
 
       <mat-list>
         <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens; let last=last" (click)="openMsg(msg)">
-        
           <mat-icon mat-list-icon>{{msg.icon}}</mat-icon>
-        
-          <h2 mat-line>{{msg.titulo}}</h2>
-        
-          <!-- <p mat-line>&nbsp;</p> -->
-          <!-- <p mat-line>{{msg.descricao}}</p> -->
-        
+          <h2 mat-line class="text-wrap">{{msg.titulo}}</h2>
           <p>{{msg.data}}</p>
-        
-          <!-- <button class="more-btn" mat-icon-button>
-                <mat-icon>more_vert</mat-icon>
-              </button> -->
           <mat-divider *ngIf="!last"></mat-divider>
         </mat-list-item>
       </mat-list>

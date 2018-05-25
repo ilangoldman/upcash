@@ -7,8 +7,8 @@ import { EmprestimoService } from '../../_service/emprestimo/emprestimo.service'
   styleUrls: ['./transferencias.component.css']
 })
 export class TransferenciasComponent implements OnInit {
-  private emprestimo;
-  private proximo;
+  public emprestimo;
+  public proximo;
 
   constructor(
     private emprestimoService: EmprestimoService

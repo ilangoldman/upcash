@@ -14,7 +14,7 @@
     <mat-nav-list class="investimentos-list">
       <mat-list-item class="status-item" *ngFor="let empresa of investimentos; let last=last" (click)="openInvestimento(empresa.id)">
         <div class="status" [ngClass]="borderStatus(empresa.status)"></div>
-        <a matLine class="text">{{ empresa.nome }}</a>
+        <a matLine class="text text-wrap">{{ empresa.nome }}</a>
         <p matLine class="text">Taxa: {{ empresa.taxa | percent: '2.0-2' }} a.a</p>
 
         <button mat-button class="valor" disabled>

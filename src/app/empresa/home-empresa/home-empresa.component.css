@@ -1,0 +1,49 @@
+
+.emprestimo-category {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    height: 28px;
+}
+
+.text {
+    position: absolute;
+    left: 14px;
+}
+
+.money-sign {
+    position: absolute;
+    right: 95px;
+}
+
+.value {
+    position: absolute;
+    right: 5px;
+}
+
+.action-btn {
+    width: 100%;
+}
+
+
+.align-center {
+    text-align: center;
+}
+
+.emprestimos-graph {
+    margin-top: 0;
+    margin-bottom: 14px;
+    padding: 0;
+}
+
+.emprestimos-graph div {
+    display: inline-block !important;
+    margin: 0;
+    padding: 0;
+}
+
+.text-wrap {
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 15px;
+}

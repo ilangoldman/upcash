@@ -46,8 +46,9 @@
 }
 
 .text-wrap {
-    word-wrap: normal;
-    white-space: pre-line !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+    line-height: 15px;
 }
 
 /* 

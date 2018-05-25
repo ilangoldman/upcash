@@ -12,7 +12,8 @@
 
 .text-wrap {
     word-wrap: break-word !important;
-    white-space: pre-wrap !important;    
+    white-space: pre-wrap !important;
+    line-height: 15px;    
 }
 
 

@@ -1,3 +1,73 @@
-<p>
-  home-empresa works!
-</p>
+
+<mat-card class="margin emprestimo-item">
+  <mat-card-title-group>
+    <mat-card-subtitle>SOLICITAÇÕES</mat-card-subtitle>
+    <mat-card-title class="title">{{ emprestimos.total | currencyFormat: 2 }}</mat-card-title>
+  </mat-card-title-group>
+
+  <div class="emprestimos-graph">
+    <div *ngFor="let emprestimo of emprestimos.solicitados; let i = index" id="id{{i}}" [ngStyle]="{ 'width': percent(emprestimo.valor) + '%' }"></div>
+  </div>
+
+  <mat-card-content>
+    <mat-list>
+      <section class="mat-typography">
+
+        <mat-list-item *ngFor="let emprestimo of emprestimos.solicitados; let i = index; let last = last">
+          <div class="emprestimo-category" id="id{{i}}"></div>
+          <h2 class="text">Solicitação {{i+1}}</h2>
+          <p class="money-sign">R$</p>
+          <p class="value">{{ emprestimo.valor | currencyFormat: 2:'' }}</p>
+          <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </section>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="action-btn" (click)="goto('emprestimos')">
+      VER EMPRESTIMOS
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="margin align-center">
+  <mat-card-title-group>
+  </mat-card-title-group>
+  <mat-card-content>
+    <section class="mat-typography">
+      <h3>Próxima Parcela</h3>
+      <h1>{{proximo.data}}</h1>
+      <h4>{{ proximo.valor | currencyFormat }}</h4>
+    </section>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button class="action-btn" (click)="goto('transferencias')">
+      VER PARCELAS
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+  <mat-card class="margin mat-typography">
+    <mat-card-title-group>
+      <mat-card-subtitle>NOTIFICAÇÕES</mat-card-subtitle>
+
+    </mat-card-title-group>
+    <mat-card-content>
+  
+      <mat-list>
+        <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens; let last=last" (click)="openMsg(msg)">
+          <mat-icon mat-list-icon>{{msg.icon}}</mat-icon>
+          <h2 mat-line class="text-wrap">{{msg.titulo}}</h2>
+          <p>{{msg.data}}</p>
+          <mat-divider *ngIf="!last"></mat-divider>
+        </mat-list-item>
+      </mat-list>
+  
+  
+    </mat-card-content>
+    <mat-card-actions class="align-center">
+      <button mat-button class="action-btn" (click)="goto('notificacoes')">
+        VER TODAS MENSAGENS
+      </button>
+    </mat-card-actions>
+  </mat-card>

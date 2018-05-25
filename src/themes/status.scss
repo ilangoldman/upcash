@@ -15,6 +15,14 @@
             border-left: 5px solid mat-color($primary, lighter);
         }
 
+        &.1 {
+            border: 5px solid red;            
+        }
+
+        &#id1 {
+            border: 5px solid red;
+        }
+
     }
 
     .linear-graph {

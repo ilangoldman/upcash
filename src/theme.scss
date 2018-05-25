@@ -3,6 +3,7 @@
 @import 'themes/login.scss';
 @import 'themes/logo.scss';
 @import 'themes/menu.scss';
+@import 'themes/emprestimos.scss';
 
 @include mat-core();
 
@@ -30,6 +31,7 @@ $status-theme: mat-light-theme($status-primary, $status-accent, $status-warn);
 }
 
 @include components-theme($status-theme);
+@include emprestimos-theme($mat-lime);
 
 // GRAPH THEME
 
