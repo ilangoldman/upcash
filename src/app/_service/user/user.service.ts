@@ -1,9 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { JSONP_ERR_NO_CALLBACK } from '@angular/common/http/src/jsonp';
+import { Observable } from 'rxjs';
+
+export interface User {
+  nome: string;
+  tipo: string;
+}
 
 @Injectable()
 export class UserService {
+  public user;
+  public url = 'http://localhost:8080/users.php';
+  // public url = '/backend-dot-upcash-md.appspot.com';
+  // public url = 'assets/teste.json';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   alterarEmail(email) {
     const login = JSON.parse(localStorage.getItem('login'));
@@ -15,20 +29,41 @@ export class UserService {
     console.log(pwd + ' - ' + newPwd + ' - ' + login.email);
   }
 
+  getResponse(): Observable<HttpResponse<User>> {
+    return this.http.get<User>(
+      this.url, { observe: 'response' });
+  }
+
   getUser() {
-    const user = {
-      nome: 'Ilan',
-      email: 'investidor@upcash.com',
-      // empresa: 'Nascetur Ridiculus Mus Institute',
-      empresa: 'Goldman Ltda',
-      icon: 'android',
-      pontos: 482,
-      ptsProximoNivel: 500,
-      nivel: 5,
-      porcentagem: 82,
-      beneficios: 3
-    };
-    return user;
+    // const user = {
+    //   nome: 'Ilan',
+    //   email: 'investidor@upcash.com',
+    //   // empresa: 'Nascetur Ridiculus Mus Institute',
+    //   empresa: 'Goldman Ltda',
+    //   icon: 'android',
+    //   pontos: 482,
+    //   ptsProximoNivel: 500,
+    //   nivel: 5,
+    //   porcentagem: 82,
+    //   beneficios: 3
+    // };
+    // return user;
+
+    return new Promise((result, reject) => {
+      this.getResponse().subscribe(data => {
+        // console.log(JSON.parse(data.body));
+        // this.user = data;
+
+
+        // PLASE REMOVE THIS SHIT!!
+        const login = {
+          email: data.body.nome,
+          tipo: data.body.tipo
+        };
+        localStorage.setItem('login', JSON.stringify(login));
+        result(data.body);
+      });
+    });
   }
 
   getPontos() {

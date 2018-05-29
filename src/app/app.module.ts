@@ -2,42 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Pipes
-import { CurrencyFormatPipe } from './_pipe/currency-format.pipe';
-import { RatingFormatPipe } from './_pipe/rating-format.pipe';
+import { MaterialModule } from './core/MaterialModule';
+// import { CoreModule } from './core/CoreModules';
+import { AuthService } from './_service/auth/auth.service';
+
+// Firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from 'environments/environment';
 
 // App Routes
 import { Routes, RouterModule } from '@angular/router';
-import { AppRouting } from './app.routing';
-
-// Material
-import { MatMenuModule } from '@angular/material/menu';
-import * as MD from '@angular/material';
-import { MatIconModule,
-  MatToolbarModule,
-  MatSidenavModule,
-  MatListModule,
-  MatButtonModule,
-  MatCardModule,
-  MatTableModule,
-  MatTabsModule,
-  MatGridListModule,
-  MatProgressSpinnerModule,
-  MatProgressBarModule,
-  MatInputModule,
-  MatDialogModule,
-  MatSelectModule,
-  MatExpansionModule,
-  MatFormFieldModule,
-  MatFormFieldControl,
-  MatSnackBarModule,
-  MatStepperModule,
-  MatButtonToggleModule,
-  MatDatepickerModule,
-  MatNativeDateModule,
-  MatTooltipModule,
-  MatSlideToggleModule} from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AppRouting } from 'app/app.routing';
+// Pipes
+import { CurrencyFormatPipe } from './_pipe/currency-format.pipe';
+import { RatingFormatPipe } from './_pipe/rating-format.pipe';
 
 // Services
 import { UserService } from './_service/user/user.service';
@@ -89,7 +68,7 @@ import { ParcelasComponent } from './investidor/carteira/parcelas/parcelas.compo
 import { KeysPipe } from './_pipe/keys.pipe';
 import { ConfiguracaoComponent } from './pages/configuracao/configuracao.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -129,40 +108,20 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     AppRouting,
-    MatMenuModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatCardModule,
-    MatTableModule,
-    MatTabsModule,
-    MatGridListModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatInputModule,
-    MatDialogModule,
-    MatSelectModule,
-    MatExpansionModule,
-    MatFormFieldModule,
-    ReactiveFormsModule,
-    MatSnackBarModule,
-    MatStepperModule,
-    MatButtonToggleModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    MatTooltipModule,
-    MatSlideToggleModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    MaterialModule
   ],
   providers: [
     UserService,
     LoginService,
     InvestimentoService,
     NotificacaoService,
-    EmprestimoService
+    EmprestimoService,
+    AuthService
   ],
   entryComponents: [
     PontuacaoDialogComponent,
