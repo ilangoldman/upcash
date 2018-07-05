@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class HttpClientService {
-  public url = 'http://localhost:8080';
+  // public url = 'http://localhost:8080';
+  public url = 'https://upcash-md.appspot.com';
+
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',

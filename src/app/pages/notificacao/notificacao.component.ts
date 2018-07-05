@@ -35,7 +35,7 @@ export class NotificacaoComponent implements OnInit {
     });
 
     msgRef.afterClosed().subscribe(result => {
-      console.log(msg.id);
+      // console.log(msg.id);
       if (!msg.lida) {
         this.userService.readMsg(msg.id);
       }

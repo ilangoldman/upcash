@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
   }
 
   erroLogin() {
-    console.log('erro');
+    // console.log('erro');
     const t = this;
     // todo mensagem de erro
     t.loginStatus = 'erro';

@@ -12,8 +12,8 @@ export class NotificacaoService extends HttpClientService {
     this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + id)
       .subscribe(
         resp => {
-          console.log(resp.body);
-          console.log(resp.body.data.attributes);
+          // console.log(resp.body);
+          // console.log(resp.body.data.attributes);
 
           return new Mensagem(id, resp.body.data.attributes);
         },
@@ -26,8 +26,8 @@ export class NotificacaoService extends HttpClientService {
     this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
       .subscribe(
         resp => {
-          console.log(resp.body);
-          console.log(resp.body.data.attributes);
+          // console.log(resp.body);
+          // console.log(resp.body.data.attributes);
           resp.body.data.forEach(m => {
             user.addMensagem(new Mensagem(m.id, m.attributes));
           });
@@ -61,7 +61,7 @@ export class NotificacaoService extends HttpClientService {
   }
 
   readMsg(msg) {
-    console.log('Mensagem: ' + msg.id + ' foi lida');
+    // console.log('Mensagem: ' + msg.id + ' foi lida');
   }
 
 

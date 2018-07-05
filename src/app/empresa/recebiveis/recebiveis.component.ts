@@ -20,8 +20,8 @@ export class RecebiveisComponent implements OnInit {
   ) {
     userService.getRecebiveis().subscribe((resp) => {
       this.recebiveis = resp;
-      console.log(this.recebiveis);
-      console.log(this.recebiveis[0]);
+      // console.log(this.recebiveis);
+      // console.log(this.recebiveis[0]);
       this.analise = [];
       this.recebiveis = [];
       resp.forEach(r => {
