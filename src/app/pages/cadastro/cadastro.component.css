@@ -1,0 +1,32 @@
+.login {
+    position: fixed;
+    left: -10px;
+    right: 0;
+    top: 0;
+    bottom: -10px;
+}
+
+.align-center {
+    /* margin: 28px auto !important; */
+    text-align: center;
+}
+
+.fit-screen {
+    width: 80vw;    
+}
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* height: 20px; */
+    /* opacity: 0; */
+}
+
+.btn-cadastro {
+    width: 100%;
+    margin: 14px;
+}

@@ -1,10 +1,12 @@
 <section class="mat-typography">
   <div mat-dialog-title class="header" color="primary">
-    <button mat-icon-button [mat-dialog-close]="">
-      <mat-icon>close</mat-icon>
-    </button>
     <h1>{{mensagem.titulo}}</h1>
     <mat-divider></mat-divider>
   </div>
+
   <div mat-dialog-content>{{mensagem.descricao}}</div>
 </section>
+
+<div mat-dialog-actions class="float-right">
+  <button mat-raised-button color="accent" [mat-dialog-close]="">Fechar</button>
+</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { EmprestimoService } from '../../_service/emprestimo/emprestimo.service';
 import { Router } from '@angular/router';
 import { NotificacaoService } from '../../_service/notificacao/notificacao.service';
 import { MatDialog } from '@angular/material';
@@ -18,29 +17,28 @@ export class HomeEmpresaComponent implements OnInit {
   constructor(
     private router: Router,
     private dialog: MatDialog,
-    private emprestimoService: EmprestimoService,
     private notificacaoService: NotificacaoService
   ) { }
 
   ngOnInit() {
-    this.displayResumoEmprestimos();
-    this.displayProxParcela();
+    // this.displayResumoEmprestimos();
+    // this.displayProxParcela();
     this.displayMensagens();
   }
 
-  displayResumoEmprestimos() {
-    this.emprestimos = this.emprestimoService.getResumoEmprestimos();
-  }
+  // displayResumoEmprestimos() {
+  //   this.emprestimos = this.emprestimoService.getResumoEmprestimos();
+  // }
 
-  displayProxParcela() {
-    const emprestimo = this.emprestimoService.getPagamento();
-    for (let i = 0; i < emprestimo.parcelas.length; i++) {
-      if (emprestimo.parcelas[i].status === 'pendente') {
-        this.proximo = emprestimo.parcelas[i];
-        break;
-      }
-    }
-  }
+  // displayProxParcela() {
+  //   const emprestimo = this.emprestimoService.getPagamento();
+  //   for (let i = 0; i < emprestimo.parcelas.length; i++) {
+  //     if (emprestimo.parcelas[i].status === 'pendente') {
+  //       this.proximo = emprestimo.parcelas[i];
+  //       break;
+  //     }
+  //   }
+  // }
 
   displayMensagens() {
     this.mensagens = this.notificacaoService.getResumoMensagens();

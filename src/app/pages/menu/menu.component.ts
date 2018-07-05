@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatSidenav, MatDialog } from '@angular/material';
 import { UserService } from 'app/_service/user/user.service';
-import { LoginService } from 'app/_service/login/login.service';
 
 @Component({
   selector: 'app-menu',
@@ -11,55 +10,54 @@ import { LoginService } from 'app/_service/login/login.service';
 })
 export class MenuComponent implements OnInit {
   @ViewChild('sidenav') sidenav: MatSidenav;
-  private user;
-  private activePage = 'Home';
+  // private user;
+  // private activePage = 'Home';
   private tabs = true;
 
-  private userMenuIcon = 'keyboard_arrow_down';
-  private mainUserMenu = [
-    {
-      icon: 'account_circle',
-      text: 'Meus dados',
-      page: 'configuracao/perfil'
-    },
-    {
-      icon: 'vpn_key',
-      text: 'Alterar dados de Acesso',
-      page: 'configuracao/acesso'
-    },
-    {
-      icon: 'announcement',
-      text: 'Notificações',
-      page: 'notificacoes'
-    },
-    {
-      icon: 'exit_to_app',
-      text: 'Sair',
-      page: 'logout'
-    }
+  // private userMenuIcon = 'keyboard_arrow_down';
+  // private mainUserMenu = [
+  //   {
+  //     icon: 'account_circle',
+  //     text: 'Meus dados',
+  //     page: 'configuracao/perfil'
+  //   },
+  //   {
+  //     icon: 'vpn_key',
+  //     text: 'Alterar dados de Acesso',
+  //     page: 'configuracao/acesso'
+  //   },
+  //   {
+  //     icon: 'announcement',
+  //     text: 'Notificações',
+  //     page: 'notificacoes'
+  //   },
+  //   {
+  //     icon: 'exit_to_app',
+  //     text: 'Sair',
+  //     page: 'logout'
+  //   }
 
-  ];
+  // ];
 
   @Input() menuItems;
-  @Input() tipo;
-  private activeItem;
+  // @Input() tipo;
+  // private activeItem;
   public tabSelected = 0;
 
   constructor(
     private router: Router,
     private userService: UserService,
-    private loginService: LoginService,
     public dialog: MatDialog
   ) {
-    if (!loginService.isLogged()) {
-      this.router.navigate(['']);
-    }
+    // if (!loginService.isLogged()) {
+    //   this.router.navigate(['']);
+    // }
   }
 
   ngOnInit() {
-    if (!this.loginService.checkTipo(this.tipo)) {
-      this.router.navigate([this.loginService.getTipo() + '/home']);
-    }
+    // if (!this.loginService.checkTipo(this.tipo)) {
+    //   this.router.navigate([this.loginService.getTipo() + '/home']);
+    // }
     // this.displayUserInfo();
     // this.sidenav.open();
   }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
+import { UserService } from '../user/user.service';
 
 
 @Injectable({
@@ -14,10 +15,22 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
     // private db: AngularFireDatabase,
-    private router: Router) {
+    private router: Router,
+    private user: UserService
+  ) {
 
     this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
+      if (!this.authenticated) {
+        // router.navigate(['empresa/home']);
+        router.navigate(['']);
+      } else {
+        this.user.getEmpresa(this.currentUserId);
+        console.log(router.url);
+        if (router.url === '/login') {
+          router.navigate(['empresa/home']);
+        }
+      }
     });
   }
 
@@ -132,24 +145,27 @@ export class AuthService {
   }
 
   emailLogin(email: string, password: string) {
-    return new Promise((resolve, reject) => {
-      this.afAuth.auth.signInWithEmailAndPassword(email, password)
-        .then((user) => {
-          this.authState = user;
-          this.updateUserData();
-          resolve();
-        })
-        .catch(error => {
-          console.log(error);
-          reject(error);
-        });
-    });
-    // return this.afAuth.auth.signInWithEmailAndPassword(email, password)
-    //   .then((user) => {
-    //     this.authState = user;
-    //     this.updateUserData();
-    //   })
-    //   .catch(error => console.log(error));
+    // return new Promise((resolve, reject) => {
+    //   this.afAuth.auth.signInWithEmailAndPassword(email, password)
+    //     .then((user) => {
+    //       console.log(user);
+    //       this.authState = user;
+    //       this.updateUserData();
+    //       resolve();
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //       reject(error);
+    //     });
+    // });
+    return this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then((res) => {
+        this.authState = res.user;
+        console.log(this.authState);
+        console.log(this.currentUserId);
+        this.updateUserData();
+      })
+      .catch(error => console.log(error));
   }
 
   // Sends email allowing user to reset password
@@ -163,9 +179,8 @@ export class AuthService {
 
 
   //// Sign Out ////
-  signOut(): void {
-    this.afAuth.auth.signOut();
-    this.router.navigate(['/']);
+  signOut() {
+    return this.afAuth.auth.signOut();
   }
 
 

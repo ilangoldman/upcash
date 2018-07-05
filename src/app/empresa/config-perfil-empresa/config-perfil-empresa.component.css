@@ -17,3 +17,13 @@
     margin-top: 14px; 
 }
 
+
+.fit-screen {
+    width: 100%;    
+}
+
+.float-right {
+    float: right;
+}
+
+

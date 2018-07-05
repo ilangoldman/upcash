@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NotificacaoService } from '../../_service/notificacao/notificacao.service';
 import { MatDialog } from '@angular/material';
 import { MensagemComponent } from './mensagem/mensagem.component';
+import { user } from 'app/GlobalVariables';
+import { UserService } from '../../_service/user/user.service';
 
 @Component({
   selector: 'app-notificacao',
@@ -13,29 +14,31 @@ export class NotificacaoComponent implements OnInit {
   private mensagens;
 
   constructor(
-    private notificacaoService: NotificacaoService,
-    public dialog: MatDialog
-  ) { }
-
-  ngOnInit() {
-    this.getNotificacoes();
+    public dialog: MatDialog,
+    private userService: UserService
+  ) {
+    userService.getMensagens().subscribe((resp) => {
+      this.mensagens = resp;
+    });
   }
 
-  getNotificacoes() {
-    this.mensagens = this.notificacaoService.getMensagens();
+  ngOnInit() {
   }
 
   openMsg(msg): void {
-    this.notificacaoService.readMsg(msg);
+    // this.notificacaoService.readMsg(msg);
     const msgRef = this.dialog.open(MensagemComponent, {
-      width: '100vw',
-      height: '100vh',
-      maxWidth: '100vw',
+      // width: '80%',
+      // height: '100vh',
+      // maxWidth: '100vw',
       data: { msg: msg }
     });
 
     msgRef.afterClosed().subscribe(result => {
-      this.getNotificacoes();
+      console.log(msg.id);
+      if (!msg.lida) {
+        this.userService.readMsg(msg.id);
+      }
     });
   }
 

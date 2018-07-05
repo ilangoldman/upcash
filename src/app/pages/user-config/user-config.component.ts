@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_service/user/user.service';
-import { LoginService } from '../../_service/login/login.service';
 import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material';
 
@@ -10,8 +9,6 @@ import { MatSnackBar } from '@angular/material';
   styleUrls: ['./user-config.component.css']
 })
 export class UserConfigComponent implements OnInit {
-  private user;
-
   private newEmail = new FormControl('', [Validators.required, Validators.email]);
   private checkEmail = new FormControl('', [Validators.required, Validators.email]);
 
@@ -20,17 +17,11 @@ export class UserConfigComponent implements OnInit {
   private checkPwd = new FormControl('', [Validators.required]);
 
   constructor(
-    private userService: UserService,
-    private loginService: LoginService,
+    private user: UserService,
     private snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
-    this.getUser();
-  }
-
-  getUser() {
-    this.user = this.userService.getUser();
   }
 
   openSnackBar(message) {
@@ -39,7 +30,7 @@ export class UserConfigComponent implements OnInit {
 
   saveEmail() {
     if (!this.newEmail.invalid && !this.checkEmail.invalid) {
-      this.userService.alterarEmail(this.newEmail.value);
+      // this.user.alterarEmail(this.newEmail.value);
       this.openSnackBar('Email alterado com sucesso!');
 
     } else {
@@ -48,26 +39,26 @@ export class UserConfigComponent implements OnInit {
     }
   }
 
-  savePwd() {
-    if (!this.pwd.invalid &&
-      this.loginService.validarUsuario(this.user.email, this.pwd.value)) {
-      this.pwd.setErrors(null);
-    } else {
-      this.pwd.setErrors({ 'pwd' : true });
-      this.pwd.markAsTouched();
-    }
+  // savePwd() {
+  //   if (!this.pwd.invalid &&
+  //     this.loginService.validarUsuario(this.user.email, this.pwd.value)) {
+  //     this.pwd.setErrors(null);
+  //   } else {
+  //     this.pwd.setErrors({ 'pwd' : true });
+  //     this.pwd.markAsTouched();
+  //   }
 
-    if (!this.pwd.invalid &&
-        !this.newPwd.invalid &&
-        !this.checkPwd.invalid) {
-      this.userService.alterarSenha(this.pwd.value, this.newPwd.value);
-      this.openSnackBar('Senha alterada com sucesso!');
+  //   if (!this.pwd.invalid &&
+  //       !this.newPwd.invalid &&
+  //       !this.checkPwd.invalid) {
+  //     this.userService.alterarSenha(this.pwd.value, this.newPwd.value);
+  //     this.openSnackBar('Senha alterada com sucesso!');
 
-    } else {
-      this.newPwd.markAsTouched();
-      this.checkPwd.markAsTouched();
-    }
-  }
+  //   } else {
+  //     this.newPwd.markAsTouched();
+  //     this.checkPwd.markAsTouched();
+  //   }
+  // }
 
   checkData(data, check) {
     if (data.value === check) {

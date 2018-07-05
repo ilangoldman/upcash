@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../_service/user/user.service';
-import { LoginService } from '../../_service/login/login.service';
-import { FormControl, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../../_service/auth/auth.service';
 
 @Component({
   selector: 'app-configuracao',
@@ -11,29 +10,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./configuracao.component.css']
 })
 export class ConfiguracaoComponent implements OnInit {
-  public user;
-  public tipo;
 
   constructor(
-    private userService: UserService,
-    private loginService: LoginService,
+    private user: UserService,
     private location: Location,
-    private router: Router
+    private router: Router,
+    private auth: AuthService
   ) { }
 
   ngOnInit() {
-    this.getUser();
-  }
-
-
-  getUser() {
-    this.user = this.userService.getUser();
-    this.tipo = this.loginService.getTipo();
   }
 
   logout() {
-    this.loginService.logout();
-    this.router.navigate(['']);
+    this.auth.signOut()
+      .then((res) => {
+        this.router.navigate(['']);
+      }).catch((err) => {
+        console.log(err);
+      });
   }
 
   goback() {

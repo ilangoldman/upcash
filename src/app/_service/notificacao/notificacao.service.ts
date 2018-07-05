@@ -1,46 +1,39 @@
 import { Injectable } from '@angular/core';
+import { user } from 'app/GlobalVariables';
+import { HttpClientService } from '../http-client.service';
+import { JSONAPI } from '../../_model/jsonapi';
+import { Mensagem } from '../../_model/mensagem';
 
 @Injectable()
-export class NotificacaoService {
+export class NotificacaoService extends HttpClientService {
 
-  constructor() { }
+  getMensagem(id) {
+    // TODO: add refresh to the data
+    this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + id)
+      .subscribe(
+        resp => {
+          console.log(resp.body);
+          console.log(resp.body.data.attributes);
+
+          return new Mensagem(id, resp.body.data.attributes);
+        },
+        error => console.log(error)
+      );
+  }
 
   getMensagens() {
-    const msg = [
-      {
-        id: 0,
-        titulo: 'Última parcela paga com sucesso',
-        descricao: 'Última parcela paga com sucesso',
-        icon: 'error',
-        lida: false,
-        data: '22/04/2018 22:35'
-      },
-      {
-        id: 1,
-        titulo: 'Essa empresa quebrou!',
-        descricao: 'skdjngf',
-        lida: false,
-        icon: 'notification_important',
-        data: '22/04/2018 22:35'
-      },
-      {
-        id: 2,
-        titulo: 'saudfn',
-        descricao: 'skdjngf',
-        lida: true,
-        icon: 'vpn_key',
-        data: '22/04/2018 22:35'
-      },
-      {
-        id: 3,
-        titulo: 'Parcela atrasada',
-        descricao: 'skdjngf',
-        lida: false,
-        icon: 'next_week',
-        data: '22/04/2018 22:35'
-      },
-    ];
-    return msg;
+    // TODO: add refresh to the data
+    this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
+      .subscribe(
+        resp => {
+          console.log(resp.body);
+          console.log(resp.body.data.attributes);
+          resp.body.data.forEach(m => {
+            user.addMensagem(new Mensagem(m.id, m.attributes));
+          });
+        },
+        error => console.log(error)
+      );
   }
 
   getResumoMensagens() {

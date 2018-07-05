@@ -1,0 +1,30 @@
+<mat-card class="margin align-center" *ngIf="analise">
+  <mat-card-title-group>
+  </mat-card-title-group>
+  <mat-card-content>
+    <section class="mat-typography">
+
+      <!-- <h3>Próxima Parcela</h3> -->
+      <h2>{{ analise.sacado }}</h2>
+      <h2>{{ analise.status }}</h2>
+      <h1>{{ analise.valor | currencyFormat }}</h1>
+      <h4>{{analise.data}}</h4>
+
+      <!-- <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> -->
+    </section>
+  </mat-card-content>
+</mat-card>
+
+<mat-list>
+  <mat-list-item *ngFor="let r of recebiveis; let last = last">
+    <p matLine>{{r.data}}</p>
+    <p matLine>{{r.sacado}}</p>
+    <p matLine>{{r.status}}</p>
+    <p class="value">{{r.valor | currencyFormat}}</p>
+    <mat-divider *ngIf="!last"></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+<button mat-fab color="accent" class="fab-button">
+  <mat-icon>add</mat-icon>
+</button>

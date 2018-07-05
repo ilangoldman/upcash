@@ -1,3 +1,109 @@
-<button mat-raised-button color="warn" class="btn">
-  DELETAR CONTA
-</button>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+  <!-- info de user -->
+  <mat-step [stepControl]="cadastroUser">
+    <form [formGroup]="cadastroUser">
+      <ng-template matStepLabel>Perfil</ng-template>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nome" #nome required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>CPF</mat-label>
+        <input matInput formControlName="cpf" #cpf required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" #email required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="tel" #tel required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Data de Nascimento</mat-label>
+        <input matInput formControlName="dob" #dob required>
+      </mat-form-field>
+
+      <div class="float-right">
+        <button mat-raised-button color="primary" matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
+
+
+  <mat-step [stepControl]="cadastroEmpresa">
+    <form [formGroup]="cadastroEmpresa">
+      <ng-template matStepLabel>Empresa</ng-template>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>CNPJ</mat-label>
+        <input matInput formControlName="cnpj" #cnpj required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Nome Fantasia</mat-label>
+        <input matInput formControlName="nomeFantasia" #nomeFantasia required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Razão Social</mat-label>
+        <input matInput formControlName="razaoSocial" #razaoSocial required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Data de Fundação</mat-label>
+        <input matInput formControlName="fundacao" #fundacao required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="tel" #tel required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Pagina Web</mat-label>
+        <input matInput formControlName="site" #site required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Faturamento</mat-label>
+        <input matInput formControlName="faturamento" #faturamento required>
+      </mat-form-field>
+
+      <div class="float-right">
+        <button mat-button matStepperPrevious>Back</button>
+        <!-- <button mat-button matStepperNext [disabled]="cadastroEmpresa.invalid">Next</button> -->
+        <button mat-raised-button color="primary" (click)="fim()">Concluir</button>
+      </div>
+    </form>
+  </mat-step>
+
+
+
+
+
+  <!-- <mat-step>
+    <form [formGroup]="outros">
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Assina pela empresa</mat-label>
+        <input matInput formControlName="faturamento" #faturamento required>
+      </mat-form-field>
+      <div *ngIf="false">
+        <p>Responsável Legal:</p>
+        <mat-form-field appearance="outline" class="fit-screen">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="responsavel" #responsavel required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="fit-screen">
+          <mat-label>CPF</mat-label>
+          <input matInput formControlName="cpf" #cpf required>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Motivo</mat-label>
+        <input matInput formControlName="motivo" #motivo required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button [disabled]="outros.invalid" (click)="fim()">Finalizar</button>
+      </div>
+    </form>
+  </mat-step> -->
+</mat-horizontal-stepper>

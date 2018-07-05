@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import * as anime from 'animejs';
-import { LoginService } from 'app/_service/login/login.service';
 import { Router } from '@angular/router';
 import * as Global from 'app/GlobalVariables';
 import { AuthService } from '../../_service/auth/auth.service';
-import { UserService } from '../../_service/user/user.service';
 
 @Component({
   selector: 'app-login',
@@ -19,14 +17,10 @@ export class LoginComponent implements OnInit {
   content = '';
 
   constructor(
-    private loginService: LoginService,
-    private authService: AuthService,
-    private router: Router,
-    private userService: UserService
+    private auth: AuthService,
+    private router: Router
   ) {
-    if (loginService.isLogged()) {
-      this.router.navigate([this.loginService.getTipo() + '/home']);
-    }
+    // TODO: keep user signed in
   }
 
   ngOnInit() {
@@ -51,51 +45,18 @@ export class LoginComponent implements OnInit {
   }
 
   login(usuario, senha) {
-    // this.authService.emailLogin(usuario, senha)
-    //   .then(this.completeLogin).catch(this.erroLogin);
-
-    this.authService.emailLogin(usuario, senha)
+    this.auth.emailLogin(usuario, senha)
       .then( (res) => {
-        console.log('then');
-        this.userService.getUser().then((user) => {
-          console.log(user);
-          console.log(user['tipo']);
-          this.router.navigate([user['tipo'] + '/home']);
-        });
-
-        // this.userService.getUser().then( (user) => {
-        //   console.log(user);
-        //   this.router.navigate([user['tipo'] + '/home']);
-        // });
-        // this.loginService.getTipo().
-          // then((tipo) => {
-          // });
-        // this.completeLogin();
+        this.router.navigate(['empresa/home']);
       }).catch( (err) => {
-        console.log('erro');
         console.log(err);
         this.loginStatus = 'erro';
     });
 
-  //   const response = this.loginService.validarUsuario(usuario, senha);
-
-  //   if (response) {
-  //     this.completeLogin();
-  //   } else {
-  //     this.erroLogin();
-  //   }
   }
 
   clearErro() {
     this.loginStatus = '';
-  }
-
-  completeLogin() {
-    console.log('logou');
-    // const u = this.authService.currentUser();
-    // console.log(u);
-    
-    this.router.navigate([this.loginService.getTipo() + '/home']);
   }
 
   erroLogin() {

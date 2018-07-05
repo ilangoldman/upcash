@@ -4,13 +4,14 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'currencyFormat'
 })
 export class CurrencyFormatPipe implements PipeTransform {
-  transform(value: number,
+  transform(value: any,
     decimalLength: number = 0,
     currencySign: string = 'R$ ',
     chunkDelimiter: string = '.',
     decimalDelimiter: string = ',',
     chunkLength: number = 3): string {
 
+    value = Number.parseInt(value);
     let sign = '';
     // value /= 100;
     if (value < 0) {

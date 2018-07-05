@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../_service/user/user.service';
+import { AuthService } from '../_service/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-empresa',
@@ -14,14 +17,14 @@ export class EmpresaComponent implements OnInit {
       page: 'home'
     },
     {
-      icon: 'monetization_on',
-      text: 'EMPRESTIMOS',
-      page: 'emprestimos'
+      icon: 'account_balance_wallet',
+      text: 'CARTEIRA',
+      page: 'carteira'
     },
     {
-      icon: 'swap_horiz',
-      text: 'TRANSFERENCIAS',
-      page: 'transferencias'
+      icon: 'monetization_on',
+      text: 'RECEBIVEIS',
+      page: 'recebiveis'
     },
     {
       icon: 'announcement',
@@ -35,9 +38,20 @@ export class EmpresaComponent implements OnInit {
     },
   ];
 
-  private tipo = 'empresa';
+  // private tipo = 'empresa';
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private auth: AuthService,
+    private router: Router
+  ) {
+    // if (auth.authenticated) {
+    //   userService.getEmpresa(auth.currentUserId);
+    // }
+    // else {
+    //   router.navigate(['']);
+    // }
+  }
 
   ngOnInit() {
   }
