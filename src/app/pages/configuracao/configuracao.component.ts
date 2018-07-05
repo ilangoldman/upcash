@@ -3,6 +3,7 @@ import { UserService } from '../../_service/user/user.service';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { AuthService } from '../../_service/auth/auth.service';
+import { user } from 'app/GlobalVariables';
 
 @Component({
   selector: 'app-configuracao',
@@ -24,6 +25,7 @@ export class ConfiguracaoComponent implements OnInit {
   logout() {
     this.auth.signOut()
       .then((res) => {
+        user.uid = undefined;
         this.router.navigate(['']);
       }).catch((err) => {
         console.log(err);

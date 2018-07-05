@@ -7,6 +7,10 @@
     margin: auto auto;    
 }
 
+.end-icon {
+    font-size: 60px;
+}
+
 .email {
     border-bottom: 1px dotted grey;
     width: fit-content;

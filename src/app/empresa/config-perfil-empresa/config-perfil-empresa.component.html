@@ -1,4 +1,4 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper [linear]="isLinear" #stepper *ngIf="!end">
 
   <!-- info de user -->
   <mat-step [stepControl]="cadastroUser" class="overflow">
@@ -133,8 +133,16 @@
       </mat-form-field>
       <div class="float-right">
         <button mat-button matStepperPrevious>Voltar</button>
-        <button mat-raised-button color="primary" (click)="fim()">Concluir</button>
+        <button mat-raised-button color="primary" (click)="fim()" [disabled]="outros.invalid">Concluir</button>
       </div>
     </form>
   </mat-step>
 </mat-horizontal-stepper>
+
+<mat-card *ngIf="end" class="margin">
+  <mat-card-content class="align-center">
+    <mat-icon class="end-icon" color="primary">{{endIcon}}</mat-icon>
+    <h1>{{endText}}</h1>
+    <button mat-button class="fit-screen" (click)="end=false">Voltar</button>
+  </mat-card-content>
+</mat-card>
