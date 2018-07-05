@@ -26,3 +26,11 @@
     top: 14px;
     height: 60%;
 }
+
+
+@media only screen and (min-width: 960px) {
+    .main {
+        width: 90%;
+        margin: 28px auto;
+    }
+}

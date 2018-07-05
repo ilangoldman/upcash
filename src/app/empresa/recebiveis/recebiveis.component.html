@@ -1,35 +1,39 @@
-<mat-card class="margin analise" *ngFor="let a of analise">
-  <mat-card-title-group>
-  </mat-card-title-group>
-  <mat-card-content>
-    <section class="mat-typography">
+<div class="main">
 
-      <!-- <h3>Próxima Parcela</h3> -->
-      <div class="align-left">
-        <h2>{{ a.sacado }}</h2>
-        <h2>{{ a.status }}</h2>
-      </div>
-      <div class="align-right">
-        <h1>{{ a.valor | currencyFormat }}</h1>
-        <h3>{{a.data}}</h3>
-      </div>
-
-      <!-- <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> -->
-    </section>
-  </mat-card-content>
-</mat-card>
-
-<mat-list>
-  <mat-list-item *ngFor="let r of recebiveis; let last = last" class="status-item">
-    <div class="status status-flag" [ngClass]="borderStatus(r.status)"></div>
-    <p matLine>{{r.data}}</p>
-    <p matLine>{{r.sacado}}</p>
-    <p matLine>{{r.status}}</p>
-    <p class="value">{{r.valor | currencyFormat}}</p>
-    <mat-divider *ngIf="!last"></mat-divider>
-  </mat-list-item>
-</mat-list>
-
-<button mat-fab color="accent" class="fab-button" (click)="pedirAdiantamento()">
-  <mat-icon>add</mat-icon>
-</button>
+  <mat-card class="margin analise" *ngFor="let a of analise">
+    <mat-card-title-group>
+    </mat-card-title-group>
+    <mat-card-content>
+      <section class="mat-typography">
+        
+        <!-- <h3>Próxima Parcela</h3> -->
+        <div class="align-left">
+          <h2>{{ a.sacado }}</h2>
+          <h2>{{ a.status }}</h2>
+        </div>
+        <div class="align-right">
+          <h1>{{ a.valor | currencyFormat }}</h1>
+          <h3>{{a.data}}</h3>
+        </div>
+        
+        <!-- <button mat-raised-button color="primary"> ADCIONAR COMPROVANTE</button> -->
+      </section>
+    </mat-card-content>
+  </mat-card>
+  
+  <mat-list>
+    <mat-list-item *ngFor="let r of recebiveis; let last = last" class="status-item">
+      <div class="status status-flag" [ngClass]="borderStatus(r.status)"></div>
+      <p matLine>{{r.data}}</p>
+      <p matLine>{{r.sacado}}</p>
+      <p matLine>{{r.status}}</p>
+      <p class="value">{{r.valor | currencyFormat}}</p>
+      <mat-divider *ngIf="!last"></mat-divider>
+    </mat-list-item>
+  </mat-list>
+  
+  <button mat-fab color="accent" class="fab-button" (click)="pedirAdiantamento()">
+    <mat-icon>add</mat-icon>
+  </button>
+  
+</div>

@@ -17,3 +17,10 @@
     margin-top: 14px; 
 }
 
+@media only screen and (min-width: 960px) {
+    .main {
+        width: 70%;
+        margin: 28px auto;
+    }
+}
+

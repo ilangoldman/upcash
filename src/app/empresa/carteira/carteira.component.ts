@@ -12,7 +12,7 @@ import { AuthService } from '../../_service/auth/auth.service';
 export class CarteiraComponent implements OnInit {
   carteira: Carteira;
   transferencias: Transferencia[];
-  hide = true;
+  hide = false;
 
   constructor(
     private business: BusinessService,

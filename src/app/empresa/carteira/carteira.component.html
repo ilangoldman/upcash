@@ -1,74 +1,79 @@
-<mat-card class="margin" *ngIf="carteira">
-  <mat-card-title-group>
-    <mat-card-subtitle>Total</mat-card-subtitle>
-    <mat-card-title class="title">{{ carteira.balanco | currencyFormat: 2 }}
-      
-      <mat-divider></mat-divider>
-    </mat-card-title>
-  </mat-card-title-group>
-  <mat-card-content>
-    <section class="mat-typography">
-      <!-- <div>
-        <h3 class="inline">Total:</h3>
-        <h2 class="inline float-right">{{carteira.balanco | currencyFormat}}</h2>
-      </div> -->
-      <div>
-        <h3 class="inline">Disponível para retirada:</h3>
-        <h2 class="inline float-right">{{carteira.disponivel | currencyFormat: 2}}</h2>
-      </div>
-      <div>
-        <h3 class="inline">Última retirada:</h3>
-        <h2 class="inline float-right">{{carteira.ultimaRetirada}}</h2>
-      </div>
-      <div>
-        <h3 class="inline">Automático:</h3>
-        <h2 class="inline float-right">{{carteira.autoRetirada}}</h2>
-      </div>
-    </section>
+<div class="main">
 
-    <div class="fit-screen">
-      <button mat-raised-button color="accent" class="space-evenly">
-        REALIZAR SAQUE
-      </button>
-      <button mat-raised-button color="accent" class="space-evenly">
-        DEPOSITAR EM CONTA
-      </button>
-    </div>
-  </mat-card-content>
-</mat-card>
-
-<!-- Extrato -->
-<mat-card class="margin" *ngIf="carteira">
-  <mat-card-title-group>
-    <mat-card-subtitle>Movimetação</mat-card-subtitle>
-    <mat-card-title class="title">{{ carteira.balanco | currencyFormat: 2 }}</mat-card-title>
-    <button mat-icon-button (click)="hide=!hide">
-      <mat-icon *ngIf="hide">keyboard_arrow_down</mat-icon>
-      <mat-icon *ngIf="!hide">keyboard_arrow_up</mat-icon>
-    </button>
-  </mat-card-title-group>
-
-  <div class="linear-graph movimentacao"></div>
-
-  <mat-card-content [ngStyle]="{ 'display': (hide)?'none':'inherit' }">
-    <mat-list>
+  
+  <mat-card id="carteira" class="margin" *ngIf="carteira">
+    <mat-card-title-group>
+      <mat-card-subtitle>Total</mat-card-subtitle>
+      <mat-card-title class="title">{{ carteira.balanco | currencyFormat: 2 }}
+        
+        <mat-divider></mat-divider>
+      </mat-card-title>
+    </mat-card-title-group>
+    <mat-card-content>
       <section class="mat-typography">
-
-        <mat-list-item *ngFor="let item of transferencias; let last=last">
-          <h2 mat-line>{{item.nome}}</h2>
-          <p mat-line>{{item.data}}</p>
-          <p class="money-sign-movimentacao">R$</p>
-          <p class="value-movimentacao">{{item.valor | currencyFormat: 2:''}}</p>
-          <mat-divider *ngIf="!last"></mat-divider>
-
-        </mat-list-item>
-
+        <!-- <div>
+          <h3 class="inline">Total:</h3>
+          <h2 class="inline float-right">{{carteira.balanco | currencyFormat}}</h2>
+        </div> -->
+        <div>
+          <h3 class="inline">Disponível para retirada:</h3>
+          <h2 class="inline float-right">{{carteira.disponivel | currencyFormat: 2}}</h2>
+        </div>
+        <div>
+          <h3 class="inline">Última retirada:</h3>
+          <h2 class="inline float-right">{{carteira.ultimaRetirada}}</h2>
+        </div>
+        <div>
+          <h3 class="inline">Automático:</h3>
+          <h2 class="inline float-right">{{carteira.autoRetirada}}</h2>
+        </div>
       </section>
-    </mat-list>
-  </mat-card-content>
-  <!-- <mat-card-actions>
-    <button mat-button class="action-btn" (click)="goto('movimentacao')">
-      VER MOVIMENTAÇÂO
-    </button>
+      
+      <div class="fit-screen">
+        <button mat-raised-button color="accent" class="space-evenly">
+          REALIZAR SAQUE
+        </button>
+        <button mat-raised-button color="accent" class="space-evenly">
+          DEPOSITAR EM CONTA
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <!-- Extrato -->
+  <mat-card id="movimentacao" class="margin" *ngIf="carteira">
+    <mat-card-title-group>
+      <mat-card-subtitle>Movimetação</mat-card-subtitle>
+      <mat-card-title class="title">{{ carteira.balanco | currencyFormat: 2 }}</mat-card-title>
+      <button mat-icon-button (click)="hide=!hide" class="hide-movimentacao">
+        <mat-icon *ngIf="hide">keyboard_arrow_down</mat-icon>
+        <mat-icon *ngIf="!hide">keyboard_arrow_up</mat-icon>
+      </button>
+    </mat-card-title-group>
+    
+    <div class="linear-graph movimentacao"></div>
+    
+    <mat-card-content class="movimentacao-content" [ngStyle]="{ 'display': (hide)?'none':'inherit' }">
+      <mat-list>
+        <section class="mat-typography">
+          
+          <mat-list-item *ngFor="let item of transferencias; let last=last">
+            <h2 mat-line>{{item.nome}}</h2>
+            <p mat-line>{{item.data}}</p>
+            <p class="money-sign-movimentacao">R$</p>
+            <p class="value-movimentacao">{{item.valor | currencyFormat: 2:''}}</p>
+            <mat-divider *ngIf="!last"></mat-divider>
+            
+          </mat-list-item>
+          
+        </section>
+      </mat-list>
+    </mat-card-content>
+    <!-- <mat-card-actions>
+      <button mat-button class="action-btn" (click)="goto('movimentacao')">
+        VER MOVIMENTAÇÂO
+      </button>
   </mat-card-actions> -->
 </mat-card>
+
+</div>

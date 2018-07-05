@@ -1,19 +1,23 @@
-<mat-list>
-  <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens" (click)="openMsg(msg)">
-    <div class="status-mensagem" [ngClass]="{ 'nova': msg.lida == false }"></div>
+<div class="main">
 
-    <mat-icon mat-list-icon>{{msg.categoria}}</mat-icon>
-    
-    <h2 mat-line>{{msg.titulo}}</h2>
-    
-    <!-- <p mat-line>&nbsp;</p> -->
-    <p mat-line>{{msg.descricao}}</p>
-    
-    <p class="data">{{msg.data}}</p>
+  <mat-list>
+    <mat-list-item class="mensagem-item" *ngFor="let msg of mensagens" (click)="openMsg(msg)">
+      <div class="status-mensagem" [ngClass]="{ 'nova': msg.lida == false }"></div>
+      
+      <mat-icon mat-list-icon>{{msg.categoria}}</mat-icon>
+      
+      <h2 mat-line>{{msg.titulo}}</h2>
+      
+      <!-- <p mat-line>&nbsp;</p> -->
+      <p mat-line>{{msg.descricao}}</p>
+      
+      <p class="data">{{msg.data}}</p>
       
       <!-- <button class="more-btn" mat-icon-button>
         <mat-icon>more_vert</mat-icon>
       </button> -->
-    <mat-divider></mat-divider>
-  </mat-list-item>
-</mat-list>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+  </mat-list>
+
+</div>

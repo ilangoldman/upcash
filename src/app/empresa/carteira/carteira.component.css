@@ -33,3 +33,38 @@
     right: 14px;
     top: 28px;
 }
+
+@media only screen and (min-width: 960px) {
+    .main {
+        width: 80%;
+        margin: 28px auto;
+    }
+
+    .margin {
+        margin: 28px;
+    }
+}
+
+/* @media only screen and (min-width: 960px) {
+    .hide-movimentacao {
+        display: none;
+    }
+
+    #carteira {
+        height: 80vh;
+        width: 40vw;
+        display: inline-flex;
+    }
+
+    #movimentacao {
+        display: inline-flex;
+        height: 80vh;
+        width: 40vw;
+    }
+
+    .movimentacao-content {
+        display: inherit;
+        width: 100%;
+    }
+
+} */
