@@ -28,3 +28,33 @@
     right: 16px;
     bottom: 16px; 
 }
+
+.analise {
+    height: 60px;
+}
+
+.align-left {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    text-align: left;
+}
+
+.align-right {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    text-align: center;
+}
+
+.status-item {
+    /* margin-left: 14px; */
+}
+
+.status-flag {
+    position: absolute;
+    left: 6px;
+    /* top: 4px; */
+    height: 50px;
+    margin-top: 2px;
+}

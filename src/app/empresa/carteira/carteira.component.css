@@ -1,0 +1,35 @@
+.inline {
+    
+    display: inline-block;
+}
+
+.float-right {
+    /* clear: both; */
+    /* float: right; */
+    position: absolute;
+    right: 14px;
+}
+
+.space-evenly {
+    display: inline-block;
+    margin: 14px auto !important;
+    /* width: 200px; */
+    width: 100%;
+}
+
+.fit-screen {
+    text-align: center;
+    width: 100%;
+}
+
+.money-sign-movimentacao {
+    position: absolute;
+    right: 94px;
+    top: 28px;    
+}
+
+.value-movimentacao {
+    position: absolute;
+    right: 14px;
+    top: 28px;
+}

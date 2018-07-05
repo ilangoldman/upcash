@@ -1,0 +1,62 @@
+<mat-vertical-stepper [linear]="true" #stepper>
+
+  <!-- info de user -->
+  <mat-step [stepControl]="fileForm" class="overflow">
+    <form [formGroup]="fileForm">
+      <ng-template matStepLabel>NF-e</ng-template>
+
+      <div class="file-input" (click)="fileInput.click()">
+        <p class="align-center">{{fileText}}</p>
+        <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
+      </div>
+
+
+      <!-- <mat-form-field appearance="outline" class="fit-screen" (click)="fileInput.click()">
+        <mat-label>Adcionar NF-e</mat-label>
+        <input type="file" matInput formControlName="nfe" #nfe required>
+        <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
+      </mat-form-field> -->
+
+      <div class="float-right">
+        <button mat-raised-button color="primary" (click)="uploadFile()">Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="fileForm" class="overflow">
+      <ng-template matStepLabel>Confirmar</ng-template>
+      <p>Id da NF-e: {{info.nfeId}}</p>
+      <p>Valor: {{info.valorTotal | currencyFormat}}</p>
+      <p>Data de Emissão: {{info.dtEmissao}}</p>
+      <p>Data de Entrega: {{info.dtEntrega}}</p>
+      <br>
+      <p>Emissor</p>
+      <p>Nome: {{info.nomeEmit}}</p>
+      <p>CNPJ: {{info.cnpjEmit}}</p>
+      <br>
+      <p>Destinatário</p>
+      <p>Nome: {{info.nomeDest}}</p>
+      <p>CNPJ: {{info.cnpjDest}}</p>
+      <div class="float-right">
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-raised-button color="accent" matStepperNext>Continuar</button>
+      </div>
+  </mat-step>
+
+  <mat-step [stepControl]="fileForm">
+    <ng-template matStepLabel>Aceitar</ng-template>
+
+    <div class="align-center">
+      <div>
+        <h3>Valor total para adiantamento:</h3>
+        <h1>{{ valor | currencyFormat }}</h1>
+      </div>
+    </div>
+
+    <div class="float-right">
+      <button mat-button matStepperPrevious>Voltar</button>
+      <button mat-raised-button color="accent" (click)="pedir()">Confirmar</button>
+    </div>
+  </mat-step>
+
+</mat-vertical-stepper>

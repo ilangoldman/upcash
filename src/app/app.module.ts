@@ -52,6 +52,7 @@ import { ConfigPerfilEmpresaComponent } from './empresa/config-perfil-empresa/co
 import { HttpClientModule } from '@angular/common/http';
 import { RecebiveisComponent } from './empresa/recebiveis/recebiveis.component';
 import { CommonModule } from '@angular/common';
+import { AdiantamentoComponent } from './empresa/recebiveis/adiantamento/adiantamento.component';
 
 
 @NgModule({
@@ -72,7 +73,8 @@ import { CommonModule } from '@angular/common';
     KeysPipe,
     ConfiguracaoComponent,
     CadastroComponent,
-    RecebiveisComponent
+    RecebiveisComponent,
+    AdiantamentoComponent
 ],
   imports: [
     BrowserModule,
@@ -92,6 +94,7 @@ import { CommonModule } from '@angular/common';
   ],
   entryComponents: [
     MensagemComponent,
+    AdiantamentoComponent
   ],
   bootstrap: [AppComponent]
 })

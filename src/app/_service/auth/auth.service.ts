@@ -4,6 +4,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase';
 import { UserService } from '../user/user.service';
+import { Observable } from 'rxjs';
+import { User } from '@firebase/auth-types';
 
 
 @Injectable({
@@ -23,12 +25,14 @@ export class AuthService {
       this.authState = auth;
       if (!this.authenticated) {
         // router.navigate(['empresa/home']);
-        router.navigate(['']);
+        if (router.url !== '/cadastro') {
+          router.navigate(['']);
+        }
       } else {
         this.user.getEmpresa(this.currentUserId);
         console.log(router.url);
         if (router.url === '/login') {
-          router.navigate(['empresa/home']);
+          router.navigate(['empresa/recebiveis']);
         }
       }
     });
@@ -47,6 +51,17 @@ export class AuthService {
   // Returns
   currentUserObservable(): any {
     return this.afAuth.authState;
+  }
+
+  observableUID() {
+    return new Observable<String>( (observer) => {
+        this.afAuth.authState.subscribe((auth) => {
+        if (this.authenticated) {
+          // this.user.getEmpresa(this.currentUserId);
+          observer.next(this.currentUserId);
+        }
+      });
+    });
   }
 
   // Returns current user UID

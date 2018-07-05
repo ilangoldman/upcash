@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
   login(usuario, senha) {
     this.auth.emailLogin(usuario, senha)
       .then( (res) => {
-        this.router.navigate(['empresa/home']);
+        this.router.navigate(['empresa/recebiveis']);
       }).catch( (err) => {
         console.log(err);
         this.loginStatus = 'erro';

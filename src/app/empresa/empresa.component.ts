@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class EmpresaComponent implements OnInit {
 
   private items = [
-    {
-      icon: 'dashboard',
-      text: 'OVERVIEW',
-      page: 'home'
-    },
+    // {
+    //   icon: 'dashboard',
+    //   text: 'OVERVIEW',
+    //   page: 'home'
+    // },
     {
       icon: 'account_balance_wallet',
       text: 'CARTEIRA',

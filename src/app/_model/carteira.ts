@@ -1,33 +1,35 @@
 import { ContaBancaria } from './conta-bancaria';
 
 export class Carteira {
-    private _contaBancaria: ContaBancaria;
+    // private _contaBancaria: ContaBancaria;
 
     private _id: String;
     private _balanco: Number;
     private _disponivel: Number;
     private _ultimaRetirada: String;
-    private _autoRetirada: boolean;
+    private _autoRetirada: String;
 
-    public constructor(iugu) {
-        const cb = {
-            banco: iugu.bank,
-            tipo: iugu.account_type,
-            agencia: iugu.bank_ag,
-            conta: iugu.bank_cc
-        };
-        this.contaBancaria = new ContaBancaria(cb);
-        this.id = iugu.id;
-        this.balanco = iugu.balance;
-        this.disponivel = iugu.balance_available_for_withdraw;
-        this.ultimaRetirada = iugu.last_withdraw;
-        this.autoRetirada = iugu.auto_withdraw;
+    public constructor(id, iugu) {
+        // const cb = {
+        //     banco: iugu.bank,
+        //     tipo: iugu.account_type,
+        //     agencia: iugu.bank_ag,
+        //     conta: iugu.bank_cc
+        // };
+        // this.contaBancaria = new ContaBancaria(cb);
+        this.id = id;
+        this.balanco = iugu.balanco;
+        this.disponivel = iugu.disponivel;
+        this.ultimaRetirada = iugu.ultima_retirada;
+        this.autoRetirada = iugu.auto_retirada;
+        // this.ultimaRetirada = iugu.last_withdraw;
+        // this.autoRetirada = iugu.auto_withdraw;
     }
 
-    public get autoRetirada(): boolean {
+    public get autoRetirada(): String {
         return this._autoRetirada;
     }
-    public set autoRetirada(value: boolean) {
+    public set autoRetirada(value: String) {
         this._autoRetirada = value;
     }
 
@@ -52,12 +54,12 @@ export class Carteira {
         this._balanco = value;
     }
 
-    public get contaBancaria(): ContaBancaria {
-        return this._contaBancaria;
-    }
-    public set contaBancaria(value: ContaBancaria) {
-        this._contaBancaria = value;
-    }
+    // public get contaBancaria(): ContaBancaria {
+    //     return this._contaBancaria;
+    // }
+    // public set contaBancaria(value: ContaBancaria) {
+    //     this._contaBancaria = value;
+    // }
 
     public get id(): String {
         return this._id;

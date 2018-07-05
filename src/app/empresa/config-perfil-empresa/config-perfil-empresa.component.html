@@ -1,7 +1,7 @@
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
 
   <!-- info de user -->
-  <mat-step [stepControl]="cadastroUser">
+  <mat-step [stepControl]="cadastroUser" class="overflow">
     <form [formGroup]="cadastroUser">
       <ng-template matStepLabel>Perfil</ng-template>
       <mat-form-field appearance="outline" class="fit-screen">
@@ -26,7 +26,7 @@
       </mat-form-field>
 
       <div class="float-right">
-        <button mat-raised-button color="primary" matStepperNext>Next</button>
+        <button mat-raised-button color="primary" matStepperNext>Continuar</button>
       </div>
     </form>
   </mat-step>
@@ -35,7 +35,7 @@
 
 
 
-  <mat-step [stepControl]="cadastroEmpresa">
+  <mat-step [stepControl]="cadastroEmpresa" class="overflow">
     <form [formGroup]="cadastroEmpresa">
       <ng-template matStepLabel>Empresa</ng-template>
       <mat-form-field appearance="outline" class="fit-screen">
@@ -68,9 +68,9 @@
       </mat-form-field>
 
       <div class="float-right">
-        <button mat-button matStepperPrevious>Back</button>
-        <!-- <button mat-button matStepperNext [disabled]="cadastroEmpresa.invalid">Next</button> -->
-        <button mat-raised-button color="primary" (click)="fim()">Concluir</button>
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-raised-button color="primary" matStepperNext>Continuar</button>
+        <!-- <button mat-raised-button color="primary" (click)="fim()">Concluir</button> -->
       </div>
     </form>
   </mat-step>
@@ -79,31 +79,62 @@
 
 
 
-  <!-- <mat-step>
+  <mat-step>
     <form [formGroup]="outros">
+      <ng-template matStepLabel>Adcionais</ng-template>
+
+      <p class="text">Endereço</p>
       <mat-form-field appearance="outline" class="fit-screen">
-        <mat-label>Assina pela empresa</mat-label>
-        <input matInput formControlName="faturamento" #faturamento required>
+        <mat-label>CEP</mat-label>
+        <input matInput formControlName="cep" #cep required>
       </mat-form-field>
-      <div *ngIf="false">
-        <p>Responsável Legal:</p>
-        <mat-form-field appearance="outline" class="fit-screen">
-          <mat-label>Nome</mat-label>
-          <input matInput formControlName="responsavel" #responsavel required>
+
+      <div class="fit-screen">
+        <mat-form-field appearance="outline" class="inline rua">
+          <mat-label>Rua</mat-label>
+          <input matInput formControlName="rua" #rua required>
         </mat-form-field>
-        <mat-form-field appearance="outline" class="fit-screen">
-          <mat-label>CPF</mat-label>
-          <input matInput formControlName="cpf" #cpf required>
+        <mat-form-field appearance="outline" class="inline num">
+          <mat-label>Numero</mat-label>
+          <input matInput formControlName="numero" #numero required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="inline complemento">
+          <mat-label>Complemento</mat-label>
+          <input matInput formControlName="complemento" #complemento required>
         </mat-form-field>
       </div>
+
       <mat-form-field appearance="outline" class="fit-screen">
-        <mat-label>Motivo</mat-label>
-        <input matInput formControlName="motivo" #motivo required>
+        <mat-label>Bairro</mat-label>
+        <input matInput formControlName="bairro" #bairro required>
       </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button [disabled]="outros.invalid" (click)="fim()">Finalizar</button>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Cidade</mat-label>
+        <input matInput formControlName="cidade" #cidade required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="estado" #estado required>
+      </mat-form-field>
+
+
+      <p class="text">Dados Bancários</p>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Banco</mat-label>
+        <input matInput formControlName="banco" #banco required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Agencia</mat-label>
+        <input matInput formControlName="agencia" #agencia required>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="fit-screen">
+        <mat-label>Conta</mat-label>
+        <input matInput formControlName="conta" #conta required>
+      </mat-form-field>
+      <div class="float-right">
+        <button mat-button matStepperPrevious>Voltar</button>
+        <button mat-raised-button color="primary" (click)="fim()">Concluir</button>
       </div>
     </form>
-  </mat-step> -->
+  </mat-step>
 </mat-horizontal-stepper>

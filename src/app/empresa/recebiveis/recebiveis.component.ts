@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { user } from 'app/GlobalVariables';
 import { Recebivel } from '../../_model/recebivel';
 import { UserService } from '../../_service/user/user.service';
+import { MatDialog } from '@angular/material';
+import { AdiantamentoComponent } from './adiantamento/adiantamento.component';
 
 @Component({
   selector: 'app-recebiveis',
@@ -9,20 +11,26 @@ import { UserService } from '../../_service/user/user.service';
   styleUrls: ['./recebiveis.component.css']
 })
 export class RecebiveisComponent implements OnInit {
-  public analise: Recebivel;
+  public analise: Recebivel[];
   public recebiveis: Recebivel[];
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    public dialog: MatDialog
   ) {
     userService.getRecebiveis().subscribe((resp) => {
       this.recebiveis = resp;
       console.log(this.recebiveis);
       console.log(this.recebiveis[0]);
-      if (this.recebiveis[0].status === 'Em análise') {
-        this.analise = this.recebiveis[0];
-        this.recebiveis = this.recebiveis.slice(1);
-      }
+      this.analise = [];
+      this.recebiveis = [];
+      resp.forEach(r => {
+        if (r.status === 'Em análise') {
+          this.analise.push(r);
+        } else {
+          this.recebiveis.push(r);
+        }
+      });
     });
   }
 
@@ -47,16 +55,32 @@ export class RecebiveisComponent implements OnInit {
   borderStatus(status) {
     let statusClass = '';
     switch (status) {
-      case 'atraso':
-        statusClass = 'erro';
+      case 'Recebido':
+        statusClass = 'atencao';
         break;
 
-      case 'pago':
+      case 'Concluído':
         statusClass = 'sucesso';
         break;
     }
 
     return statusClass;
+  }
+
+  pedirAdiantamento() {
+    const pedido = this.dialog.open(AdiantamentoComponent, {
+      // width: '80%',
+      // height: '100vh',
+      // maxWidth: '100vw',
+      // data: { msg: msg }
+    });
+
+    pedido.afterClosed().subscribe(result => {
+      // console.log(msg.id);
+      // if (!msg.lida) {
+      //   this.userService.readMsg(msg.id);
+      // }
+    });
   }
 
 }
