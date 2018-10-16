@@ -9,7 +9,8 @@ export class NotificacaoService extends HttpClientService {
 
   getMensagem(id) {
     // TODO: add refresh to the data
-    this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + id)
+    //this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + id)
+    this.getResponse<JSONAPI>('detalhe-mensagem')
       .subscribe(
         resp => {
           // console.log(resp.body);
@@ -23,7 +24,8 @@ export class NotificacaoService extends HttpClientService {
 
   getMensagens() {
     // TODO: add refresh to the data
-    this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
+    //this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
+    this.getResponse<JSONAPI>('mensagem')
       .subscribe(
         resp => {
           // console.log(resp.body);

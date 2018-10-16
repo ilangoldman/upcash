@@ -14,7 +14,8 @@ export class BusinessService extends HttpClientService {
   getCarteira(uid) {
     // TODO: add refresh to the data
     return new Observable<Carteira>((observer) => {
-      this.getResponse<JSONAPI>('/empresa/' + uid + '/carteira')
+      //this.getResponse<JSONAPI>('/empresa/' + uid + '/carteira')
+      this.getResponse<JSONAPI>('carteira')
         .subscribe(
           resp => {
 
@@ -33,7 +34,8 @@ export class BusinessService extends HttpClientService {
   getTransferencia(uid) {
     // TODO: add refresh to the data
     return new Observable<Transferencia[]>((observer) => {
-      this.getResponse<JSONAPI>('/empresa/' + uid + '/carteira/transferencia')
+      //this.getResponse<JSONAPI>('/empresa/' + uid + '/carteira/transferencia')
+      this.getResponse<JSONAPI>('transferencia')
         .subscribe(
           resp => {
 

@@ -1,0 +1,12 @@
+{
+    "data": {
+        "type": "carteira",
+        "id": "1",
+        "attributes": {
+            "balanco": "10000",
+            "disponivel": "5000",
+            "ultima_retirada": "05/04/2018",
+            "auto_retirada": "Não"
+        }
+    }
+}

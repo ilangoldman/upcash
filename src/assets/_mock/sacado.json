@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "type": "sacado",
+            "id": "1",
+            "attributes": {
+                "nome": "Sacado 1 Ltda.",
+                "nome_fantasia": "Sacado 1",
+                "cnpj": "2875981729",
+                "email": "sacado@teste.com"
+            }
+        },
+        {
+            "type": "sacado",
+            "id": "2",
+            "attributes": {
+                "nome": "Sacado 2 Ltda.",
+                "nome_fantasia": "Sacado 2",
+                "cnpj": "2875981729",
+                "email": "sacado@teste.com"
+            }
+        },
+        {
+            "type": "sacado",
+            "id": "3",
+            "attributes": {
+                "nome": "Sacado 3 Ltda.",
+                "nome_fantasia": "Sacado 3",
+                "cnpj": "2875981729",
+                "email": "sacado@teste.com"
+            }
+        }
+    ]
+}

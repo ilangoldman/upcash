@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 })
 export abstract class HttpClientService {
   // public url = 'http://localhost:8080';
-  public url = 'https://upcash-md.appspot.com';
+  // public url = 'https://upcash-md.appspot.com';
+  public url = '/assets/_mock/';
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -22,7 +23,7 @@ export abstract class HttpClientService {
 
   getResponse<T>(path): Observable<HttpResponse<T>> {
     return this.http.get<T>(
-      this.url + path, { observe: 'response' });
+      this.url + path + '.json', { observe: 'response' });
   }
 
   /** PUT: update the hero on the server. Returns the updated hero upon success. */

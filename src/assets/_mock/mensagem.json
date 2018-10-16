@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "type": "mensagem",
+            "id": "1",
+            "attributes": {
+                "titulo": "Adiantamento aceito",
+                "descricao": "Adiantamento de R$50.000, do sacado 1 foi aceito.",
+                "data": "04/07/2017",
+                "categoria": "android",
+                "lida": "false"
+            }
+        },
+        {
+            "type": "mensagem",
+            "id": "2",
+            "attributes": {
+                "titulo": "Adiantamento aceito 2",
+                "descricao": "Adiantamento de R$50.000, do sacado 2 foi aceito.",
+                "data": "04/07/2017",
+                "categoria": "android",
+                "lida": "true"
+            }
+        },
+        {
+            "type": "mensagem",
+            "id": "3",
+            "attributes": {
+                "titulo": "Adiantamento aceito 3",
+                "descricao": "Adiantamento de R$50.000, do sacado 3 foi aceito.",
+                "data": "04/07/2017",
+                "categoria": "android",
+                "lida": "false"
+            }
+        },
+        {
+            "type": "mensagem",
+            "id": "4",
+            "attributes": {
+                "titulo": "Adiantamento aceito 4",
+                "descricao": "Adiantamento de R$50.000, do sacado 4 foi aceito.",
+                "data": "04/07/2017",
+                "categoria": "android",
+                "lida": "true"
+            }
+        }
+    ]
+}

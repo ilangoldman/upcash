@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "type": "transferencia",
+            "id": "1",
+            "attributes": {
+                "data": "04/07/2018",
+                "valor": "50000",
+                "nome": "Itau",
+                "status": "recebido"
+            }
+        },
+        {
+            "type": "transferencia",
+            "id": "2",
+            "attributes": {
+                "data": "04/07/2018",
+                "valor": "50000",
+                "nome": "Itau",
+                "status": "recebido"
+            }
+        },
+        {
+            "type": "transferencia",
+            "id": "3",
+            "attributes": {
+                "data": "04/07/2018",
+                "valor": "50000",
+                "nome": "Bradesco",
+                "status": "enviado"
+            }
+        },
+        {
+            "type": "transferencia",
+            "id": "4",
+            "attributes": {
+                "data": "04/07/2018",
+                "valor": "50000",
+                "nome": "Itau",
+                "status": "enviado"
+            }
+        }
+    ]
+}

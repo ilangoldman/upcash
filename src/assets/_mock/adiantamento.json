@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "type": "recebivel",
+            "id": "1",
+            "attributes": {
+                "nfe": "url/nfe/1",
+                "valor": "50000",
+                "porcentagem": "80",
+                "status": "Em análise",
+                "sacado": "Sacado 1",
+                "data": "04/07/2018"
+            }
+        },
+        {
+            "type": "recebivel",
+            "id": "2",
+            "attributes": {
+                "nfe": "url/nfe/2",
+                "valor": "50000",
+                "porcentagem": "80",
+                "status": "Recebido",
+                "sacado": "Sacado 2",
+                "data": "04/05/2018"
+            }
+        },
+        {
+            "type": "recebivel",
+            "id": "10",
+            "attributes": {
+                "nfe": "url/nfe/10",
+                "valor": "100000",
+                "porcentagem": "80",
+                "status": "Em análise",
+                "sacado": "Sacado 3",
+                "data": "14/07/2018"
+            }
+        },
+        {
+            "type": "recebivel",
+            "id": "3",
+            "attributes": {
+                "nfe": "url/nfe/3",
+                "valor": "100000",
+                "porcentagem": "90",
+                "status": "Concluído",
+                "sacado": "Sacado 2",
+                "data": "04/04/2018"
+            }
+        },
+        {
+            "type": "recebivel",
+            "id": "4",
+            "attributes": {
+                "nfe": "url/nfe/4",
+                "valor": "100000",
+                "porcentagem": "100",
+                "status": "Concluído",
+                "sacado": "Sacado 1",
+                "data": "04/03/2018"
+            }
+        }
+    ]
+}

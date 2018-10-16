@@ -1,0 +1,12 @@
+{
+    "data": {
+        "type": "mensagem",
+        "id": "1",
+        "attributes": {
+            "titulo": "Adiantamento aceito",
+            "descricao": "Adiantamento de R$50.000, do sacado 1 foi aceito.",
+            "data": "04/07/2017",
+            "categoria": "android"
+        }
+    }
+}

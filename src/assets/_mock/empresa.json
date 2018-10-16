@@ -1,0 +1,35 @@
+{
+    "data": {
+        "type": "empresa",
+        "id": "1",
+        "attributes": {
+            "email": "teste@teste.com",
+            "nome": "Ilan",
+            "sobrenome": "Goldman",
+            "razao_social": "UpCash Ltda.",
+            "nome_fantasia": "UpCash",
+            "cnpj": "2875981729",
+            "telefone_comercial": "21587489",
+            "fundacao": "12/10/1997",
+            "descricao": "Adiantamento de Recebiveis",
+            "motivo": "Fluxo de Caixa",
+            "pagina_web": "upcash.com.br"
+        }
+    },
+    "included": [
+        {
+            "type": "endereco",
+            "id": "1",
+            "attributes": {
+                "cep": "01230111",
+                "tipo": "rua",
+                "logradouro": "Albuquerque Lins",
+                "numero": "848",
+                "complemento": "101",
+                "bairro": "Santa Cecília",
+                "cidade": "São Paulo",
+                "estado": "SP"
+            }
+        }
+    ]
+}

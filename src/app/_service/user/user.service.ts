@@ -25,7 +25,8 @@ export class UserService extends HttpClientService {
 
   getEmpresa(uid) {
     // TODO: add refresh to the data
-    this.getResponse<JSONAPI>('/empresa/' + uid)
+    //this.getResponse<JSONAPI>('/empresa/' + uid)
+    this.getResponse<JSONAPI>('empresa')
       .subscribe(
         resp => {
           // console.log(resp.body);
@@ -35,15 +36,15 @@ export class UserService extends HttpClientService {
           this.getSacado();
           // this.getMensagens();
           // this.getRecebiveis();
-          console.log(user);
+          // console.log(user);
         },
         error => console.log(error)
       );
   }
 
   getSacado() {
-    // TODO: add refresh to the data
-    this.getResponse<JSONAPI>('/empresa/' + user.uid + '/sacado')
+    //this.getResponse<JSONAPI>('/empresa/' + user.uid + '/sacado')
+    this.getResponse<JSONAPI>('sacado')
       .subscribe(
         resp => {
           // console.log(resp.body);
@@ -59,7 +60,8 @@ export class UserService extends HttpClientService {
   getMensagens() {
     // TODO: add refresh to the data
     return new Observable<Mensagem[]>((observer) => {
-      this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
+      //this.getResponse<JSONAPI>('/empresa/' + user.uid + '/mensagem')
+      this.getResponse<JSONAPI>('mensagem')
         .subscribe(
           resp => {
             const msgs = [];
@@ -75,13 +77,14 @@ export class UserService extends HttpClientService {
 
   readMsg(msg) {
     // melhorar
-    this.update<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + msg, null).subscribe();
+    //this.update<JSONAPI>('/empresa/' + user.uid + '/mensagem/' + msg, null).subscribe();
   }
 
   getRecebiveis() {
     // TODO: add refresh to the data
     return new Observable<Recebivel[]>((observer) => {
-      this.getResponse<JSONAPI>('/empresa/' + user.uid + '/adiantamento')
+      //this.getResponse<JSONAPI>('/empresa/' + user.uid + '/adiantamento')
+      this.getResponse<JSONAPI>('adiantamento')
         .subscribe(
           resp => {
             // console.log(resp.body);
